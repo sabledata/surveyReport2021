@@ -1,0 +1,132 @@
+SURVEY_SERIES_ID,BLOCK_DESIGNATION,LATITUDE,LONGITUDE,DEPTH_M,GROUPING_CODE,SELECTION_IND,SELECTION_ID,SELECTION_TYPE_CODE,FE_MAJOR_LEVEL_ID,STATUS_CODE,NUM_FISHING_ATTEMPTS,STATUS
+43,7552,49.17229,-127.1069,-714,51,1,1,1,21,6,2,Successfully fished on first attempt
+43,7594,49.11405,-126.8624,-205,50,1,1,1,20,6,1,Successfully fished on first attempt
+43,7673,49.0041,-126.7577,-293,50,1,1,1,19,6,1,Successfully fished on first attempt
+43,7820,48.86132,-126.8187,-1123,52,1,1,1,18,6,1,Successfully fished on first attempt
+43,7867,48.81873,-126.4935,-217,50,1,1,1,15,6,1,Successfully fished on first attempt
+43,7871,48.8079,-126.8482,-1285,52,1,1,1,17,6,1,Successfully fished on first attempt
+43,7891,48.78992,-126.849,-1308,52,1,1,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,7950,48.74563,-126.4428,-537,51,1,1,1,13,6,1,Successfully fished on first attempt
+43,7967,48.73002,-126.5524,-670,51,1,1,1,16,6,1,Successfully fished on first attempt
+43,8071,48.65009,-126.2032,-271,50,1,1,1,12,6,1,Successfully fished on first attempt
+43,8211,48.50762,-126.2652,-731,51,1,1,1,11,6,1,Successfully fished on first attempt
+43,8268,48.44006,-126.4582,-1241,52,1,1,1,10,6,1,Successfully fished on first attempt
+43,8283,48.43039,-126.053,-190,50,1,1,1,8,6,1,Successfully fished on first attempt
+43,8296,48.41646,-126.216,-659,51,1,1,1,9,6,1,Successfully fished on first attempt
+43,8393,48.33915,-126.0043,-717,51,1,1,1,6,6,1,Successfully fished on first attempt
+43,8436,48.30251,-125.9795,-546,51,1,1,1,2,6,1,Successfully fished on first attempt
+43,8438,48.30108,-125.9256,-310,50,1,1,1,1,6,1,Successfully fished on first attempt
+43,8450,48.288,-126.1152,-1067,52,1,1,1,4,6,1,Successfully fished on first attempt
+43,8469,48.27003,-126.1162,-1289,NULL,1,1,1,NULL,2,0,Rejected based on on-ground inspection
+43,8476,48.26515,-125.9278,-550,51,1,1,1,5,6,1,Successfully fished on first attempt
+43,8526,48.21612,-126.1192,-1072,52,1,1,1,3,6,1,Successfully fished on first attempt
+43,8648,50.68079,-128.887,-208,53,1,1,1,45,6,1,Successfully fished on first attempt
+43,8684,50.64437,-128.6608,-184,53,1,1,1,44,6,1,Successfully fished on first attempt
+43,8756,50.51847,-128.6617,-1060,55,1,2,1,43,6,1,Successfully fished on first attempt
+43,8776,50.48212,-128.5492,-236,53,1,1,1,42,6,1,Successfully fished on first attempt
+43,8833,50.37371,-128.4377,-248,53,1,1,1,41,6,1,Successfully fished on first attempt
+43,9002,50.17475,-128.244,-1410,NULL,1,1,1,NULL,1,0,Rejected based on prior knowledge
+43,9003,50.17456,-128.216,-1168,55,1,1,1,39,6,1,Successfully fished on first attempt
+43,9025,50.13975,-128.4125,-1051,55,1,1,1,40,6,1,Successfully fished on first attempt
+43,9121,50.01355,-128.3582,-1132,55,1,2,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,9333,49.72107,-127.7793,-747,54,1,1,1,33,6,1,Successfully fished on first attempt
+43,9337,49.71985,-127.6684,-645,54,1,1,1,32,6,1,Successfully fished on first attempt
+43,9405,49.64552,-127.4765,-674,54,1,1,1,31,6,1,Successfully fished on first attempt
+43,9432,49.61163,-127.6436,-574,54,1,1,1,28,6,1,Successfully fished on first attempt
+43,9437,49.60992,-127.5053,-696,54,1,1,1,30,6,1,Successfully fished on first attempt
+43,9452,49.59264,-127.5611,-684,54,1,1,1,29,6,1,Successfully fished on first attempt
+43,9518,49.52234,-127.7014,-1119,55,1,1,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,9625,49.39107,-127.2914,-556,54,1,1,1,26,6,1,Successfully fished on first attempt
+43,9645,49.35551,-127.3202,-972,55,1,1,1,24,6,1,Successfully fished on first attempt
+43,9648,49.35428,-127.2376,-408,53,1,1,1,25,6,1,Successfully fished on first attempt
+43,9664,49.31955,-127.3214,-1264,55,1,1,1,23,6,1,Successfully fished on first attempt
+43,9671,49.31659,-127.1289,-184,53,1,1,1,22,6,1,Successfully fished on first attempt
+43,9673,49.30235,-127.377,-1307,NULL,1,1,1,NULL,2,0,Rejected based on on-ground inspection
+43,9674,49.30196,-127.3495,-1317,NULL,1,1,1,NULL,2,0,Rejected based on on-ground inspection
+43,9675,49.30156,-127.322,-1298,55,1,1,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,9887,51.82139,-130.5672,-298,56,1,1,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,9943,51.78692,-130.45,-416,56,1,1,1,72,6,1,Successfully fished on first attempt
+43,9973,51.77032,-130.3336,-236,56,1,1,1,73,6,1,Successfully fished on first attempt
+43,10238,51.61063,-130.1267,-537,57,1,1,1,74,6,1,Successfully fished on first attempt
+43,10310,51.55458,-130.3272,-977,58,1,1,1,75,6,1,Successfully fished on first attempt
+43,10358,51.51727,-130.4415,-1052,58,1,1,1,76,6,1,Successfully fished on first attempt
+43,10360,51.51796,-130.3838,-1129,58,1,1,1,77,6,1,Successfully fished on first attempt
+43,10386,51.50097,-130.2969,-982,58,1,1,1,78,6,1,Successfully fished on first attempt
+43,10541,51.39706,-129.8627,-227,56,1,1,1,46,6,1,Successfully fished on first attempt
+43,10553,51.37603,-130.2071,-803,57,1,1,1,79,6,1,Successfully fished on first attempt
+43,10596,51.36207,-129.7184,-207,56,1,1,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,10683,51.28553,-130.2621,-1284,58,1,1,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,10806,51.21585,-130.0311,-527,57,1,1,1,81,6,1,Successfully fished on first attempt
+43,10834,51.19735,-130.0879,-702,57,1,1,1,80,6,1,Successfully fished on first attempt
+43,10984,51.12946,-129.4861,-287,56,1,1,1,47,6,1,Successfully fished on first attempt
+43,11117,51.02103,-129.599,-639,57,1,1,1,48,6,1,Successfully fished on first attempt
+43,11206,50.91312,-129.5976,-232,56,1,1,1,49,6,1,Successfully fished on first attempt
+43,11209,50.91353,-129.5123,-190,56,1,1,1,50,6,1,Successfully fished on first attempt
+43,11248,50.82361,-129.5113,-672,57,1,1,1,51,6,1,Successfully fished on first attempt
+43,11269,53.10654,-132.6457,-224,59,1,1,1,67,6,1,Successfully fished on first attempt
+43,11276,53.06504,-132.8214,-1189,61,1,1,1,65,6,1,Successfully fished on first attempt
+43,11278,53.06694,-132.7618,-1194,61,1,1,1,66,6,1,Successfully fished on first attempt
+43,11282,53.07065,-132.6427,-345,59,1,2,1,68,6,1,Successfully fished on first attempt
+43,11322,53.01952,-132.5488,-255,59,1,1,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,11354,52.98363,-132.5459,-605,60,1,1,1,69,6,1,Successfully fished on first attempt
+43,11414,52.91534,-132.4213,-451,60,1,1,1,70,6,1,Successfully fished on first attempt
+43,11436,52.8803,-132.3888,-653,60,1,1,1,71,6,1,Successfully fished on first attempt
+43,11459,52.84691,-132.297,-244,59,1,1,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,11540,52.70248,-132.3158,-1359,61,1,1,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,11554,52.67296,-132.0768,-199,59,1,2,1,NULL,1,0,Rejected based on prior knowledge
+43,11595,52.49998,-131.7994,-216,59,1,2,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,11603,52.46476,-131.7677,-320,59,1,2,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,11610,52.44816,-131.7078,-235,59,1,1,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,11621,52.3936,-131.7339,-1044,61,1,1,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,11665,52.28977,-131.5515,-332,59,1,2,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,11689,52.23713,-131.4899,-290,59,1,2,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,11690,52.21599,-131.6351,-1245,61,1,2,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,11702,52.20181,-131.4586,-337,59,1,2,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,11736,52.13174,-131.3671,-191,59,1,1,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,11742,52.11259,-131.4245,-643,60,1,1,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,11747,52.0928,-131.511,-686,60,1,1,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,11770,52.05988,-131.3633,-723,60,1,1,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,11772,52.06104,-131.305,-209,59,1,2,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,11777,52.04073,-131.4206,-1010,61,1,1,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,11800,52.00881,-131.2149,-222,59,1,1,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,11816,51.97395,-131.1549,-279,59,1,2,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,11844,51.8682,-131.0337,-294,59,1,2,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,11861,54.36589,-133.6807,-242,62,1,1,1,52,6,1,Successfully fished on first attempt
+43,11868,54.34315,-133.8013,-338,62,1,1,1,53,6,1,Successfully fished on first attempt
+43,11880,54.32278,-133.8605,-559,63,1,1,1,54,6,1,Successfully fished on first attempt
+43,11979,54.21531,-133.8479,-589,63,1,1,1,55,6,1,Successfully fished on first attempt
+43,12040,54.17349,-133.5363,-355,62,1,1,1,57,6,1,Successfully fished on first attempt
+43,12046,54.14489,-133.809,-759,63,1,1,1,56,6,1,Successfully fished on first attempt
+43,12223,53.94785,-133.7862,-1143,64,1,1,1,59,6,1,Successfully fished on first attempt
+43,12233,53.9596,-133.4825,-219,62,1,1,1,58,6,1,Successfully fished on first attempt
+43,12251,53.90836,-133.8731,-1065,64,1,1,1,60,6,1,Successfully fished on first attempt
+43,12375,53.78038,-133.4633,-778,63,1,1,1,61,6,1,Successfully fished on first attempt
+43,12392,53.74341,-133.4897,-1025,64,1,1,1,62,6,1,Successfully fished on first attempt
+43,12565,53.43372,-133.0954,-921,64,1,1,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,12567,53.43577,-133.0354,-445,63,1,1,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,12603,53.37681,-133.1802,-817,63,1,1,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,12649,53.32302,-133.1749,-666,63,1,1,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,12729,53.26332,-132.809,-341,62,1,1,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,12730,53.26427,-132.7791,-192,62,1,1,1,NULL,1,0,Rejected based on prior knowledge
+43,12767,53.1975,-133.1627,-1197,64,1,1,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,12845,53.14058,-132.7084,-454,62,1,1,1,64,6,1,Successfully fished on first attempt
+43,90001,54.65765,-130.5103,NULL,441,1,99,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,90002,54.71328,-130.4227,NULL,441,1,99,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,90003,54.76557,-130.3533,NULL,441,1,99,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,90004,54.80543,-130.268,NULL,441,1,99,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,90005,54.87747,-130.184,NULL,441,1,99,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,90006,53.10931,-129.3551,NULL,368,1,99,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,90007,53.18827,-129.3778,NULL,368,1,99,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,90008,53.32415,-129.3056,NULL,368,1,99,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,90009,53.18033,-129.1227,NULL,368,1,99,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,90010,53.10971,-129.1162,NULL,368,1,99,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,90011,52.51091,-128.4562,NULL,338,1,99,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,90012,52.5733,-128.4652,NULL,338,1,99,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,90013,52.65948,-128.4702,NULL,338,1,99,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,90014,52.71701,-128.457,NULL,338,1,99,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,90015,52.78841,-128.4364,NULL,338,1,99,1,NULL,9,0,Block not fished successfully but remains in sampling frame
+43,90016,52.12508,-127.6094,NULL,335,1,99,1,34,6,1,Successfully fished on first attempt
+43,90017,52.21898,-127.4171,NULL,335,1,99,1,35,6,1,Successfully fished on first attempt
+43,90018,52.27132,-127.2591,NULL,335,1,99,1,36,6,1,Successfully fished on first attempt
+43,90019,52.44598,-127.2603,NULL,335,1,99,1,37,6,1,Successfully fished on first attempt
+43,90020,52.34795,-127.4712,NULL,335,1,99,1,38,6,1,Successfully fished on first attempt

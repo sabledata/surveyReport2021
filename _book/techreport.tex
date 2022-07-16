@@ -1,0 +1,1332 @@
+%%%%% Set up %%%%%
+
+% Set document style and font size
+\documentclass[12pt]{article}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+
+% File path to resources (style file etc)
+\newcommand{\locRepo}{csas-style}
+
+% Style file for DFO Technical Reports
+\usepackage{\locRepo/tech-report}
+
+% header-includes from R markdown entry
+\usepackage{float}
+
+%%%%% Variables %%%%%
+
+% New definitions: Title, year, report number, authors
+% Protect lower case words (i.e., species names) in \Addlcwords{}, in "TechReport.sty"
+\newcommand{\trTitle}{Summary of the annual 2021 sablefish (\emph{Anoplopoma fimbria}) trap survey, October 6 - November 21, 2021}
+\newcommand{\trYear}{2022}
+\newcommand{\trReportNum}{nnn}
+% Optional
+\newcommand{\trAuthFootA}{Email: \link{mailto:Lisa.Lacko@dfo-mpo.gc.ca}{\nolinkurl{Lisa.Lacko@dfo-mpo.gc.ca}} \textbar{} telephone: (778) 268-3236}
+\newcommand{\trAuthsLong}{Lisa C. Lacko, Schon M. Acheson, and Kendra R. Holt}
+\newcommand{\trAuthsBack}{Lacko, L.C., Acheson, S.M. and Holt, K.R.}
+
+% New definition: Address
+\newcommand{\trAddy}{Pacific Biological Station\\
+Fisheries and Oceans Canada, 3190 Hammond Bay Road\\
+Nanaimo, British Columbia, V9T 6N7, Canada\\}
+
+% Abstract
+\newcommand{\trAbstract}{This document describes sampling activities and summarizes results from the 2021 British Columbia sablefish research and assessment survey. The survey was comprised of stratified random sets (StRS) at five depth-stratified areas and standardized sets at one traditional inlet locality. Four sets were dedicated to bottom contact research with 3 deep-water autonomous cameras mounted on a 60 trap string. Biological sampling was conducted for sablefish and incidentally captured species such as rockfishes and lingcod. Sablefish were randomly sampled from every third trap on all sets, up to a maximum sample count of 50. The tag and release study conducted annually since 1991 was continued in 2021.
+
+A total of 41,020 sablefish were caught on StRS sets in 2021, of which 3,865 were used for biological samples and 8,013 were tagged and released. Results are summarized for sablefish catch-per-unit-effort (CPUE), sablefish biological sampling, catch composition, and oceanographic data. Survey CPUE are presented in relation to previous years to describe trends over time. In the most recent 2 years, survey data from stratified random sets show a slight increasing trend in CPUE. At the 2021 StRS sites, the stratified mean survey abundance was 36 kg/trap, up 3\% from 2020 and down -6\% from the 2019-2020 average.}
+
+% Resume (i.e., French abstract)
+\newcommand{\trResume}{Voici le résumé. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.}
+
+\newcommand{\trISBN}{}
+
+\DeclareGraphicsExtensions{.png,.pdf}
+%%%%% Start %%%%%
+
+% Start the document
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+
+% commands and environments needed by pandoc snippets
+% extracted from the output of `pandoc -s`
+%% Make R markdown code chunks work
+\usepackage{array}
+\usepackage{amssymb,amsmath}
+\usepackage{color}
+\usepackage{fancyvrb}
+
+% From default template:
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\},formatcom=\color[rgb]{0.00,0.00,0.00}}
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textit{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textit{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textit{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textit{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\begin{document}
+
+%%%% Front matter %%%%%
+
+% Add the first few pages
+\frontmatter
+
+%%%%% Drafts %%%%%
+
+%\linenumbers  % Line numbers
+%\onehalfspacing  % Extra space between lines
+\renewcommand{\headrulewidth}{0.5pt}  % Header line
+\renewcommand{\footrulewidth}{0.5pt}  % footer line
+%\pagestyle{fancy}\fancyhead[c]{Draft: Do not cite or circulate}  % Header text
+
+\newcommand{\lt}{\ensuremath <}
+\newcommand{\gt}{\ensuremath >}
+
+%Defines cslreferences environment
+%Required by pandoc 2.8
+%Copied from https://github.com/rstudio/rmarkdown/issues/1649
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{cslreferences}%
+  {}%
+  {\par}
+
+%%%%% Main document %%%%%
+\hypertarget{sec:introduction}{%
+\section{Introduction}\label{sec:introduction}}
+
+British Columbia (BC) sablefish (\emph{Anoplopoma fimbria}), also known as black cod, are a highly valuable commercial fish species that are harvested directly by the commercial groundfish K (Sablefish) and T (Trawl) licence sectors. They are also intercepted by the non-directed groundfish longline hook fisheries of the L (Pacific halibut), ZN (rockfishes), LC (lingcod) and DF (North Pacific spiny dogfish) licence sectors. BC vessels have landed an average of 2,227 metric tons of black cod annually over the past ten years (2012 to 2021), with the majority captured in 2021 by longline trap gear (58\%) and longline hook gear (34\%).
+
+Fishery-independent research surveys using longline trap gear have been conducted by the Department of Fisheries and Oceans (DFO) since 1988. Survey procedures have evolved over time with 1. standardized fishing sets (1988 - 2010) and traditional tagging sets (1991 - 2007) conducted at offshore indexing localities; 2. traditional tagging sets conducted at offshore tagging localities (1995 - 2008); 3. standardized fishing sets conducted at mainland inlet localities (1994 - 2019, 2021); and 4. stratified random sets conducted within five spatial strata (2003-2021).
+
+These surveys are used to obtain catch rate data, gather biological samples, capture oceanographic measurements, record gear bottom contact and collect tag release and recapture data. This information is used as the key contemporary index of abundance for assessing the biological status of the sablefish stock, and to condition an operating model that serves as the biological basis of the coastal Management Strategy Evaluation (\protect\hyperlink{ref-DFO2020}{DFO 2020}).
+
+Due to weather conditions, 77 out of the 111 blocks and one out of four mainland inlets were surveyed in 2021.\\
+\clearpage
+
+\hypertarget{methods}{%
+\section{Methods}\label{methods}}
+
+\hypertarget{survey-design}{%
+\subsection{SURVEY DESIGN}\label{survey-design}}
+
+Methodology for the 2021 sablefish research and assessment surveys employed a stratified random sampling (StRS) design and a traditional standardized inlet component. In 2021, Wild Canadian Sablefish, Ltd.~implemented a multi-year research study to understand and quantify movement of longline trap gear.
+
+\hypertarget{stratified-random-sampling-survey-design-component}{%
+\subsubsection{STRATIFIED RANDOM SAMPLING SURVEY DESIGN COMPONENT}\label{stratified-random-sampling-survey-design-component}}
+
+Since 2011, the StRS design has been conducted in all offshore survey areas. The StRS design began in 2003 with the purpose of distributing tag releases at random, collecting biological samples and developing a catch-rate based index of abundance (\protect\hyperlink{ref-Wyeth2003}{Wyeth and Kronlund 2003}). It also provided an alternative design to the historic traditional offshore component of the survey which occurred from 1990 to 2010 at fixed locations.
+
+Under the StRS design the offshore survey area is partitioned into five spatial strata (S\textsubscript{1} to S\textsubscript{5}) and three depth strata (RD\textsubscript{1} to RD\textsubscript{3}) for a total of 15 strata (Figure~\ref{fig:figure1}). The five spatial strata are S\textsubscript{1} (South West Coast Vancouver Island or SWCVI), S\textsubscript{2} (North West Coast Vancouver Island or NWCVI), S\textsubscript{3} (Queen Charlotte Sound or QCS), S\textsubscript{4} (South West Coast of Haida Gwaii or SWCHG), and S\textsubscript{5} (North West Coast of Haida Gwaii or NWCHG). The three targeted depth ranges are 100-250 fathoms (RD\textsubscript{1}), 250-450 fathoms (RD\textsubscript{2}), and 450-750 fathoms (RD\textsubscript{3}). The area within each of the 15 strata are sectioned into 2 km x 2 km grid cells or `fishing blocks' from which set locations are randomly chosen.
+
+From 2003 through 2005, five grid cells were randomly selected in each spatial-depth stratum. From 2006 through 2010, the number was increased to six. An analysis was completed for the 2011 survey to optimize the allocation of the blocks to strata for the 2011 and 2012 survey. However, in order to lower survey costs, the number of blocks were further reduced for the 2013 survey, from a total of 110 to 91 offshore blocks while maintaining the same relative allocation of blocks to strata. This total number of blocks has been in place on all subsequent surveys, including 2021 (Table~\ref{tab:table1}).
+
+\hypertarget{traditional-mainland-inlet-survey-component}{%
+\subsubsection{TRADITIONAL MAINLAND INLET SURVEY COMPONENT}\label{traditional-mainland-inlet-survey-component}}
+
+Under the traditional mainland inlet design, sets were allocated to five specific polygons in each of the following 4 areas: Portland Inlet, Gil Island, Finlayson Channel, and Dean/Burke Channel (Figure~\ref{fig:figure1}). In 2021, only Dean/Burke Channel was fished.
+
+\hypertarget{gear-movement-research}{%
+\subsubsection{GEAR MOVEMENT RESEARCH}\label{gear-movement-research}}
+
+The objectives for the gear movement research in 2021 are to: 1. Validate estimates of gear movement derived from a movement classification algorithm developed from 25-trap strings of sablefish gear; 2. Quantify the relative error rates produced by the algorithm in 1.; 3. Estimate bottom-contact and gear movement from 60-trap strings in BC coastal fishing grounds, by collecting movement data near the ends and middle of the string. Gear movement research had no requirement for biological sampling or tagging of sablefish.
+
+\hypertarget{ghnmca-and-haida-heritage-site}{%
+\subsection{GHNMCA AND HAIDA HERITAGE SITE}\label{ghnmca-and-haida-heritage-site}}
+
+Approval was granted for three years (2021 to 2023) to conduct research sets in the designated multi-use zones of the GHNMCA (Gwaii Haanas National Marine Conservation Area), as identified in the Gwaii Haanas Gina 'Waadluxan KilGuhlGa Land-Sea-People Management Plan \link{https://www.pc.gc.ca/en/pn-np/bc/gwaiihaanas/info}{\underline{https://www.pc.gc.ca/en/pn-np/bc/gwaiihaanas/info}}.
+
+\hypertarget{vessel}{%
+\subsection{VESSEL}\label{vessel}}
+
+The 2021 survey of 77 fishing sets and 4 gear movement sets were chartered aboard the F/V Pacific Viking (Figure~\ref{fig:figure2}), skippered by Albert (Deacon) Melnychuk between Oct 6 - Nov 21 , 2021 (Appendix~\ref{app:first-appendix}). Information about the vessel can be found at \link{http://marinetraffic.com}{\underline{http://marinetraffic.com}}.
+
+\hypertarget{fishing-gear}{%
+\subsection{FISHING GEAR}\label{fishing-gear}}
+
+The longline trap gear for StRS and inlet sets consisted of a groundline resting on the ocean floor with 25 baited traps attached to beckets at 150 foot intervals along its length and 90 pound anchors at each end (Figure~\ref{fig:figure3} a). A flagpole was required for at least one end of the set to improve visibility for retrieval. The traps were steel frame with a bottom hoop diameter of 54 inches and covered with an North American \#84 black braided nylon web of 2.75 inch mesh (Figure~\ref{fig:figure3} b).
+
+The tunnels were made of green braided, knotless, 1.25 inch mesh. The traps did not include escape rings, however included a `rot panel' of \# 21 cotton located above the middle ring. Standard bait bags (6 by 12 inches) made of 1/8 inch web with a nylon drawstring and \#7 stainless trolling snaps were included with the traps.
+
+\hypertarget{fishing-operations}{%
+\subsection{FISHING OPERATIONS}\label{fishing-operations}}
+
+During normal survey fishing operations gear was deployed on alternate days. Prior to deployment, the Fishing Master inspected the block to determine fishability and if it was within the targeted depth range. The goal was to have as much gear as possible within the block boundaries. If unfishable, the survey protocol requires that an alternate block is to be chosen to the east, west, north, and south, respectively. If none of those blocks meet the criteria, an alternate block of the same area and depth strata was randomly chosen.
+
+Two science staff recorded information associated with the deployment of the gear. One science member was positioned in the wheelhouse and entered data in the EDAS GFBioField Bridge Log form within the Electronic Data Acquisition System (EDAS) (\protect\hyperlink{ref-Olsen2010}{Olsen 2010}). The global positioning system (GPS) and bottom sounder data were logged continuously for the duration of the survey and designated fields on the bridge log were auto-populated. Details on electronic entry of the all EDAS GFBioField forms mentioned in this document is available in the GFBio Field User Guide 2020.
+
+A set paper log was filled out on the deck by the science recorder who had maximum visibility of the crew setting the traps over the stern rail. The set log included the time and identity of the first and last buoys, anchor time, a tally of beckets and traps, as well as the unique identifying numbers of sensors deployed (Appendix~\ref{app:second-appendix}).
+
+\hypertarget{stratified-random-component-strs}{%
+\subsubsection{Stratified Random Component (StRS)}\label{stratified-random-component-strs}}
+
+Sets in StRS blocks had a targeted soak time of 24 hours. Fishing sets were designated useable if hauled between 22 and 26 hours. Traps were baited with 10 pounds of loose offshore Pacific Hake (\emph{Merluccius productus}) and 2 pounds of bagged squid.
+
+\hypertarget{traditional-standardized-inlet-component}{%
+\subsubsection{Traditional Standardized Inlet Component}\label{traditional-standardized-inlet-component}}
+
+Fishing sets in inlet localities had a targeted soak time of 18 hours. These sets were designated useable if hauled between 16 and 20 hours, compatible with the historic inlet survey protocols. Traps were baited with 2 pounds of bagged squid.
+
+\hypertarget{catch-processing}{%
+\subsection{CATCH PROCESSING}\label{catch-processing}}
+
+Haulback speed allowed the science crew to accurately record catch. Two science staff were positioned on deck at the haul card station; one recorded the catch and the other managed the movement of baskets. In addition, the catch recorder entered the haul start and end times into the EDAS GFBioField Bridge Log. As the groundline was hauled, each becket and trap were entered in the EDAS GFBioField Trap Catch form. Crew members alerted the recorder about any damage to a trap (i.e.~holes) which was then recorded in the EDAS GFBioField Trap Usability form.
+
+Catch by species from each trap was sorted into baskets by the crew. Baskets were then weighed to the nearest 0.2 kg on a motion compensating scale and given a basket use code of D, A, T, L, SD or F. Code D designated fish species as discards or commercial catch; code A allocated fish to age samples; code T allocated sablefish to be tagged and released; code L allocated fish for length samples; code SD identified sublegal sablefish discards; code F represented fish frames with amphipod or hagfish damage.
+
+\hypertarget{sablefish-allocation-details}{%
+\subsubsection{Sablefish Allocation Details}\label{sablefish-allocation-details}}
+
+Prior to 2018, sablefish were tagged from 1/3 of the traps on StRS sets and 1/2 of the traps on the inlet sets. Due to high catch numbers, the survey protocol was revised in 2018 to designate \textasciitilde125 sablefish to be tagged (T) from 1/3 of the traps on all sets. This convention was continued in 2021. When catches were high, traps targeted for tagging were spread throughout the string to avoid tagging the first 125 fish. A biological sample was collected from the coded ``A'' traps with the goal of selecting 50 to 60 fish. If CPUE was high, the new survey protocol of 2018 designated a minimal of two traps to be used for samples. If both traps contained more than 60 sablefish, a random process was used to select \textasciitilde60 specimens.
+
+The remaining traps were allocated to the discard category and sorted by size into either legal (D) or sublegal (SD) discards. The SD (sublegal discards) code was added during the 2017 survey to account for the large numbers of juvenile sablefish and facilitate their quick return to the ocean. Legal discards (D) of sablefish were kept by the vessel and processed as commercial catch.
+
+\hypertarget{biological-sampling-lwsmo}{%
+\subsection{BIOLOGICAL SAMPLING (LWSMO)}\label{biological-sampling-lwsmo}}
+
+Biological samples were collected from sablefish and incidentally captured species such as rockfishes and lingcod on the EDAS GFBioField Fish Recording form. Measurements were electronically recorded for fork length (L), body weight (W), sex (S) and maturity level (M). Sagittal otoliths (O) were collected and stored for potential ageing by the sclerochronology laboratory. In addition, tissue for DNA was collected from the rougheye/blackspotted rockfish complex for later species determination. Since this complex of two distinct species (\protect\hyperlink{ref-Orr2008}{Orr and Wildes 2008}) have similar appearances with slight variations in colour markings and dorsal fin lengths, the sampler visually identifed each specimen as either a rougheye, a blackspotted or a hybrid species. All rockfish, lingcod and legal-sized sablefish (fork length \textgreater{} 55 cm) that were sacrificed for biological samples were dressed, frozen, and landed as commercial catch.
+
+Length (L) and weight (W) measurements were collected from all Pacific halibut (\emph{Hippoglossus stenolepis}) before they were released at sea. Only the length (L) was recorded for Pacific sleeper sharks (\emph{Somniosus pacificus}) before release.
+
+\hypertarget{sablefish-tagging}{%
+\subsection{SABLEFISH TAGGING}\label{sablefish-tagging}}
+
+Fish destined to be tagged were transferred from the sorting area to a tagging tank. A vessel crew member was positioned to retrieve sablefish from the tank and provide assistance with fish handling. A scientist stood at the sample station and tagged fish with a Mark II Long Tagging gun loaded with Floy FD-94 T-bar anchor tags. The tag was inserted on the left side of the fish, 1 cm below and 2-3 cm behind the anterior insertion of the first dorsal fin. Fork length (mm to the nearest ½ cm) measurements taken on the Scantrol measuring board were electronically transferred to the EDAS GFBioField Fish Recording form (\protect\hyperlink{ref-Olsen2010}{Olsen 2010}). Before release, any sampling errors, injuries or damage to the fish were documented on the Fish Recording form by a second scientist who was stationed at the sample computer. Tag checks were performed systematically to ensure tag numbers on the data form matched those on the fish specimen.
+
+\hypertarget{sablefish-tag-recovery}{%
+\subsection{SABLEFISH TAG RECOVERY}\label{sablefish-tag-recovery}}
+
+Any previously tagged fish brought aboard may have been treated in one of two ways. First, sablefish with Canadian tags were re-released with a new tag and the previous tag was removed. In addition, any wounds from the old tag were recorded. Second, sablefish with a foreign agency tag or sablefish that had sustained numerous injuries were retained for biological sampling. For these specimens, the tag and otoliths were stored in a bar-coded vial that was later scanned into the EDAS GFBioField Tag Recovery Entry form by DFO staff (\protect\hyperlink{ref-Olsen2010}{Olsen 2010}). DFO returns foreign tags to their country of origin through the Wild Canadian Sablefish, Ltd tag rewards program.
+
+\hypertarget{camera-and-oceanographic-sensor-data-collection}{%
+\subsection{CAMERA AND OCEANOGRAPHIC SENSOR DATA COLLECTION}\label{camera-and-oceanographic-sensor-data-collection}}
+
+\hypertarget{trap-strings}{%
+\subsubsection{25 TRAP STRINGS}\label{trap-strings}}
+
+In addition to the 25 traps used for fishing sets, an open, unbaited ``camera'' trap was added to the middle of a string of gear. A Nuytco autonomous deep-water camera, sea-bird SBE 39 temperature and pressure logger (SBE 39) and accelerometer (AXL) were attached to the trap. A target number of sets were allocated for the camera trap deployments in each of the fifteen StRS area-depth strata (Table~\ref{tab:table2}). Data from the accelerometers, CTD sensors, SBE temperature and pressure loggers were processed after the set was complete using tools on the GFBioField Upload Sensor Data form.
+
+\hypertarget{trap-strings-1}{%
+\subsubsection{60 TRAP STRINGS}\label{trap-strings-1}}
+
+In order to evaluate gear bottom-contact and movement from a typical commercial fishing set, 60 traps were set with electronic gear at the middle and ends of the string on 4 sets (Table~\ref{tab:table3}). A Nuytco autonomous deep-water camera, SBE 39 and AXL were attached to trap number 5, 35, and 55.
+
+\hypertarget{electronic-monitoring-em-video-data-collection}{%
+\subsection{ELECTRONIC MONITORING (EM) VIDEO DATA COLLECTION}\label{electronic-monitoring-em-video-data-collection}}
+
+During haulback, the electronic monitoring (EM) system cameras were activated by the hydraulic sensor. Three standard analog cameras were positioned at optimal viewing angles to record survey activities. Two cameras were stationed along the mast to record the catch as it was processed at the hopper. A third camera was stationed on the side of the wheelhouse to record the traps as they were brought over the rail. The video data from each set was reviewed by science staff the following day to provide quality control on catch data.
+
+\hypertarget{results-and-discussion}{%
+\section{Results and Discussion}\label{results-and-discussion}}
+
+\hypertarget{fishing}{%
+\subsection{FISHING}\label{fishing}}
+
+The 2021 survey was 47 days long, starting in Nanaimo, BC on October 6, with crew changes on October 27, and November 2nd at Port Hardy. There were six weather days on leg one due to the October 2021 Northeast Pacific bomb cyclone. Inclement weather prevented fishing one day on leg two, and four days on leg three. In total, 81 sets were completed (Appendix~\ref{app:third-appendix}): 72 StRS sets at random sites, four camera sets at benthic contact research sites (Figure~\ref{fig:figure4}) and five standardized sets at Dean/Burke Channel mainland inlet locality (Figure~\ref{fig:figure5}).
+
+Of the 91 original blocks for the StRS portion of the survey, four were replaced at sea; two blocks were rejected after on-ground inspection and two blocks were rejected based on prior knowledge (Figure~\ref{fig:figure6}).
+
+\hypertarget{catch-per-unit-effort-cpue}{%
+\subsection{CATCH PER UNIT EFFORT (CPUE)}\label{catch-per-unit-effort-cpue}}
+
+Catch per unit effort (CPUE) statistics for 2021 are presented in relation to the available time series for each of the survey components: (i) StRS (2003-2021) and (ii) traditional mainland inlet indexing sites (1991-2019).
+
+\hypertarget{stratified-random-set-cpue}{%
+\subsubsection{Stratified Random Set CPUE}\label{stratified-random-set-cpue}}
+
+Catch rates (catch per unit effort; CPUE) as indexed by kilograms of sablefish per trap (Figure~\ref{fig:figure7}) and numbers of fish per trap (Figure~\ref{fig:figure8}) were generally higher in the middle depth strata over the survey time series (2003-2021). In 2020 and 2021, the kg/trap and \#fish/trap in the middle depth strata (RD\textsubscript{2}) were lower than the peak reached in 2019 in all areas with the exception of the South West Vancouver Island (S\textsubscript{1}).
+
+The mean weight in 2021 was similar or slightly lower compared to 2020 in areas S\textsubscript{2}, S\textsubscript{3} and S\textsubscript{4}, and slightly higher in the areas S\textsubscript{1} and S\textsubscript{5} (Figure~\ref{fig:figure9}). The stratified mean survey abundance in 2021 was 36 kg/trap, which is up 3\% from 2020 and down -6\% from the 2019-2020 average (Figure~\ref{fig:figure10}).
+
+\hypertarget{mainland-inlet-cpue}{%
+\subsubsection{Mainland Inlet CPUE}\label{mainland-inlet-cpue}}
+
+CPUE in the mainlaind inlets has varied in a relatively predictable manner over time with peak CPUE occurring every 5-8 years (Figure~\ref{fig:figure11} a,b) . In the early part of the time series (mid-1990s) average CPUE remained relatively constant before a peak in CPUE was observed in 1999, followed by declines to consistent levels until another peak in 2003 and 2004, and again in 2011. In 2018, CPUE returned (\textasciitilde23 fish, and \textasciitilde40 kg per trap) to the levels observed during previous peaks. In 2019, the highest catch rates of the 26 year time series were observed (\textasciitilde36 fish, and \textasciitilde61 kg per trap). Notably, the 2018-2019 mean weight (\textasciitilde1.7 kg) declined to an all time low due to large number of small fish becoming available to the survey (Figure~\ref{fig:figure11} c).
+
+No inlets were surveyed in 2020. Dean/Burke Channel was the only mainland inlet locality surveyed in 2021 and not included in the CPUE figures.
+
+\hypertarget{catch-composition}{%
+\subsection{CATCH COMPOSITION}\label{catch-composition}}
+
+A total of thirty-eight taxonomic groups were represented in the 2021 catch from StRS sets (Table~\ref{tab:table4}). These included eight roundfish species, twelve rockfish species, three flatfish species and fifteen invertebrate species. Other than sablefish, the most common species, by weight, were spiny dogfish (\emph{Squalus acanthias}), lingcod (\emph{Ophiodon elongatus}), Pacific halibut (\emph{Hippoglossus stenolepis}) and rougheye/blackspotted rockfish complex (\emph{Sebastes aleutianus}).
+
+A total of six taxonomic groups were represented in the catches from traditional standardized sets conducted in mainland inlet localities in 2021 (Table~\ref{tab:table5}). These included one roundfish species, no rockfish species, one flatfish species and four invertebrate species. The most common species captured, in terms of total weight, other than sablefish were Pacific halibut (\emph{Hippoglossus stenolepis}).
+
+\hypertarget{sablefish-sampling}{%
+\subsection{SABLEFISH SAMPLING}\label{sablefish-sampling}}
+
+A detailed breakdown of the fate of the sablefish catch in each trap for the 2021 survey is listed in Appendix~\ref{app:fourth-appendix}. Over all sets, 325 traps with sablefish were sampled and 455 traps with sablefish were tagged.
+
+During the 2021 StRS survey component, a total of 39,747 sablefish were caught. Of that total, 7,720 were tagged and released and 3,605 were retained for biological sampling. Of the tagged fish, 71 were previously tagged fish that were re-released with a new tag. There were 2 previously tagged fish retained for sampling (Appendix~\ref{app:fifth-appendix}).
+
+Out of the 1,273 sablefish captured during the 2021 traditional survey component (inlet standardized sets), 359 were tagged and released, 260 were used for biological sampling and 11 were previously tagged fish re-released with a new tag (Appendix~\ref{app:fifth-appendix}).
+
+The four dedicated trap movement sets that deployed cameras captured 7,589 sablefish. Sublegal sablefish and other species were returned to the water, except for those fish permitted for retention under the Section 52 licence. There were 14 previously tagged fish retained for sampling (Appendix~\ref{app:fifth-appendix}).
+
+Overall, the StRS sets had a higher proportion of females than males over all spatial strata (S\textsubscript{1} - S\textsubscript{5}). More females than males were caught in the shallow depth stratum (RD\textsubscript{1}) within all spatial strata (S\textsubscript{1} - S\textsubscript{5}). In the mid depth stratum (RD\textsubscript{2}), there were more males than females in S\textsubscript{1}, S\textsubscript{2}, S\textsubscript{3} and S\textsubscript{5}. The deepest depth stratum (RD\textsubscript{3}) saw more females in spatial strata S\textsubscript{1}, S\textsubscript{2} and S\textsubscript{5} (Table~\ref{tab:table6}).
+
+Differences in length distributions between female and male sablefish are exhibited in the data collected from the StRS portion of the 2003 - 2021 surveys. Over these 19 years, the mean fork length (\(\bar{x}\)) was 64.9 cm for females and 58.2 cm for males (Figure~\ref{fig:figure12}).
+
+In 2021, the average mean fork length for the 1,998 females was 61.6 cm and the average mean fork length for the 1,557 males was 54.8 cm. The average length of males reached their lowest mean size since 2003 (Figure~\ref{fig:figure13}).
+
+On average, female sablefish grow faster and reach a far greater size (Figure~\ref{fig:figure14} a) compared to males (Figure~\ref{fig:figure14} b).
+
+\hypertarget{sablefish-sub-legal-encounters}{%
+\subsection{SABLEFISH SUB-LEGAL ENCOUNTERS}\label{sablefish-sub-legal-encounters}}
+
+More than half of the sub-legal specimens were captured in the mid-depth waters of i) the northern strata of S\textsubscript{4} and S\textsubscript{5} in 2017 and 2018, ii) all spatial strata in 2019, iii) S\textsubscript{1}, S\textsubscript{4} and S\textsubscript{5} in 2020, and iv) S\textsubscript{1}, S\textsubscript{2}, S\textsubscript{4} and S\textsubscript{5} in 2021 (Figure~\ref{fig:figure15}).
+
+\hypertarget{recovered-tagged-sablefish}{%
+\subsection{RECOVERED TAGGED SABLEFISH}\label{recovered-tagged-sablefish}}
+
+Of the 426 Canadian tagged fish that were recovered on the survey, the majority (62\%) had travelled no more than 50 kilometers from the release site. More than half of the recoveries (67\%) were recaptured within 5 years at liberty (Table~\ref{tab:table7}).
+
+\hypertarget{other-fish-sampling}{%
+\subsection{OTHER FISH SAMPLING}\label{other-fish-sampling}}
+
+Length, sex, maturity, otoliths and DNA samples were collected for 151 rougheye/blackspotted rockfish samples. The science samplers visually identified 19 specimens as rougheye, 81 specimens as blackspotted and 1 specimen as a hybrid species (Appendix~\ref{app:sixth-appendix}).
+
+Length, sex, maturity and otoliths were collected for shortraker rockfish, yelloweye rockfish, and lingcod (Appendix~\ref{app:seventh-appendix}).
+
+\hypertarget{sablefish-ages}{%
+\subsection{SABLEFISH AGES}\label{sablefish-ages}}
+
+At the time of this report, sablefish ages were only available prior to 2021. The highest proportion of female ages in StRS sets for 2003 through to 2010 were 3, 4, 5, 6, 7, 8, 9 and 10 years of age, respectively. Then, another cohort appeared in 2011 through to 2015, showing up as 3, 4, 5, 6 and 7 year olds. In 2016, 2017 and 2018 the highest proportion of female sablefish were ages 3, 4, and 5 year olds. Last, the years 2019 and 2020 were represented by 3 and 4 year old female sablefish (Figure~\ref{fig:figure16} a).
+
+The highest proportion of male ages in StRS sets for 2003 through to 2011 were 3, 5, 5, 6, 8, 8, 8, 10 and 12 years of age, respectively. Another cohort appeared in 2012 through to 2016 as 4, 5, 7, 7 and 8 year olds. A cohort also appeared to arrive in 2017 which was dominated by 3 year olds and in 2018 by 5 year olds. The years 2019 and 2020 were represented by 3 and 4 year old male sablefish (Figure~\ref{fig:figure16} b).
+
+The maximum reported age in B.C. for females is 92 years, collected in 2003. The maximum reported age in B.C. for males is 96 years, collected in 2018.
+
+\hypertarget{oceanographic-temperatures-and-depths}{%
+\subsection{OCEANOGRAPHIC TEMPERATURES AND DEPTHS}\label{oceanographic-temperatures-and-depths}}
+
+As with previous years, the 2021 survey data exhibited a trend of decreasing temperature with depth over 1-degree latitude intervals from southwest Vancouver Island to northwest Haida Gwaii (Figure~\ref{fig:figure17}).
+
+SBE 39 recorders have been placed on survey fishing sets since 2006. In the shallow waters, the lowest average temperature of 4.1 \(^\circ\)C was recorded in 2016 (latitude zone 52\(^\circ\) - 53\(^\circ\)); the highest average temperature was 7.4 \(^\circ\)C in 2016 (50\(^\circ\) - 51\(^\circ\)) . In the mid-depth waters, the lowest average temperature was 2.9 \(^\circ\)C in 2019 (52\(^\circ\) - 53\(^\circ\)); the highest average temperature was 6.4 \(^\circ\)C in 2013 (50\(^\circ\) - 51\(^\circ\)). In the deepest waters, the lowest average temperature was 2.2 \(^\circ\)C in 2016 (54\(^\circ\) - 55\(^\circ\)) and the highest average temperature was 4.1\(^\circ\)C in 2016 (48\(^\circ\) - 49\(^\circ\)) (Figure~\ref{fig:figure18}).
+
+\hypertarget{acknowledgements}{%
+\subsection{ACKNOWLEDGEMENTS}\label{acknowledgements}}
+
+The stock assessment survey and data report is the result of the collaborative efforts of many individuals. Wild Canadian Sablefish has provided coordination and support of the annual Sablefish survey since 1994. The scientific staff that conducted the 2021 sablefish research charter included Dean Gaidica and Peter Jankiewicz of Archipelago Marine Research Ltd (AMR); Schon Acheson, Kristina Castle, Ryan Luft, Erika Nielsen, Kathryn Temple, Daniel Williams and Malcolm Wyeth of Fisheries and Oceans, Canada.
+
+A special thanks to the Vessel Master and crew of the F/V Pacific Viking, whose efforts made the survey successful and safe during the COVID-19 pandemic. In 2021, the crew consisted of Deacon Melnychuk (skipper), David Holomego, Rory Johnson, Shae Lawson, Rick Schneider and Kevin Wright.
+
+\clearpage
+
+\hypertarget{tables}{%
+\section{Tables}\label{tables}}
+
+
+\begin{table}[!h]
+
+\caption{\label{tab:table1}Spatial and depth stratum allocation and completed set counts (blue) for the 2021 sablefish research and assessment survey. ~\\}
+\fontsize{9}{11}\selectfont
+\begin{tabular}[t]{l>{\raggedleft\arraybackslash}p{0.5cm}>{\raggedleft\arraybackslash}p{0.5cm}>{\raggedleft\arraybackslash}p{0.5cm}>{\raggedleft\arraybackslash}p{0.5cm}>{\raggedleft\arraybackslash}p{0.5cm}>{\raggedleft\arraybackslash}p{0.5cm}>{\raggedleft\arraybackslash}p{0.7cm}>{\raggedleft\arraybackslash}p{0.5cm}}
+\toprule
+\multicolumn{1}{c}{\textbf{ }} & \multicolumn{6}{c}{\textbf{Depth Strata}} & \multicolumn{2}{c}{\textbf{ }} \\
+\cmidrule(l{3pt}r{3pt}){2-7}
+\textcolor{black}{\textbf{Spatial Strata}} & \textcolor{black}{\textbf{RD\textsubscript{1}}} & \textcolor{black}{\textbf{RD\textsubscript{1} 2021}} & \textcolor{black}{\textbf{RD\textsubscript{2}}} & \textcolor{black}{\textbf{RD\textsubscript{2} 2021}} & \textcolor{black}{\textbf{RD\textsubscript{3}}} & \textcolor{black}{\textbf{RD\textsubscript{3} 2021}} & \textcolor{black}{\textbf{Total}} & \textcolor{black}{\textbf{Total 2021}}\\
+\midrule
+S\textsubscript{1} (South West Coast Vancouver Island or SWCVI) & 6 & \textcolor{blue}{6} & 8 & \textcolor{blue}{8} & 5 & \textcolor{blue}{5} & 19 & \textcolor{blue}{19}\\
+S\textsubscript{2} (North West Coast Vancouver Island or NWCVI) & 6 & \textcolor{blue}{6} & 7 & \textcolor{blue}{7} & 5 & \textcolor{blue}{5} & 18 & \textcolor{blue}{18}\\
+S\textsubscript{3} (Queen Charlotte Sound or QCS) & 8 & \textcolor{blue}{6} & 6 & \textcolor{blue}{6} & 5 & \textcolor{blue}{4} & 19 & \textcolor{blue}{16}\\
+S\textsubscript{4} (South West Coast Haida Gwaii or SWCHG) & 6 & \textcolor{blue}{2} & 6 & \textcolor{blue}{3} & 5 & \textcolor{blue}{2} & 17 & \textcolor{blue}{7}\\
+S\textsubscript{5} (North West Coast Haida Gwaii or NWCHG) & 6 & \textcolor{blue}{5} & 7 & \textcolor{blue}{4} & 5 & \textcolor{blue}{3} & 18 & \textcolor{blue}{12}\\
+\midrule
+\textbf{Total} & \textbf{32} & \textbf{\textcolor{blue}{25}} & \textbf{34} & \textbf{\textcolor{blue}{28}} & \textbf{25} & \textbf{\textcolor{blue}{19}} & \textbf{91} & \textbf{\textcolor{blue}{72}}\\
+\bottomrule
+\end{tabular}
+\end{table}
+~\\
+
+\begin{table}[!h]
+
+\caption{\label{tab:table2}Target number of 25-trap camera survey sets and completed counts (blue) for the 2021 sablefish research and assessment survey. ~\\}
+\fontsize{9}{11}\selectfont
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{3.3cm}>{\centering\arraybackslash}p{1.1cm}>{\centering\arraybackslash}p{0.7cm}>{\centering\arraybackslash}p{1.0cm}>{\centering\arraybackslash}p{0.7cm}>{\centering\arraybackslash}p{1.0cm}>{\centering\arraybackslash}p{0.7cm}>{\centering\arraybackslash}p{0.7cm}>{\centering\arraybackslash}p{0.7cm}>{\centering\arraybackslash}p{0.7cm}}
+\toprule
+\multicolumn{1}{c}{\textbf{ }} & \multicolumn{6}{c}{\textbf{Sets in Depth Strata}} & \multicolumn{2}{c}{\textbf{ }} \\
+\cmidrule(l{3pt}r{3pt}){2-7}
+\textcolor{black}{\textbf{Strata}} & \textcolor{black}{\textbf{RD\textsubscript{1}}} & \textcolor{black}{\textbf{RD\textsubscript{1} 2021}} & \textcolor{black}{\textbf{RD\textsubscript{2}}} & \textcolor{black}{\textbf{RD\textsubscript{2} 2021}} & \textcolor{black}{\textbf{RD\textsubscript{3}}} & \textcolor{black}{\textbf{RD\textsubscript{3} 2021}} & \textcolor{black}{\textbf{Inlet}} & \textcolor{black}{\textbf{Total}} & \textcolor{black}{\textbf{Total 2021}}\\
+\midrule
+S\textsubscript{1} (SWCVI) & 2 & \textcolor{blue}{3} & 2 & \textcolor{blue}{4} & 1 & \textcolor{blue}{0} & \textcolor{blue}{} & 5 & \textcolor{blue}{7}\\
+S\textsubscript{2} (NWCVI) & 2 & \textcolor{blue}{3} & 2 & \textcolor{blue}{4} & 1 & \textcolor{blue}{1} & \textcolor{blue}{} & 5 & \textcolor{blue}{8}\\
+S\textsubscript{3} (QCS) & 2 & \textcolor{blue}{1} & 2 & \textcolor{blue}{1} & 1 & \textcolor{blue}{0} & \textcolor{blue}{} & 5 & \textcolor{blue}{2}\\
+S\textsubscript{4} (SWCHG) & 2 & \textcolor{blue}{2} & 2 & \textcolor{blue}{2} & 1 & \textcolor{blue}{0} & \textcolor{blue}{} & 5 & \textcolor{blue}{4}\\
+S\textsubscript{5} (NWCHG) & 2 & \textcolor{blue}{0} & 2 & \textcolor{blue}{0} & 1 & \textcolor{blue}{1} & \textcolor{blue}{} & 5 & \textcolor{blue}{1}\\
+Inlet (Dean/Burke) &  & \textcolor{blue}{} &  & \textcolor{blue}{} &  & \textcolor{blue}{} & \textcolor{blue}{1} &  & \textcolor{blue}{1}\\
+\midrule
+\textbf{Total} & \textbf{10} & \textbf{\textcolor{blue}{9}} & \textbf{10} & \textbf{\textcolor{blue}{11}} & \textbf{5} & \textbf{\textcolor{blue}{2}} & \textbf{\textcolor{blue}{1}} & \textbf{25} & \textbf{\textcolor{blue}{23}}\\
+\bottomrule
+\end{tabular}
+\end{table}
+~\\
+
+\begin{table}[!h]
+
+\caption{\label{tab:table3}Details of completed 60 trap camera movement sets. Seabird temperature and pressure recorder (SBE39), Hobo accelerometer (HOBO) and camera (CAM) are indicated with an `x.'}
+\fontsize{9}{11}\selectfont
+\begin{tabular}[t]{lrrrccc}
+\toprule
+\textbf{Spatial Strata} & \textbf{Set} & \textbf{Becket} & \textbf{Trap} & \textbf{SBE39} & \textbf{HOBO} & \textbf{CAM}\\
+\midrule
+S\textsubscript{1} (SWCVI) & 7 & 5 & 5 & x & x & x\\
+ &  & 30 & 30 & x & x & \vphantom{3} x\\
+ &  & 55 & 55 & x & x & \vphantom{1} x\\
+\midrule
+S\textsubscript{1} (SWCVI) & 14 & 2 & 2 & x & x & x\\
+ &  & 30 & 30 & x & x & \vphantom{2} x\\
+ &  & 59 & 59 & x & x & x\\
+\midrule
+S\textsubscript{2} (NWCVI) & 27 & 5 & 5 & x & x & x\\
+ &  & 30 & 30 & x & x & \vphantom{1} x\\
+ &  & 51 & 51 & x & x & x\\
+\midrule
+S\textsubscript{5} (NWCHG) & 63 & 5 & 5 & x & x & x\\
+ &  & 30 & 30 & x & x & x\\
+ &  & 55 & 55 & x & x & x\\
+\bottomrule
+\end{tabular}
+\end{table}
+\clearpage
+
+
+\begin{table}[!h]
+
+\caption{\label{tab:table4}Summary of species captured during the 2021 survey StRS sets conducted by the Pacific Viking. No value in both weight and count fields indicate trace weights.}
+\fontsize{8}{10}\selectfont
+\begin{tabular}[t]{lllrl}
+\toprule
+\textbf{Category} & \textbf{Common Name} & \textbf{Scientific Name} & \textbf{Count} & \textbf{Weight(kg)}\\
+\midrule
+Roundfish Species & Sablefish & ANOPLOPOMA FIMBRIA &  & 79,274\\
+ & Spiny dogfish & SQUALUS ACANTHIAS &  & 1,750\\
+ & Lingcod & OPHIODON ELONGATUS &  & 1,061\\
+ & Pacific grenadier & CORYPHAENOIDES ACROLEPIS &  & 206\\
+ & Pectoral rattail & ALBATROSSIA PECTORALIS &  & 194\\
+ & Pink snailfish & PARALIPARIS ROSACEUS &  & 2\\
+ & Pacific flatnose & ANTIMORA MICROLEPIS &  & 2\\
+ & Threadfin sculpin & ICELINUS FILAMENTOSUS & 2 & \\
+\midrule
+Rockfish Species & Rougheye/blackspotted rockfish complex & SEBASTES ALEUTIANUS &  & 240\\
+ & Redbanded rockfish & SEBASTES BABCOCKI &  & 178\\
+ & Yelloweye rockfish & SEBASTES RUBERRIMUS &  & 144\\
+ & Shortspine thornyhead & SEBASTOLOBUS ALASCANUS &  & 43\\
+ & Shortraker rockfish & SEBASTES BOREALIS &  & 25\\
+ & Canary rockfish & SEBASTES PINNIGER &  & 3\\
+ & Yellowmouth rockfish & SEBASTES REEDI &  & 2\\
+ & Rosethorn rockfish & SEBASTES HELVOMACULATUS &  & 1\\
+ & Greenstriped rockfish & SEBASTES ELONGATUS &  & 1\\
+ & Longspine thornyhead & SEBASTOLOBUS ALTIVELIS &  & 1\\
+ & Sharpchin rockfish & SEBASTES ZACENTRUS & 1 & \\
+ & Darkblotched rockfish & SEBASTES CRAMERI & 1 & \\
+\midrule
+Flatfish Species & Pacific halibut & HIPPOGLOSSUS STENOLEPIS &  & 928\\
+ & Arrowtooth flounder & ATHERESTHES STOMIAS &  & 159\\
+ & Dover sole & MICROSTOMUS PACIFICUS &  & 6\\
+\midrule
+Invertebrate Species & Grooved Tanner Crab & CHIONOECETES TANNERI &  & 206\\
+ &  & ALLOCENTROTUS FRAGILIS &  & 60\\
+ & Oregontriton & FUSITRITON OREGONENSIS &  & 23\\
+ & Brown box crab & LOPHOLITHODES FORAMINATUS &  & 8\\
+ & Red Queen Crab & LITHODES COUESI &  & 4\\
+ & Giant pacific octopus & ENTEROCTOPUS DOFLEINI &  & 3\\
+ &  & NEPTUNEA &  & 2\\
+ &  & HETEROZONIAS ALTERNATUS &  & 1\\
+ & Rose starfish & CROSSASTER PAPPOSUS & 1 & \\
+ &  & PARALOMIS MULTISPINA & 1 & \\
+ &  & SOLASTERIDAE & 1 & \\
+ &  & CROSSASTER & 1 & \\
+ & Sea lilies and feather stars & CRINODEA &  & \\
+ & Fish-eating star & STYLASTERIAS FORRERI &  & \\
+ & Ophiuroidea & OPHIUROIDEA &  & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[!h]
+
+\caption{\label{tab:table5}Summary of species captured by the Pacific Viking during the 2021 survey standardized sets conducted at Dean/Burke Channel mainland inlet locality. No value in both weight and count fields indicate trace weights.}
+\fontsize{8}{10}\selectfont
+\begin{tabular}[t]{lllrr}
+\toprule
+\textbf{Category} & \textbf{Common Name} & \textbf{Scientific Name} & \textbf{Count} & \textbf{Weight(kg)}\\
+\midrule
+Roundfish Species & Sablefish & ANOPLOPOMA FIMBRIA &  & 2840\\
+\midrule
+Flatfish Species & Pacific halibut & HIPPOGLOSSUS STENOLEPIS &  & 22\\
+\midrule
+Invertebrate Species & Mud star & CTENODISCUS CRISPATUS & 2 & \\
+ & Vermillion starfish & MEDIASTER AEQUALIS & 1 & \\
+ & Sponges & PORIFERA &  & \\
+ &  & NEPTUNEA &  & \\
+\bottomrule
+\end{tabular}
+\end{table}
+\clearpage
+
+
+
+\begin{table}[!h]
+
+\caption{\label{tab:table6}Summary of sablefish sex ratios and mean fork length measurements collected during the 2021 stratified random sets by spatial and depth stratum. ~\\
+\hspace*{0.333em}\\}
+\fontsize{9}{11}\selectfont
+\begin{tabular}[t]{llrrrrr}
+\toprule
+\multicolumn{2}{c}{\textbf{Strata}} & \multicolumn{2}{c}{\textbf{Proportion}} & \multicolumn{3}{c}{\textbf{Mean Fork Length (mm)}} \\
+\cmidrule(l{3pt}r{3pt}){1-2} \cmidrule(l{3pt}r{3pt}){3-4} \cmidrule(l{3pt}r{3pt}){5-7}
+\textbf{Spatial} & \textbf{Depth} & \textbf{Males} & \textbf{Females} & \textbf{Males} & \textbf{Females} & \textbf{Tagged}\\
+\midrule
+S\textsubscript{1} & RD\textsubscript{1} & 0.24 & 0.76 & 550 & 601 & 581\\
+ & RD\textsubscript{2} & 0.74 & 0.26 & 531 & 568 & 531\\
+ & RD\textsubscript{3} & 0.23 & 0.77 & 577 & 648 & 615\\
+\midrule
+\textbf{} & \textbf{} & \textbf{0.40} & \textbf{0.60} & \textbf{553} & \textbf{606} & \textbf{576}\\
+\midrule
+S\textsubscript{2} & RD\textsubscript{1} & 0.21 & 0.79 & 546 & 592 & 579\\
+ & RD\textsubscript{2} & 0.67 & 0.33 & 528 & 569 & 540\\
+ & RD\textsubscript{3} & 0.45 & 0.55 & 559 & 645 & 574\\
+\midrule
+\textbf{} & \textbf{} & \textbf{0.44} & \textbf{0.56} & \textbf{544} & \textbf{602} & \textbf{564}\\
+\midrule
+S\textsubscript{3} & RD\textsubscript{1} & 0.22 & 0.78 & 600 & 670 & 649\\
+ & RD\textsubscript{2} & 0.53 & 0.47 & 539 & 578 & 549\\
+ & RD\textsubscript{3} & 0.62 & 0.38 & 544 & 617 & 566\\
+\midrule
+\textbf{} & \textbf{} & \textbf{0.46} & \textbf{0.54} & \textbf{561} & \textbf{622} & \textbf{588}\\
+\midrule
+S\textsubscript{4} & RD\textsubscript{1} & 0.32 & 0.68 & 601 & 643 & 621\\
+ & RD\textsubscript{2} & 0.43 & 0.57 & 543 & 587 & 561\\
+ & RD\textsubscript{3} & 0.63 & 0.37 & 611 & 627 & 605\\
+\midrule
+\textbf{} & \textbf{} & \textbf{0.46} & \textbf{0.54} & \textbf{585} & \textbf{619} & \textbf{596}\\
+\midrule
+S\textsubscript{5} & RD\textsubscript{1} & 0.28 & 0.72 & 562 & 648 & 608\\
+ & RD\textsubscript{2} & 0.52 & 0.48 & 528 & 561 & 547\\
+ & RD\textsubscript{3} & 0.37 & 0.63 & 600 & 661 & 596\\
+\midrule
+\textbf{} & \textbf{} & \textbf{0.39} & \textbf{0.61} & \textbf{563} & \textbf{623} & \textbf{584}\\
+\bottomrule
+\end{tabular}
+\end{table}
+~\\
+\hspace*{0.333em}\\
+
+
+\begin{table}[!h]
+
+\caption{\label{tab:table7}Canadian tag recovery counts from all sets during the 2021 survey, by distance from release site and years at liberty. Distances were determined using the great circle distance between the release location and recovery location. ~\\
+\hspace*{0.333em}\\}
+\fontsize{9}{11}\selectfont
+\begin{tabular}[t]{l>{\raggedleft\arraybackslash}p{1.1cm}rrccclr}
+\toprule
+\multicolumn{1}{c}{\textbf{ }} & \multicolumn{7}{c}{\textbf{Distance (km) from Release Location}} & \multicolumn{1}{c}{\textbf{ }} \\
+\cmidrule(l{3pt}r{3pt}){2-8}
+\textbf{Years at Liberty} & \textbf{<10} & \textbf{11-50} & \textbf{51-100} & \textbf{101-250} & \textbf{251-500} & \textbf{501-1000} & \textbf{1000+} & \textbf{Recovery count}\\
+\midrule
+1 & 38 & 22 & 8 & 8 & 1 & 0 & 0 & 77\\
+2-5 & 82 & 42 & 13 & 38 & 28 & 2 & 4 & 209\\
+6-10 & 22 & 13 & 3 & 16 & 8 & 3 & 1 & 66\\
+11+ & 24 & 21 & 8 & 12 & 6 & 1 & 2 & 74\\
+\midrule
+Total Counts & 166 & 98 & 32 & 74 & 43 & 6 & 7 & 426\\
+\bottomrule
+\end{tabular}
+\end{table}
+\clearpage
+
+\hypertarget{figures}{%
+\section{Figures}\label{figures}}
+
+
+\begin{figure}[htb]
+
+{\centering \pdftooltip{\includegraphics[width=410px]{c:/github/surveyReport2021/figures/figure1}}{Figure \ref{fig:figure1}} 
+
+}
+
+\caption{Location of the survey design boundaries of the mainland inlet localities, and the five spatial areas (S\textsubscript{1}-S\textsubscript{5}) of the stratified random survey design. The three depths strata (RD\textsubscript{1}-RD\textsubscript{3}) are colour-coded and nested within each of the five spatial strata.}\label{fig:figure1}
+\end{figure}
+\clearpage
+
+
+\begin{figure}[htb]
+
+{\centering \pdftooltip{\includegraphics[width=480px,height=480px]{c:/github/surveyReport2021/figures/figure2}}{Figure \ref{fig:figure2}} 
+
+}
+
+\caption{Image of the F/V Pacific Viking used for the 2021 sablefish research and assessment survey. Photo credit: Cody Melnychuk.}\label{fig:figure2}
+\end{figure}
+\clearpage
+
+
+\begin{figure}[htb]
+
+{\centering \pdftooltip{\includegraphics[width=380px,height=626px]{c:/github/surveyReport2021/figures/figure3}}{Figure \ref{fig:figure3}} 
+
+}
+
+\caption{Trap gear elements consisting of 25 baited traps snapped to beckets along a groundline (A). Trap and camera trap elements (B).}\label{fig:figure3}
+\end{figure}
+\clearpage
+
+
+\begin{figure}[htb]
+
+{\centering \pdftooltip{\includegraphics[width=450px]{c:/github/surveyReport2021/figures/figure4}}{Figure \ref{fig:figure4}} 
+
+}
+
+\caption{Start locations of survey sets (red markers) conducted in 2021 for the stratified random survey areas S\textsubscript{1} through S\textsubscript{5}. Movement/deep-water autonomous camera locations (triangle symbols) are labelled in red font.}\label{fig:figure4}
+\end{figure}
+\clearpage
+
+
+\begin{figure}[htb]
+
+{\centering \pdftooltip{\includegraphics[width=450px]{c:/github/surveyReport2021/figures/Figure5}}{Figure \ref{fig:figure5}} 
+
+}
+
+\caption{Location of the 2021 standardized sets within the Dean/Burke Channel mainland inlet locality.\\}\label{fig:figure5}
+\end{figure}
+\clearpage
+
+
+\begin{figure}[htb]
+
+{\centering \pdftooltip{\includegraphics[width=450px]{c:/github/surveyReport2021/figures/figure6}}{Figure \ref{fig:figure6}} 
+
+}
+
+\caption{Map of allocated vs completed survey blocks for the 2021 survey sets. Star symbols depict rationale for dropped survey blocks.}\label{fig:figure6}
+\end{figure}
+\clearpage
+
+\clearpage
+
+
+\begin{figure}[htb]
+
+{\centering \pdftooltip{\includegraphics[width=450px,height=576px]{c:/github/surveyReport2021/figures/figure7}}{Figure \ref{fig:figure7}} 
+
+}
+
+\caption{Average Sablefish catch per unit effort (CPUE; mean +/- 95\% CIs) by survey strata since 2003. Panels run deep to shallow (left to right) and north to south (top to bottom).}\label{fig:figure7}
+\end{figure}
+\clearpage
+
+
+\begin{figure}[htb]
+
+{\centering \pdftooltip{\includegraphics[width=450px,height=576px]{c:/github/surveyReport2021/figures/figure8}}{Figure \ref{fig:figure8}} 
+
+}
+
+\caption{Average number of sablefish per trap (mean +/- 95\% CIs) by StRS survey strata over time. Panels run deep to shallow (left to right) and north to south (top to bottom).}\label{fig:figure8}
+\end{figure}
+\clearpage
+
+
+\begin{figure}[htb]
+
+{\centering \pdftooltip{\includegraphics[width=450px,height=576px]{c:/github/surveyReport2021/figures/figure9}}{Figure \ref{fig:figure9}} 
+
+}
+
+\caption{Average weight of sablefish (mean +/- 95\% CIs) by survey strata over time. Panels run deep to shallow (left to right) and north to south (top to bottom).}\label{fig:figure9}
+\end{figure}
+\clearpage
+
+
+\begin{figure}[htb]
+
+{\centering \pdftooltip{\includegraphics[width=450px,height=576px]{c:/github/surveyReport2021/figures/figure10}}{Figure \ref{fig:figure10}} 
+
+}
+
+\caption{Annual mean weight of sablefish per trap (kg/trap) (A); annual mean number of sablefish per trap (\#fish/trap) (B); annual mean weight of sablefish (kg) (C) by StRS survey strata over time. Horizontal line is median and blue dots are arithmetic mean.}\label{fig:figure10}
+\end{figure}
+\clearpage
+
+
+\begin{figure}[htb]
+
+{\centering \pdftooltip{\includegraphics[width=450px,height=560px]{c:/github/surveyReport2021/figures/figure11}}{Figure \ref{fig:figure11}} 
+
+}
+
+\caption{Annual distributions of catch statistics over all mainland inlet indexing sets between 1994 and 2019, including: (A) CPUE in units of weight of sablefish per trap (kg/trap); (B) CPUE in units of sablefish per trap (\#fish/trap); and (C) mean sablefish body weight (kg). Horizontal line is median, grey shading shows the 25th and 75\% percentiles, and blue dots show arithmetic means. No inlets were surveyed in 2020. Dean/Burke Channel inlet was the only inlet surveyed in 2021 and not included in these figures.}\label{fig:figure11}
+\end{figure}
+\clearpage
+
+
+\begin{figure}[htb]
+
+{\centering \pdftooltip{\includegraphics[width=420px,height=245px]{c:/github/surveyReport2021/figures/figure12}}{Figure \ref{fig:figure12}} 
+
+}
+
+\caption{Length frequencies for female (grey) and male sablefish (steel blue) up to 2021 for all StRS sets. Specimen number (n), mean (\(\overline{x}\)) and standard deviation (\(\sigma\)) are displayed.}\label{fig:figure12}
+\end{figure}
+
+\begin{figure}[htb]
+
+{\centering \pdftooltip{\includegraphics[width=450px,height=240px]{c:/github/surveyReport2021/figures/figure13}}{Figure \ref{fig:figure13}} 
+
+}
+
+\caption{Average length and ratios of male and female sablefish by year. Counts by sex are labelled on top of the plotted lines.}\label{fig:figure13}
+\end{figure}
+\clearpage
+
+
+\begin{figure}[htb]
+
+{\centering \pdftooltip{\includegraphics[width=410px,height=235px]{c:/github/surveyReport2021/figures/figure14}}{Figure \ref{fig:figure14}} 
+
+}
+
+\caption{Sablefish fork length (L in cm) vs weight (W in kg) for females (A) and males (B) for the 2021 survey.}\label{fig:figure14}
+\end{figure}
+
+\begin{figure}[htb]
+
+{\centering \pdftooltip{\includegraphics[width=350px,height=235px]{c:/github/surveyReport2021/figures/figure15i}}{Figure \ref{fig:figure15}} 
+
+}
+
+\caption{The percentage of sub-legal sablefish (\textless55 cm fork length) sampled by spatial (S\textsubscript{1}-S\textsubscript{5}) and depth strata (S=shallow, RD\textsubscript{1}; M=mid, RD\textsubscript{2}; D=deep, RD\textsubscript{3}) over time. Sub-legal specimen count above 50\% sampled shown in blue.}\label{fig:figure15}
+\end{figure}
+\clearpage
+
+
+\begin{figure}[htb]
+
+{\centering \pdftooltip{\includegraphics[width=500px,height=577px]{c:/github/surveyReport2021/figures/figure16}}{Figure \ref{fig:figure16}} 
+
+}
+
+\caption{Bubble plot for female (A) and male (B) sablefish ages by survey year from StRS sets that have been aged. The sizes of the circles are proportional to the number of fish with given ages. Fish age 35 and older are included in one bubble. The total number of fish aged are listed across the top of each panel. The ages with the highest ratios are posted to the right of each bubble.}\label{fig:figure16}
+\end{figure}
+\clearpage
+
+~\\
+
+\begin{figure}[htb]
+
+{\centering \pdftooltip{\includegraphics[width=500px,height=335px]{c:/github/surveyReport2021/figures/figure17}}{Figure \ref{fig:figure17}} 
+
+}
+
+\caption{Coplot of average depth (m) vs average temperature (\(^\circ\)C) for a given 1-degree latitude range (blue bands) for 2021. The number of fishing sets deployed with a SBE 39 recorder are represented by n.}\label{fig:figure17}
+\end{figure}
+\clearpage
+
+
+\begin{figure}[htb]
+
+{\centering \pdftooltip{\includegraphics[width=480px,height=616px]{c:/github/surveyReport2021/figures/figure18}}{Figure \ref{fig:figure18}} 
+
+}
+
+\caption{Vertical density ridgeplots of mean temperatures per year as reported by set from the Sea-bird SBE 39 loggers on traps at three depth intervals, RD\textsubscript{1} = shallow (100-450 m), RD\textsubscript{2} = mid (450-850 m), RD\textsubscript{3} = deep (850-1400 m). Lines indicate the 2.5\% and 97.5\% tails.}\label{fig:figure18}
+\end{figure}
+\clearpage
+
+\begin{appendices}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+\counterwithin{equation}{section}
+
+\clearpage
+
+\section{LIST OF SABLEFISH RESEARCH AND ASSESSMENT SURVEYS.}
+\label{app:first-appendix}
+
+\begingroup\fontsize{8}{10}\selectfont
+\begin{longtable}{rlllrr}
+\toprule
+\textbf{Year} & \textbf{Dates} & \textbf{Vessel} & \textbf{Captain} & \textbf{Set Count} & \textbf{GFBIO Id}\\
+\midrule
+1988 & Oct 28  - Nov 24 & VICIOUS FISHER & VANCE FLETCHER & 16 & 43990\\
+1989 & Oct 19  - Nov 18 & LA PORSCHE & SIGURD BRYNJOLFSON & 29 & 43910\\
+1990 & Nov  8  - Nov 18 & VIKING STAR & DOUG FARRINGTON & 24 & 43750\\
+1991 & Oct  9  - Oct 29 & W. E. RICKER & ALAN FARRINGTON & 32 & 43673\\
+1992 & Oct 13  - Nov  4 & W. E. RICKER & RON ROBERTS & 38 & 43670\\
+1993 & Oct 19  - Nov 11 & W. E. RICKER & ALAN FARRINGTON & 42 & 43650\\
+1994 & Oct 13  - Oct 31 & LA PORSCHE & RICHARD BEAUVAIS & 39 & 43630\\
+1994 & Oct 18  - Nov 13 & WESTERN VIKING & RICK JONES & 27 & 43390\\
+1995 & Oct  8  - Oct 20 & OCEAN PEARL & ROBERT FRAUMENI & 29 & 43270\\
+1995 & Oct 11  - Oct 28 & VICTOR F & MICHAEL DERRY & 34 & 43330\\
+1995 & Oct  1  - Oct 31 & VIKING SUNRISE & JASON OLSEN & 40 & 43350\\
+1996 & Sep 26  - Oct 10 & OCEAN PEARL & MICHAEL DERRY & 32 & 43039\\
+1996 & Sep 30  - Oct 22 & VIKING STAR & OTTO ELVAN & 49 & 43210\\
+1996 & May 10  - May 30 & VIKING SUNRISE & ALBERT (DEACON) MELNYCHUK & 42 & 43024\\
+1997 & Sep 26  - Oct 21 & OCEAN PEARL & MICHAEL DERRY & 74 & 42699\\
+1997 & May 20  - Jun 10 & VIKING SUNRISE & ALBERT (DEACON) MELNYCHUK & 42 & 42760\\
+1998 & Sep 22  - Oct 17 & OCEAN PEARL & MICHAEL DERRY & 89 & 41122\\
+1999 & Sep 29  - Oct 30 & OCEAN PEARL & MICHAEL DERRY & 109 & 40589\\
+2000 & Oct  8  - Nov 14 & PACIFIC VIKING & ALBERT (DEACON) MELNYCHUK & 131 & 40517\\
+2001 & Oct  6  - Nov  6 & OCEAN PEARL & MICHAEL DERRY & 134 & 43233\\
+2002 & Oct  4  - Nov  7 & PACIFIC VIKING & ALBERT (DEACON) MELNYCHUK & 125 & 48120\\
+2002 & Oct  5  - Nov 13 & VIKING SUNRISE & JASON OLSEN & 90 & 48110\\
+2003 & Oct 15  - Nov 13 & OCEAN PEARL & MICHAEL DERRY & 94 & 52100\\
+2003 & Oct  7  - Nov 10 & VIKING STAR & JIM FARRINGTON & 84 & 52120\\
+2004 & Oct  5  - Nov 15 & MILBANKE SOUND & DON QUAST & 95 & 58145\\
+2004 & Oct  5  - Nov  3 & OCEAN MARAUDER & ALBERT (DEACON) MELNYCHUK & 84 & 57360\\
+2005 & Oct  4  - Nov  2 & PACIFIC VIKING & ALBERT (DEACON) MELNYCHUK & 84 & 60529\\
+2005 & Oct  7  - Nov 17 & VIKING SUNRISE & RORY JOHNSON & 88 & 60503\\
+2006 & Oct  1  - Nov  1 & PACIFIC VIKING & ALBERT (DEACON) MELNYCHUK & 98 & 62966\\
+2006 & Oct  2  - Nov 15 & SENA II & TIM JOYS & 98 & 62666\\
+2007 & Oct  7  - Nov 12 & PACIFIC VIKING & ALBERT (DEACON) MELNYCHUK & 99 & 65106\\
+2007 & Oct  8  - Nov 12 & VIKING TIDE & JASON OLSEN & 91 & 65107\\
+2008 & Sep 29  - Nov 16 & OCEAN PEARL & ROBERT FRAUMENI & 157 & 67007\\
+2009 & Oct  8  - Nov 25 & OCEAN PEARL & ROBERT FRAUMENI & 155 & 69067\\
+2010 & Oct  9  - Nov 30 & OCEAN PEARL & ROBERT FRAUMENI & 153 & 70787\\
+2011 & Oct  9  - Nov 21 & OCEAN PEARL & DARCY NICHOLS & 132 & 72067\\
+2012 & Oct  9  - Nov 17 & OCEAN PEARL & DARCY NICHOLS & 135 & 73190\\
+2013 & Oct 11  - Nov 17 & PACIFIC VIKING & ALBERT (DEACON) MELNYCHUK & 111 & 74872\\
+2014 & Oct  9  - Nov 17 & OCEAN PEARL & DARCY NICHOLS & 111 & 76150\\
+2015 & Oct  9  - Nov 20 & PACIFIC VIKING & ALBERT (DEACON) MELNYCHUK & 111 & 77830\\
+2016 & Oct  7  - Nov 22 & OCEAN PEARL & DARCY NICHOLS & 111 & 80471\\
+2017 & Oct  6  - Nov 21 & PACIFIC VIKING & ALBERT (DEACON) MELNYCHUK & 109 & 82790\\
+2018 & Oct  9  - Nov 19 & OCEAN PEARL & DARCY NICHOLS & 111 & 84250\\
+2019 & Oct  8  - Nov 25 & PACIFIC VIKING & ALBERT (DEACON) MELNYCHUK & 109 & 85230\\
+2020 & Oct  7  - Nov 21 & PACIFIC VIKING & ALBERT (DEACON) MELNYCHUK & 87 & 85690\\
+2021 & Oct  6  - Nov 21 & PACIFIC VIKING & ALBERT (DEACON) MELNYCHUK & 81 & 86130\\
+\bottomrule
+\end{longtable}
+\endgroup{}
+\clearpage
+
+\section{SABLEFISH CHARTER SET LOG 2021.}
+\label{app:second-appendix}
+
+Example of the set log data form with directions from the survey instruction manual.
+\begin{flushleft}\includegraphics[width=460px,height=466px]{c:/github/surveyReport2021/figures/AppendixB} \end{flushleft}
+\clearpage
+
+\section{SURVEY SET DETAILS 2021.}
+\label{app:third-appendix}
+
+Details of sets completed during the 2021 survey program (F/V Pacific Viking). Sets are listed by stratum/inlet name, set type, depth stratum, start date, end of gear deployment time and duration in minutes. The depth strata for type 3 tagging sets include RD\textsubscript{1} (100-250 fathoms), RD\textsubscript{2} (250-450 fathoms) and RD\textsubscript{3} (450-750 fathoms). The position data includes the major area and start and end latitude and longitude in degrees decimal minutes. The bottom depths (in meters) of the fishing set are shown with the mean bottom depth calculated from recordings at one minute intervals between the start and end of the set. The number of traps fished for each set excludes open traps, while holed or fouled traps have been included. Sets that successfully deployed a Seabird SBE temperature and pressure recorder (SBE 39), Hobo accelerometer (HOBO) or camera (CAM) are indicated with an `x.'
+\begin{landscape}\begingroup\fontsize{8}{10}\selectfont
+\begin{longtable}{>{\raggedleft\arraybackslash}p{0.5cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{0.9cm}>{\raggedright\arraybackslash}p{0.7cm}>{\raggedright\arraybackslash}p{0.9cm}>{\raggedright\arraybackslash}p{0.6cm}>{\raggedleft\arraybackslash}p{0.9cm}>{\raggedright\arraybackslash}p{0.5cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedleft\arraybackslash}p{0.6cm}>{\raggedleft\arraybackslash}p{0.6cm}>{\raggedleft\arraybackslash}p{0.5cm}>{\raggedleft\arraybackslash}p{0.6cm}>{\raggedright\arraybackslash}p{0.4cm}>{\raggedright\arraybackslash}p{0.4cm}>{\raggedright\arraybackslash}p{0.4cm}}
+\toprule
+\textbf{Set} & \textbf{Spatial Stratum} & \textbf{Type} & \textbf{Depth Stratum} & \textbf{Date} & \textbf{Time} & \textbf{Duration (minutes)} & \textbf{Area} & \textbf{Start Latitude} & \textbf{Start Longitude} & \textbf{End Latitude} & \textbf{End Longitude} & \textbf{Start Depth (m)} & \textbf{End Depth (m)} & \textbf{Mean Depth (m)} & \textbf{Traps Fished} & \textbf{SBE 39} & \textbf{HOBO} & \textbf{CAM}\\
+\midrule
+\endfirsthead
+\multicolumn{19}{@{}l}{continued.}\\
+\toprule
+\textbf{Set} & \textbf{Spatial Stratum} & \textbf{Type} & \textbf{Depth Stratum} & \textbf{Date} & \textbf{Time} & \textbf{Duration (minutes)} & \textbf{Area} & \textbf{Start Latitude} & \textbf{Start Longitude} & \textbf{End Latitude} & \textbf{End Longitude} & \textbf{Start Depth (m)} & \textbf{End Depth (m)} & \textbf{Mean Depth (m)} & \textbf{Traps Fished} & \textbf{SBE 39} & \textbf{HOBO} & \textbf{CAM}\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+1 & S1 & StRS & RD1 & Oct  7 & 07:57 & 1330 & 3C & 48° 8.6'N & 125° 55.8'W & 48° 8.1'N & 125° 56.3'W & 328 & 313 & 307 & 25 & x &  & \\
+2 & S1 & StRS & RD2 & Oct  7 & 09:03 & 1443 & 3C & 48° 8.6'N & 125° 58.6'W & 48° 8.1'N & 125° 59.1'W & 571 & 598 & 594 & 25 & x &  & \\
+3 & S1 & StRS & RD3 & Oct  7 & 10:52 & 1504 & 3C & 48° 2.5'N & 126° 6.3'W & 48° 2.5'N & 126° 7.3'W & 1051 & 1048 & 1052 & 25 & x &  & \\
+4 & S1 & StRS & RD3 & Oct  7 & 12:25 & 1525 & 3C & 48° 7.7'N & 126° 5.8'W & 48° 7.8'N & 126° 6.8'W & 977 & 1053 & 998 & 25 & x &  & \\
+5 & S1 & StRS & RD2 & Oct  7 & 14:13 & 1545 & 3C & 48° 6.4'N & 125° 55.1'W & 48° 6.1'N & 125° 56'W & 484 & 514 & 503 & 25 & x & x & x\\
+6 & S1 & StRS & RD2 & Oct  7 & 15:43 & 1604 & 3C & 48° 0.9'N & 125° 59.5'W & 48° 0.8'N & 126° 0.7'W & 736 & 737 & 707 & 25 & x & x & x\\
+7 &  & Movement &  & Oct  7 & 17:35 & 1594 & 3C & 48° 1.3'N & 126° 4.8'W & 48° 0.3'N & 126° 6.6'W & 415 & 546 & 482 & 56 & x & x & x\\
+8 & S1 & StRS & RD1 & Oct  9 & 07:59 & 1325 & 3C & 48° 5.4'N & 126° 3.2'W & 48° 5.5'N & 126° 4.2'W & 187 & 196 & 191 & 25 & x &  & \\
+9 & S1 & StRS & RD2 & Oct  9 & 09:39 & 1378 & 3C & 48° 5.4'N & 126° 12.2'W & 48° 5.4'N & 126° 13.2'W & 532 & 601 & 567 & 25 & x &  & \\
+10 & S1 & StRS & RD3 & Oct  9 & 11:50 & 1473 & 3C & 48° 6'N & 126° 26.4'W & 48° 6'N & 126° 27.4'W & 1199 & 1264 & 1220 & 25 & x &  & \\
+11 & S1 & StRS & RD2 & Oct  9 & 14:58 & 1421 & 3C & 48° 0'N & 126° 15'W & 48° 0.2'N & 126° 16.1'W & 655 & 711 & 685 & 25 & x & x & x\\
+12 & S1 & StRS & RD1 & Oct  9 & 16:45 & 1451 & 3C & 48° 8.5'N & 126° 11.9'W & 48° 8.5'N & 126° 13'W & 205 & 421 & 316 & 25 & x & x & x\\
+13 & S1 & StRS & RD2 & Oct  9 & 18:58 & 1503 & 3C & 48° 5.3'N & 126° 27.2'W & 48° 4.6'N & 126° 27.2'W & 467 & 576 & 520 & 25 & x & x & x\\
+14 &  & Movement &  & Oct 11 & 09:28 & 488 & 3C & 48° 8.1'N & 126° 43.1'W & 48° 8'N & 126° 45.5'W & 396 & 474 & 432 & 57 & x & x & x\\
+15 & S1 & StRS & RD1 & Oct 13 & 05:58 & 1326 & 3C & 48° 8.6'N & 126° 29.2'W & 48° 8.6'N & 126° 30.2'W & 224 & 236 & 229 & 25 & x &  & \\
+16 & S1 & StRS & RD2 & Oct 13 & 07:42 & 1332 & 3C & 48° 4.1'N & 126° 32.5'W & 48° 3.6'N & 126° 33'W & 553 & 612 & 583 & 25 & x &  & \\
+17 & S1 & StRS & RD3 & Oct 13 & 10:20 & 1366 & 3C & 48° 8.9'N & 126° 49.7'W & 48° 9'N & 126° 50.6'W & 1254 & 1326 & 1298 & 25 & x &  & \\
+18 & S1 & StRS & RD3 & Oct 13 & 11:55 & 1380 & 3C & 48° 2.2'N & 126° 48.7'W & 48° 2.2'N & 126° 49.8'W & 1124 & 1139 & 1135 & 25 & x &  & \\
+19 & S1 & StRS & RD1 & Oct 13 & 14:12 & 1371 & 3C & 48° 9.8'N & 126° 45.2'W & 48° 9.8'N & 126° 46.2'W & 315 & 337 & 324 & 25 & x & x & x\\
+20 & S1 & StRS & RD1 & Oct 13 & 16:16 & 1368 & 3D & 49° 0.4'N & 126° 51.7'W & 49° 0.4'N & 126° 52.9'W & 209 & 233 & 220 & 25 & x & x & x\\
+21 & S1 & StRS & RD2 & Oct 15 & 05:59 & 1324 & 3D & 49° 0.9'N & 127° 5.5'W & 49° 0.5'N & 127° 6.4'W & 595 & 691 & 643 & 25 & x &  & \\
+22 & S2 & StRS & RD1 & Oct 15 & 08:10 & 1323 & 3D & 49° 8.5'N & 127° 7.5'W & 49° 8.5'N & 127° 8.5'W & 194 & 205 & 199 & 25 & x &  & \\
+23 & S2 & StRS & RD3 & Oct 15 & 10:16 & 1353 & 3D & 49° 8.6'N & 127° 18.6'W & 49° 8.7'N & 127° 19.7'W & 1261 & 1316 & 1285 & 25 & x &  & \\
+24 & S2 & StRS & RD3 & Oct 15 & 11:44 & 1362 & 3D & 49° 1.7'N & 127° 18.4'W & 49° 1.8'N & 127° 19.5'W & 828 & 953 & 920 & 25 & x &  & \\
+25 & S2 & StRS & RD1 & Oct 15 & 13:12 & 1378 & 3D & 49° 0.7'N & 127° 13.3'W & 49° 0.9'N & 127° 14.5'W & 357 & 475 & 421 & 25 & x & x & x\\
+26 & S2 & StRS & RD2 & Oct 15 & 14:18 & 1448 & 3D & 49° 4'N & 127° 17'W & 49° 3.4'N & 127° 17.3'W & 457 & 527 & 489 & 25 & x & x & x\\
+27 &  & Movement &  & Oct 15 & 16:33 & 1431 & 3D & 49° 2.1'N & 127° 14.7'W & 49° 2.5'N & 127° 16.9'W & 363 & 617 & 479 & 57 & x & x & x\\
+28 & S2 & StRS & RD2 & Oct 17 & 04:52 & 1325 & 3D & 49° 7.1'N & 127° 37.8'W & 49° 7.1'N & 127° 39'W & 630 & 593 & 602 & 25 & x &  & \\
+29 & S2 & StRS & RD2 & Oct 17 & 06:26 & 1329 & 3D & 49° 5.2'N & 127° 32.7'W & 49° 5.1'N & 127° 33.8'W & 517 & 767 & 657 & 25 & x &  & \\
+30 & S2 & StRS & RD2 & Oct 17 & 07:46 & 1328 & 3D & 49° 6.1'N & 127° 29.5'W & 49° 6.1'N & 127° 30.5'W & 707 & 722 & 715 & 25 & x &  & \\
+31 & S2 & StRS & RD2 & Oct 17 & 09:04 & 1340 & 3D & 49° 9.2'N & 127° 27.9'W & 49° 9.2'N & 127° 29'W & 622 & 660 & 648 & 25 & x & x & x\\
+32 & S2 & StRS & RD2 & Oct 17 & 11:02 & 1359 & 3D & 49° 3.7'N & 127° 39.8'W & 49° 3.2'N & 127° 40.5'W & 611 & 668 & 636 & 25 & x & x & x\\
+33 & S2 & StRS & RD2 & Oct 17 & 12:26 & 1378 & 3D & 49° 3.9'N & 127° 46.5'W & 49° 3.2'N & 127° 46.9'W & 713 & 682 & 722 & 25 & x & x & x\\
+34 & Dean/Burke & Inlet &  & Oct 24 & 12:07 & 1071 & 5B & 52° 0.5'N & 127° 37.1'W & 52° 0.8'N & 127° 36.3'W & 445 & 446 & 448 & 25 & x &  & \\
+35 & Dean/Burke & Inlet &  & Oct 24 & 13:59 & 1092 & 5B & 52° 3.6'N & 127° 25.5'W & 52° 4'N & 127° 24.8'W & 594 & 596 & 595 & 25 & x &  & \\
+36 & Dean/Burke & Inlet &  & Oct 24 & 15:23 & 1115 & 5B & 52° 6.3'N & 127° 15.8'W & 52° 6.6'N & 127° 14.9'W & 583 & 583 & 583 & 25 & x &  & \\
+37 & Dean/Burke & Inlet &  & Oct 24 & 17:32 & 1129 & 5B & 52° 6.8'N & 127° 16'W & 52° 6.3'N & 127° 15.2'W & 524 & 515 & 522 & 25 & x &  & \\
+38 & Dean/Burke & Inlet &  & Oct 24 & 19:29 & 1138 & 5B & 52° 0.5'N & 127° 28.5'W & 52° 1'N & 127° 28'W & 521 & 515 & 519 & 25 & x & x & x\\
+39 & S2 & StRS & RD3 & Oct 28 & 06:38 & 1343 & 3D & 50° 0.2'N & 128° 12'W & 50° 0.1'N & 128° 13.2'W & 1171 & 1194 & 1148 & 25 & x &  & \\
+40 & S2 & StRS & RD3 & Oct 28 & 08:31 & 1375 & 3D & 50° 0.4'N & 128° 24.7'W & 50° 0.4'N & 128° 26'W & 962 & 907 & 912 & 25 & x &  & \\
+41 & S2 & StRS & RD1 & Oct 28 & 11:08 & 1398 & 3D & 50° 1.9'N & 128° 26'W & 50° 2'N & 128° 27.1'W & 275 & 350 & 311 & 25 & x &  & \\
+42 & S2 & StRS & RD1 & Oct 28 & 12:40 & 1449 & 3D & 50° 8.4'N & 128° 32.7'W & 50° 8.4'N & 128° 34'W & 223 & 262 & 237 & 25 & x &  & \\
+43 & S2 & StRS & RD3 & Oct 28 & 14:27 & 1464 & 5A & 50° 1.6'N & 128° 38.9'W & 50° 1.5'N & 128° 40.5'W & 1008 & 1135 & 985 & 25 & x & x & x\\
+44 & S2 & StRS & RD1 & Oct 28 & 16:24 & 1468 & 5A & 50° 8.1'N & 128° 39.1'W & 50° 8.1'N & 128° 40.3'W & 190 & 195 & 193 & 25 & x & x & x\\
+45 & S2 & StRS & RD1 & Oct 28 & 18:18 & 1487 & 5A & 50° 0.5'N & 128° 52.3'W & 50° 0.4'N & 128° 53.4'W & 219 & 223 & 222 & 25 & x & x & x\\
+46 & S3 & StRS & RD1 & Oct 30 & 04:03 & 1239 & 5B & 51° 3.5'N & 129° 51.2'W & 51° 3.4'N & 129° 52'W & 228 & 231 & 229 & 25 & x &  & \\
+47 & S3 & StRS & RD1 & Oct 30 & 07:26 & 1283 & 5A & 51° 0.6'N & 129° 28.9'W & 51° 0.5'N & 129° 30'W & 289 & 292 & 292 & 25 & x &  & \\
+48 & S3 & StRS & RD2 & Oct 30 & 08:52 & 1330 & 5A & 51° 0.9'N & 129° 35.1'W & 51° 0'N & 129° 36.2'W & 503 & 571 & 542 & 25 & x &  & \\
+49 & S3 & StRS & RD1 & Oct 30 & 10:14 & 1371 & 5A & 50° 5.3'N & 129° 35.4'W & 50° 5.2'N & 129° 36.5'W & 237 & 242 & 239 & 25 & x & x & x\\
+50 & S3 & StRS & RD1 & Oct 30 & 11:34 & 1375 & 5A & 50° 5.3'N & 129° 30.7'W & 50° 5.4'N & 129° 31.8'W & 195 & 222 & 209 & 25 & x &  & \\
+51 & S3 & StRS & RD2 & Oct 30 & 13:31 & 1363 & 5A & 50° 9.8'N & 129° 31.2'W & 50° 9.2'N & 129° 31'W & 487 & 773 & 639 & 25 & x & x & x\\
+52 & S5 & StRS & RD1 & Nov  6 & 04:16 & 1235 & 5E & 54° 1.6'N & 133° 40.4'W & 54° 1.5'N & 133° 41.6'W & 228 & 231 & 230 & 25 & x &  & \\
+53 & S5 & StRS & RD1 & Nov  6 & 05:45 & 1248 & 5E & 54° 0.3'N & 133° 47.7'W & 54° 0.2'N & 133° 48.8'W & 241 & 377 & 313 & 25 & x &  & \\
+54 & S5 & StRS & RD2 & Nov  6 & 06:45 & 1306 & 5E & 54° 9.2'N & 133° 50.9'W & 54° 9.1'N & 133° 52'W & 507 & 591 & 543 & 25 & x &  & \\
+55 & S5 & StRS & RD2 & Nov  6 & 08:30 & 1338 & 5E & 54° 3.4'N & 133° 50'W & 54° 3.4'N & 133° 51.2'W & 475 & 513 & 488 & 25 & x &  & \\
+56 & S5 & StRS & RD2 & Nov  6 & 10:09 & 1363 & 5E & 54° 0.9'N & 133° 47.5'W & 54° 0.9'N & 133° 48.6'W & 533 & 609 & 559 & 25 & x &  & \\
+57 & S5 & StRS & RD1 & Nov  6 & 12:12 & 1423 & 5E & 54° 0'N & 133° 31.1'W & 54° 0.1'N & 133° 32.1'W & 372 & 371 & 371 & 25 & x &  & \\
+58 & S5 & StRS & RD1 & Nov  9 & 08:46 & 1316 & 5E & 53° 7.1'N & 133° 29'W & 53° 7.1'N & 133° 30.4'W & 211 & 262 & 231 & 24 & x &  & \\
+59 & S5 & StRS & RD3 & Nov  9 & 10:53 & 1343 & 5E & 53° 7.3'N & 133° 46.6'W & 53° 7.4'N & 133° 47.8'W & 1169 & 1140 & 1151 & 25 & x &  & \\
+60 & S5 & StRS & RD3 & Nov  9 & 12:26 & 1359 & 5E & 53° 4.8'N & 133° 51.9'W & 53° 5'N & 133° 53.2'W & 1137 & 1080 & 1121 & 25 & x &  & \\
+61 & S5 & StRS & RD2 & Nov  9 & 15:48 & 1356 & 5E & 53° 7'N & 133° 27.2'W & 53° 6.9'N & 133° 28.3'W & 600 & 721 & 636 & 25 & x &  & \\
+62 & S5 & StRS & RD3 & Nov  9 & 16:51 & 1393 & 5E & 53° 5.2'N & 133° 28'W & 53° 5.1'N & 133° 29.1'W & 836 & 935 & 877 & 25 & x & x & x\\
+63 &  & Movement &  & Nov  9 & 18:55 & 1373 & 5E & 53° 3.1'N & 133° 18.3'W & 53° 3.3'N & 133° 20.9'W & 417 & 641 & 517 & 56 & x & x & x\\
+64 & S5 & StRS & RD1 & Nov 13 & 16:37 & 1323 & 5E & 53° 0.4'N & 132° 41.5'W & 53° 0.7'N & 132° 42.5'W & 441 & 474 & 431 & 25 & x &  & \\
+65 & S4 & StRS & RD3 & Nov 13 & 18:10 & 1381 & 5E & 53° 0.3'N & 132° 49.2'W & 53° 0.1'N & 132° 50.4'W & 1231 & 1221 & 1229 & 25 & x &  & \\
+66 & S4 & StRS & RD3 & Nov 13 & 19:50 & 1387 & 5E & 53° 0.5'N & 132° 44.4'W & 53° 0.4'N & 132° 45.6'W & 1103 & 1224 & 1186 & 25 & x &  & \\
+67 & S4 & StRS & RD1 & Nov 13 & 21:14 & 1398 & 5E & 53° 0.9'N & 132° 39.6'W & 53° 0.2'N & 132° 39.6'W & 307 & 363 & 401 & 24 & x & x & x\\
+68 & S4 & StRS & RD1 & Nov 13 & 22:12 & 1455 & 5E & 53° 0.7'N & 132° 38.3'W & 53° 0.7'N & 132° 39.6'W & 347 & 517 & 437 & 24 & x & x & x\\
+69 & S4 & StRS & RD2 & Nov 14 & 00:04 & 1475 & 5E & 52° 9.5'N & 132° 31.8'W & 52° 9.5'N & 132° 33.2'W & 608 & 807 & 712 & 25 & x & x & x\\
+70 & S4 & StRS & RD2 & Nov 14 & 01:46 & 1526 & 5E & 52° 5.4'N & 132° 24.6'W & 52° 5.1'N & 132° 25.8'W & 512 & 602 & 564 & 25 & x & x & x\\
+71 & S4 & StRS & RD2 & Nov 14 & 02:54 & 1567 & 5E & 52° 3.3'N & 132° 22.5'W & 52° 3.2'N & 132° 23.9'W & 558 & 737 & 645 & 24 & x &  & \\
+72 & S3 & StRS & RD1 & Nov 17 & 08:52 & 1331 & 5B & 51° 7.7'N & 130° 26.2'W & 51° 7.7'N & 130° 27.1'W & 289 & 426 & 342 & 25 & x &  & \\
+73 & S3 & StRS & RD1 & Nov 17 & 10:16 & 1368 & 5B & 51° 5.8'N & 130° 19.8'W & 51° 5.8'N & 130° 20.7'W & 240 & 245 & 242 & 25 & x &  & \\
+74 & S3 & StRS & RD2 & Nov 17 & 13:09 & 1335 & 5B & 51° 7.1'N & 130° 6.6'W & 51° 7'N & 130° 7.7'W & 465 & 482 & 478 & 25 & x &  & \\
+75 & S3 & StRS & RD3 & Nov 17 & 15:21 & 1332 & 5B & 51° 3.8'N & 130° 18.6'W & 51° 3.8'N & 130° 19.8'W & 968 & 927 & 943 & 25 & x &  & \\
+76 & S3 & StRS & RD3 & Nov 17 & 17:04 & 1342 & 5B & 51° 1.5'N & 130° 25.9'W & 51° 1.5'N & 130° 26.9'W & 950 & 1175 & 970 & 25 & x &  & \\
+77 & S3 & StRS & RD3 & Nov 17 & 18:38 & 1353 & 5B & 51° 1.2'N & 130° 22.3'W & 51° 1.2'N & 130° 23.2'W & 1167 & 1133 & 1151 & 25 & x &  & \\
+78 & S3 & StRS & RD3 & Nov 19 & 00:16 & 1320 & 5B & 51° 9.9'N & 130° 16.9'W & 51° 9.9'N & 130° 17.9'W & 827 & 936 & 876 & 25 & x &  & \\
+79 & S3 & StRS & RD2 & Nov 19 & 02:09 & 1346 & 5B & 51° 3'N & 130° 11.5'W & 51° 3'N & 130° 12.5'W & 767 & 807 & 788 & 25 & x &  & \\
+80 & S3 & StRS & RD2 & Nov 19 & 04:30 & 1377 & 5A & 51° 2.2'N & 130° 4.4'W & 51° 2.2'N & 130° 5.4'W & 643 & 704 & 670 & 25 & x &  & \\
+81 & S3 & StRS & RD2 & Nov 19 & 05:43 & 1411 & 5A & 51° 3.1'N & 130° 1.5'W & 51° 3.1'N & 130° 2.6'W & 499 & 542 & 522 & 25 & x &  & \\*
+\end{longtable}
+\endgroup{}
+\end{landscape}
+\clearpage
+
+\section{SUMMARY OF BASKET USE BY TRAP 2021.}
+\label{app:fourth-appendix}
+
+Summary of the basket use by trap number for StRS and inlet sets during the 2021 sablefish survey. The fate of the sablefish catch for each set and trap is indicated using the following abbreviations: D = Discarded after weighing (processed as commercial catch), A = Sampled for LSMWO, T = Tagged and released, SD = Sublegal discarded, F= Frames, NULL = No sablefish catch/trap missing. Standardized sets at mainland inlet localities are highlighted with green colour and StRS sets have no background colour. Those set numbers highlighted with purple colour had a camera deployed on the string of gear.
+\begin{landscape}\begingroup\fontsize{6}{8}\selectfont
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.8cm}>{\raggedright\arraybackslash}p{0.3cm}>{\raggedright\arraybackslash}p{0.3cm}>{\raggedright\arraybackslash}p{0.3cm}>{\raggedright\arraybackslash}p{0.3cm}>{\raggedright\arraybackslash}p{0.3cm}>{\raggedright\arraybackslash}p{0.3cm}>{\raggedright\arraybackslash}p{0.3cm}>{\raggedright\arraybackslash}p{0.3cm}>{\raggedright\arraybackslash}p{0.3cm}>{\raggedright\arraybackslash}p{0.4cm}>{\raggedright\arraybackslash}p{0.4cm}>{\raggedright\arraybackslash}p{0.4cm}>{\raggedright\arraybackslash}p{0.4cm}>{\raggedright\arraybackslash}p{0.4cm}>{\raggedright\arraybackslash}p{0.4cm}>{\raggedright\arraybackslash}p{0.4cm}>{\raggedright\arraybackslash}p{0.4cm}>{\raggedright\arraybackslash}p{0.4cm}>{\raggedright\arraybackslash}p{0.4cm}>{\raggedright\arraybackslash}p{0.4cm}>{\raggedright\arraybackslash}p{0.4cm}>{\raggedright\arraybackslash}p{0.4cm}>{\raggedright\arraybackslash}p{0.4cm}>{\raggedright\arraybackslash}p{0.4cm}>{\raggedright\arraybackslash}p{0.4cm}>{\raggedright\arraybackslash}p{0.4cm}>{\raggedleft\arraybackslash}p{0.2cm}>{\raggedleft\arraybackslash}p{0.2cm}>{\raggedleft\arraybackslash}p{0.2cm}>{\raggedleft\arraybackslash}p{0.2cm}}
+\toprule
+\multicolumn{1}{c}{\textbf{ }} & \multicolumn{26}{c}{\textbf{Trap}} & \multicolumn{4}{c}{\textbf{Total}} \\
+\cmidrule(l{3pt}r{3pt}){2-27} \cmidrule(l{3pt}r{3pt}){28-31}
+\textbf{Set} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10} & \textbf{11} & \textbf{12} & \textbf{13} & \textbf{14} & \textbf{15} & \textbf{16} & \textbf{17} & \textbf{18} & \textbf{19} & \textbf{20} & \textbf{21} & \textbf{22} & \textbf{23} & \textbf{24} & \textbf{25} & \textbf{26} & \textbf{A} & \textbf{D} & \textbf{T} & \textbf{-}\\
+\midrule
+\endfirsthead
+\multicolumn{31}{@{}l}{continued.}\\
+\toprule
+\multicolumn{1}{c}{\textbf{ }} & \multicolumn{26}{c}{\textbf{Trap}} & \multicolumn{4}{c}{\textbf{Total}} \\
+\cmidrule(l{3pt}r{3pt}){2-27} \cmidrule(l{3pt}r{3pt}){28-31}
+\textbf{Set} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10} & \textbf{11} & \textbf{12} & \textbf{13} & \textbf{14} & \textbf{15} & \textbf{16} & \textbf{17} & \textbf{18} & \textbf{19} & \textbf{20} & \textbf{21} & \textbf{22} & \textbf{23} & \textbf{24} & \textbf{25} & \textbf{26} & \textbf{A} & \textbf{D} & \textbf{T} & \textbf{-}\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_1.png}} & T & D,SD & A & D,SD & D,SD & T & D,SD & D,SD & D,SD & D,SD & D,SD & A & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD & A & D,SD & D,F & D,F & D,SD & D,SD & D,SD &  & 3 & 2 & 2 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_2.png}} & D,F & A & T,F & D,SD & D,F & D,SD & D,F & D,SD & T & D,SD & D,SD & D,SD & D,SD & A,F & D,F & D,F & D,F & T,F & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD &  & 2 & 6 & 3 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_3.png}} & A &  & A & A & T & D & A & T & D,SD & D & T & D,SD & D,SD & T & D,SD & D,SD & T & D,SD & D,SD & T & D,SD & A & T & T,SD & T,SD &  & 5 & 2 & 7 & 1\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_4.png}} & T &  & A & T & D,SD & D,SD & T & D,SD & A & T & D,SD & D,SD & T & D,SD & A & T & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD & A & D,SD &  & 4 & 0 & 6 & 1\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_5.png}} & D,F & A,F & T,F & D,SD & D,SD & D,F & D,SD & D,SD & D,SD & D,F & D,F & T & D,SD &  & D,F & D,F & A & D,SD & D,F & D,F & D,F & D,SD & T,F & D,F & D,F & D,F & 2 & 12 & 3 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_6.png}} & D,F & T & D,F & A & T,F & D,SD & A & T & D,SD & A & T & D,SD & D,SD &  & D,SD & A & T & D,F & D,SD & T & D,SD & A,F & T,F & D,F & D,SD & D,F & 5 & 5 & 7 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_8.png}} & D,SD & A & T & D,SD & D,SD & T & D,SD & D,SD & T & D,SD & D,SD & D & D,SD & D,SD & D,SD & D,SD & D,SD & T & D,SD & D,SD & D & D,SD & A & D & D &  & 2 & 4 & 4 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_9.png}} & D,SD & T & D,SD & D,SD & D,SD & T,SD & A & D,SD & D,SD & D,SD & T & D,SD & D,SD & D,SD & D,SD & A & T & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD & T &  & 2 & 0 & 4 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_10.png}} & T & D,SD & A & T & D & A & T & A & D,SD & T & D & A & T & T & D & T & D & A & T & D,SD & D & T & D,SD & D,SD & T &  & 5 & 5 & 10 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_11.png}} & D,SD & D,SD & T & D,SD & A & T & D,SD & D,SD & T & D,SD & D,SD & T & D,SD &  & D,SD & D,SD & D,SD & T & D,SD & A & D,SD & T,SD & D,SD & D,SD & D,SD & D,SD & 2 & 0 & 5 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_12.png}} & D,SD & T & D,SD & D,SD & T & D,SD & A,F & T & D,SD & D,F & D,SD & D,F & D,F &  & D,SD & T,SD & T & D,SD & D,SD & D,F & D,SD & A & D,SD & D,SD & D,SD & D & 2 & 5 & 4 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_13.png}} & T & D,SD & D,SD & D,SD & D,SD & A,F & T & D,SD & D,SD & T & T,SD & D,SD & D,SD &  & D,SD & T & D,SD & D,SD & T & D,SD & A & D,SD & D,SD & D,SD & D,SD & D,SD & 2 & 0 & 5 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_15.png}} & A & T & A & D,SD & T &  &  &  & A & D,SD & T &  & A & T & D,SD &  & T &  & A & T & A & D,SD & T & D,SD & D,SD &  & 6 & 0 & 7 & 6\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_16.png}} & T & T,SD & D,SD & D,SD & D,SD & A & T & D,SD & D,SD & T & D,SD & D,SD & T & T,SD & D,SD & D,SD & D,SD & D,SD & A & D,SD & A & D,SD & D,SD & D,SD & D,SD &  & 3 & 0 & 4 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_17.png}} & A & T & T & D & A & T &  &  &  & A &  & T & D &  &  & A & A & T & D & A &  & D &  & T & D &  & 6 & 5 & 6 & 8\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_18.png}} & A & T & T,SD & D,SD & T &  & A & T & D,SD & D & T & D,SD & T,SD & T &  & A & T & D,SD & D,SD & T & D,SD & A & T & T,SD & T,SD &  & 4 & 1 & 8 & 2\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_19.png}} & D,SD & D,SD & A & T & D,SD & D,SD & T & D,SD & D,SD & T & D,SD & D,SD & T &  & D,SD & T &  & A & T &  & A &  &  & A & T & A & 5 & 0 & 7 & 4\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_20.png}} & D & A & T & A & A & T & D,SD & A & T & D,SD &  &  & D,SD &  &  & A &  & T & D & D,SD & T &  &  &  & D & D & 5 & 4 & 5 & 7\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_21.png}} & A & T & D & A & T & D,SD & D,SD & T & D,SD & D,SD & D,SD & D,SD & D,SD & T & D,SD & T,SD & T & D,SD & A & T,SD & D,SD & D,SD & D,SD & D,SD & D,SD &  & 3 & 1 & 5 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_22.png}} & T & D,SD &  & D,SD & D & A & T &  & A &  &  &  &  & D,SD &  & T & A & A & T & D,SD &  &  & A & D,SD & T &  & 5 & 1 & 5 & 9\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_23.png}} & A & A & T & D & A & T & D & A & T & D & A & T & D & D & T & D,SD & A & T &  & A & T &  &  & T & A &  & 8 & 5 & 8 & 3\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_24.png}} & A & T & D,SD & D,SD & T & D,SD & T & T & T,SD & T,SD & T & D,SD & D,SD & D,SD & D,SD & T,SD & T & D,SD & D,SD & D,SD & D,SD & A & D,SD & D,SD & D,SD &  & 2 & 0 & 6 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_25.png}} & T & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD & A & D,SD & D,SD & D,SD & T &  & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD & A & D,SD & D,SD & D,SD & D,SD & D,SD & 2 & 0 & 2 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_26.png}} & D,SD & D,SD & T & D,SD & A & T & D,SD & D,SD & T & D,SD & D,SD & D,SD & D,SD &  & D,SD & D,SD & D,SD & T & D,SD & A & D,SD & D,SD & D,SD & D,F & D,SD & D,SD & 2 & 1 & 4 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_28.png}} & T & D,SD & D,SD & T & D,SD & A & T & D,SD & D,SD & T & D,SD & A & T & D,SD & D,SD & T & D,SD & A & T & D,SD & A & T & D,SD & D,SD & T &  & 4 & 0 & 9 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_29.png}} & D,SD & A &  & D,SD &  & T & D,SD & D,SD & T & D,SD &  & D,SD & D,SD & A & T & D,SD & D,SD & T & D,SD & A & T & D,SD & D,SD & D,SD & D,SD &  & 3 & 0 & 5 & 3\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_30.png}} & D,SD & T & D,SD & A & T & D,SD & A & T & D,SD & A & T & D,SD & D,SD & T &  & A & T & D,SD & D,SD & T & D,SD & A & T &  & D,SD &  & 5 & 0 & 8 & 2\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_31.png}} & T & D,SD & A & T & D,SD & D,F & T & D,SD & A & T & D,SD & D,SD & D,SD &  & A & T & D,SD & D,SD & D,SD & T,SD & D,SD & T & D,SD & D,SD & D,F & D,SD & 3 & 2 & 6 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_32.png}} & D,SD & D,SD & T & T,SD & A & T & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD &  & D,SD & D,SD & D,SD & T & D,SD & A & T & D,SD & D,SD & T & D,SD & D,SD & 2 & 0 & 5 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_33.png}} & D,SD & T & D,SD & A & T & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD &  & D,SD & D,SD & T & D,SD & D,SD & D,SD & D,SD & A & D,SD & D,SD & D,SD & D,SD & 2 & 0 & 3 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_34.png}} & T & T,SD & A & T & D,SD & T,SD & T,SD & T,SD & T,SD & D,SD & D,SD & T,SD & T & D,SD & A & D,SD & D,SD & A & T & D,SD & A & T &  &  & T &  & 4 & 0 & 6 & 2\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_35.png}} & D,SD &  &  & A & A & T &  &  & T & D,SD &  &  & A & A & T & A &  &  & A & A & T & A & A & T & D,SD &  & 9 & 0 & 5 & 8\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_36.png}} & A & T & D,SD & A & T & D,SD & A & T & D,SD & A & T & D,SD & T & T &  & A & T & T,SD & A & T &  & A &  & A &  &  & 8 & 0 & 8 & 4\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_37.png}} & T & D,SD & A &  & T,SD & A &  & A & A & T & D,SD &  & T & A & D,SD & T & D,SD &  &  & A & A & T &  & D,SD & T &  & 7 & 0 & 6 & 6\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_38.png}} & D,SD &  & T &  & A & T &  & A & T &  & A &  &  &  & T &  & A &  & A &  & T & A &  & T & A & A & 8 & 0 & 6 & 10\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_39.png}} &  &  &  & A & T & D,SD & A & T &  & A &  & T & A & T &  & T & T & T &  & T & T &  &  &  &  &  & 4 & 0 & 9 & 11\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_40.png}} & T & D,SD & A & T & D,SD & T & T & D &  & T & D,SD &  & T & D,SD & A & T & A & D,SD & T &  & D,SD & D,SD & D,SD & D,SD &  &  & 3 & 1 & 8 & 4\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_41.png}} & D & A & T & D,SD & D,SD & T & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD & A & D,SD & D,SD & D,SD & D,SD &  & D,SD & D,SD & D,SD & D,SD & D,SD &  & 2 & 1 & 2 & 1\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_42.png}} &  & T & D,SD & A & D,SD & D,SD & A & T & T,SD & A & D,SD & D & A & T & D & D,F & D,SD & D,SD & D,SD & D,SD &  & D,SD & D,SD & D,SD & D,SD &  & 4 & 3 & 3 & 2\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_43.png}} & T &  & T & T &  & T &  & A &  & T & A & A & T &  &  & T &  & T & D,SD & T & T & D,SD & D,SD &  & D,SD &  & 3 & 0 & 10 & 8\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_44.png}} &  &  & A & T & A & A & T & D,SD & T & T & A & A & T &  & A &  & T & A &  & A & D & T & T & T & T & T & 8 & 1 & 11 & 4\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_45.png}} & A & T,F & D,SD &  & T & A & D,SD & T & D,SD & A,F & T & T,F & D,SD &  &  &  & T & T & T & T & D,SD & T & T &  &  & T & 3 & 0 & 12 & 5\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_46.png}} & T & D,SD & A & T & D,SD & T & T & D,SD & A & T & D,SD & T,F & D,SD & D,SD & D,SD & T & D,SD & T & D,SD & D,SD & T & D,SD & T & D,SD &  &  & 2 & 0 & 10 & 1\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_47.png}} &  &  &  & A & A & T &  & A & T &  & A & T &  &  & T & A &  &  &  &  &  &  & A &  &  &  & 6 & 0 & 4 & 15\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_48.png}} & A & T & D,SD & A & T & D,SD & A & T & D,SD & D,SD & T & D,SD & D,SD & D,SD & D,SD & T & D,SD & D & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD & T,SD &  & 3 & 1 & 5 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_49.png}} & T & A & A & T & D & A & T & A & A & T & A & A & T &  & A & T & A & A & T & D & A &  &  &  & T &  & 11 & 2 & 8 & 4\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_50.png}} &  & A & T & D,F & A & T & A & A & T & A & A & T & A & A & T & A & A & T & T & T &  & T &  & A & T &  & 11 & 1 & 10 & 3\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_51.png}} & A & T & D,SD & A & T & D,SD & D,SD & T & D,SD & A & T & D,SD &  & D,SD & D,SD &  & T & D,SD & D,SD & T &  & T & D,SD & D,SD & D,SD & D,SD & 3 & 0 & 7 & 2\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_52.png}} & T & D,SD &  & T & A &  &  & D,SD & A &  &  & A & T &  &  &  &  & A & T & A & A & T & A & A & T &  & 8 & 0 & 6 & 9\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_53.png}} &  & A & T & D,SD & A & T & D,SD & A & A & A & T &  &  & A & T & A & A & T & A & A &  &  & A &  & A &  & 12 & 0 & 5 & 6\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_54.png}} & A & T & D,SD & D,SD & T & D,SD & D,SD & D,SD & D,SD & D,SD & T & D,SD & D,SD & D,SD & D,SD & D,SD & T & D,SD & A & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD &  & 2 & 0 & 4 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_55.png}} & T & D,SD & A & T & D,SD & A & T & D,SD & D,SD & T & D,SD & D,SD & D,SD & D,SD & D & T & D,SD &  & D,SD & D,SD & A & T & D,SD & A & D,SD &  & 4 & 1 & 6 & 1\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_56.png}} & D,SD & A & T & D,SD & D,SD & T & D,SD & D,SD & T & D,SD & D,SD & T & D,SD & A & T & D,SD & D,SD & T & D,SD & D,SD &  & D,SD & D,SD & D,SD & D,SD &  & 2 & 0 & 6 & 1\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_57.png}} & A & T &  & D,SD & T & D,SD & A & D,SD & T,SD & A & T & D,SD & D,SD & T & D,SD & D,SD & T & D,SD & A & T & D,SD & A & T & D,SD & T &  & 5 & 0 & 8 & 1\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_58.png}} &  &  &  &  &  &  &  &  &  &  &  &  & T &  &  &  & A &  &  &  & A &  &  &  & T &  & 2 & 0 & 2 & 21\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_59.png}} & A &  & T & A & A & T &  & A & T & A & A &  & T & A & A & T & A & A & T & D & D,SD & T & D &  &  &  & 10 & 2 & 7 & 5\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_60.png}} & A &  & A &  & T & A &  & T & D &  & T & D & A & T &  & A &  & A &  & T &  & A &  & A & A &  & 9 & 2 & 5 & 9\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_61.png}} & T & D,SD & A & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD & T & D,SD & D,SD & T & D,SD & D,SD & D,SD & D,SD & A & T & D,SD & D,SD & D,SD &  & D,SD & D,SD &  & 2 & 0 & 4 & 1\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_62.png}} & D,SD & A & T & D,SD & D,SD & T & D,SD & A & T & D,SD & D,SD & T & D,SD &  & T & D,SD & D,SD & T & D,SD & D,SD & T & D,SD & A & D,SD & D,SD & D,SD & 3 & 0 & 7 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_64.png}} & T & D,SD & A & T & D,SD & D,SD & D,SD & D,SD & D,SD & T & D & D,SD & T & D,SD & D,SD & T & D,SD & A & D,SD & D & A & T & D,SD & D,SD & D,SD &  & 3 & 2 & 6 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_65.png}} &  & A & T &  &  & T & A & A & T &  &  &  & A &  &  &  &  &  &  &  & T & A &  &  &  &  & 5 & 0 & 4 & 16\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_66.png}} &  & T & A & A &  & A &  &  & A & T & T &  & A & T & D,SD & D,SD & T & D &  &  & A & A &  &  &  &  & 7 & 1 & 5 & 10\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_67.png}} & T & D & A & T & D & A & T & D,SD & D,SD & T & D,SD & D,SD &  &  & T,SD & T & D,SD & A & T & D,SD & D,SD & T & T &  & T & D & 3 & 3 & 9 & 2\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_68.png}} & D,SD & A & T & D,SD & D,SD & D,SD & D & D,SD & T & D,SD &  & T & D,SD &  & T & D,SD & D,SD & T & D,SD & A & T &  & A & T & A &  & 4 & 1 & 7 & 3\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_69.png}} & A & T & D,SD & D,SD & D,SD & D,SD & A & T &  & D,SD & T & D,SD & D &  & D,SD & D,SD & T & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD & 2 & 1 & 4 & 1\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_70.png}} & T & D,SD & A & T & D,SD & D,SD & D,SD & D,SD & D,SD & T & D,SD & T,SD & D,SD &  & D,SD & T & D,SD & A & D,SD & D,SD & A & T & D,SD & A & D,SD & D,SD & 4 & 0 & 5 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_71.png}} & D,SD & A & T & D,SD & D,SD & D,SD & D,SD & D,SD & T & D,SD & D,SD & D,SD & D,SD & D,SD & T & D,SD & D,SD &  & D,SD & D,SD & A & D,SD & D,SD & D,SD & T,SD &  & 2 & 0 & 3 & 1\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_72.png}} & A & T & D,SD & D,SD & T & D,SD & A & T & D & A & T & D &  & T & D,SD & A & T & D,SD & D,SD & T & D,SD & D,SD & T & D,SD & D,SD &  & 4 & 2 & 8 & 1\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_73.png}} & T & A & A &  & D,SD & D,SD & T & D,SD & T,SD & T,F & D & D,SD & T &  & A & T & T,SD & A & T & D,SD &  & T & D,SD & A & T &  & 5 & 1 & 8 & 3\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_74.png}} & D,SD & A & T & D,SD & D,SD & T & D,SD & D,SD & D,SD & D,SD & D,SD & T & D,SD & A & T &  & D,SD & T & D,SD & A & T & D,SD & D,SD & T & D,SD &  & 3 & 0 & 7 & 1\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_75.png}} & A & T & D,SD & D,SD & D,SD & D,SD & D,SD & T & D,SD & D,SD & D,SD & D,SD & D,SD & T & D,SD & A & D,SD & D,SD &  & D,SD & T,SD & D,SD &  & D,SD & D,SD &  & 2 & 0 & 3 & 2\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_76.png}} & T & T,SD & A & T & D,SD & D,SD & T & D,SD & A & T & D,SD & D,SD & T & D,SD & D,SD & T & D,SD & D,SD & T & D,SD & A & D,SD & D,SD & D,SD & D,SD &  & 3 & 0 & 7 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_77.png}} & D,SD & A & T & D & A & T & D,SD & A & T & T,SD & D,SD & T & D,SD & A & T & D,SD & D,SD & T & D,SD & D,SD & T & D,SD & D,SD & T & D,SD &  & 4 & 1 & 8 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_78.png}} & A & T & D,SD & D,SD &  & D,SD & D,SD & T & D,SD & D,SD & D,SD & D,SD & D,SD & T & D,SD & A & T & D,SD & A & T & D,SD & D,SD & T,SD & D,SD & D,SD &  & 3 & 0 & 5 & 1\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_79.png}} & T & D,SD & A & D,SD & D,SD & T,SD & T & D,SD & D,SD &  &  & D,SD & D,SD & D,SD & A & T & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD & D,SD & D,F &  & 2 & 1 & 3 & 2\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_80.png}} & D,SD & A & T & D,SD & T,SD & T & D,SD & D,SD & T & D,SD & D,SD & D,SD & T,SD & D,SD & T & D,SD & A & T,SD & D,SD & D,SD & T,SD & D,SD & D,SD & D,SD & D,SD &  & 2 & 0 & 4 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_81.png}} & A & T & D,SD & T,SD & D,SD & D,SD & D,SD & T & D,SD & A & T & D,SD & D,SD & T & T,SD & D,SD & T & D,SD & A & T & D,SD & D,SD & D,SD & D,SD & T,SD &  & 3 & 0 & 6 & 0\\*
+\end{longtable}
+\endgroup{}
+\end{landscape}
+\clearpage
+
+\section{SUMMARY OF SABLEFISH BIOLOGICAL DATA 2021.}
+\label{app:fifth-appendix}
+
+Summary of biological data collected for sablefish by set, catch weight in kilograms and numbers of fish. Sablefish counts by trap are represented by sparklines, with every string picked up from the end location in 2021. Tagged fish counts are recorded by number of fish recovered and re-released, fish sampled and fish tagged and released. Tagged fish fork lengths are listed by count and mean (millimeters). Specimen counts are listed by sample type; mean fork lengths are tabulated. Standardized sets at mainland inlet localities are highlighted with green colour and StRS sets have no background colour. Those set numbers highlighted with purple colour had a camera deployed on the string of gear. The 4 sets highlighted in blue colour represent the 60 trap sets that were deployed to evaluate gear bottom-contact.
+\begin{landscape}\begingroup\fontsize{8}{10}\selectfont
+\begin{longtable}{>{\raggedleft\arraybackslash}p{0.3cm}>{\raggedleft\arraybackslash}p{0.6cm}>{\raggedleft\arraybackslash}p{0.7cm}>{\raggedleft\arraybackslash}p{1.4cm}>{\raggedleft\arraybackslash}p{0.9cm}>{\raggedleft\arraybackslash}p{1.3cm}>{\raggedleft\arraybackslash}p{0.9cm}>{\raggedleft\arraybackslash}p{1.5cm}>{\raggedleft\arraybackslash}p{0.9cm}>{\raggedleft\arraybackslash}p{0.7cm}>{\raggedleft\arraybackslash}p{0.6cm}>{\raggedleft\arraybackslash}p{0.7cm}>{\raggedleft\arraybackslash}p{0.8cm}>{\raggedleft\arraybackslash}p{0.6cm}>{\raggedleft\arraybackslash}p{0.6cm}>{\raggedleft\arraybackslash}p{1.1cm}>{\raggedleft\arraybackslash}p{0.7cm}>{\raggedleft\arraybackslash}p{0.7cm}}
+\toprule
+\multicolumn{1}{c}{\textbf{Set}} & \multicolumn{3}{c}{\textbf{Total Catch}} & \multicolumn{3}{c}{\textbf{Tagged Fish Counts}} & \multicolumn{2}{c}{\textbf{Tagged Fork Lengths(mm)}} & \multicolumn{6}{c}{\textbf{Specimen Count}} & \multicolumn{3}{c}{\textbf{Mean Fork Length(mm)}} \\
+\cmidrule(l{3pt}r{3pt}){1-1} \cmidrule(l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-7} \cmidrule(l{3pt}r{3pt}){8-9} \cmidrule(l{3pt}r{3pt}){10-15} \cmidrule(l{3pt}r{3pt}){16-18}
+\textbf{} & \textbf{kg} & \textbf{Count} & \textbf{Count by Trap} & \textbf{Recover-Rerelease} & \textbf{Tag Sample} & \textbf{Released} & \textbf{Count} & \textbf{Mean} & \textbf{Fork Length} & \textbf{Sex} & \textbf{Maturity} & \textbf{Otoliths} & \textbf{Weight} & \textbf{Count} & \textbf{Proportion Males} & \textbf{Males} & \textbf{Females}\\
+\midrule
+\endfirsthead
+\multicolumn{18}{@{}l}{continued.}\\
+\toprule
+\multicolumn{1}{c}{\textbf{Set}} & \multicolumn{3}{c}{\textbf{Total Catch}} & \multicolumn{3}{c}{\textbf{Tagged Fish Counts}} & \multicolumn{2}{c}{\textbf{Tagged Fork Lengths(mm)}} & \multicolumn{6}{c}{\textbf{Specimen Count}} & \multicolumn{3}{c}{\textbf{Mean Fork Length(mm)}} \\
+\cmidrule(l{3pt}r{3pt}){1-1} \cmidrule(l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-7} \cmidrule(l{3pt}r{3pt}){8-9} \cmidrule(l{3pt}r{3pt}){10-15} \cmidrule(l{3pt}r{3pt}){16-18}
+\textbf{} & \textbf{kg} & \textbf{Count} & \textbf{Count by Trap} & \textbf{Recover-Rerelease} & \textbf{Tag Sample} & \textbf{Released} & \textbf{Count} & \textbf{Mean} & \textbf{Fork Length} & \textbf{Sex} & \textbf{Maturity} & \textbf{Otoliths} & \textbf{Weight} & \textbf{Count} & \textbf{Proportion Males} & \textbf{Males} & \textbf{Females}\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_1.png}} & 3403 & 1829 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig1.png}} & 0 & 0 & 139 & 137 & 549 & 49 & 49 & 49 & 49 & 49 & 49 & 0.31 & 528 & 575\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_2.png}} & 2645 & 1567 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig2.png}} & 0 & 0 & 190 & 190 & 536 & 50 & 49 & 49 & 49 & 49 & 50 & 0.73 & 537 & 580\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_3.png}} & 857 & 330 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig3.png}} & 5 & 0 & 102 & 107 & 622 & 51 & 51 & 51 & 51 & 51 & 51 & 0.16 & 615 & 632\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_4.png}} & 953 & 489 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig4.png}} & 0 & 0 & 121 & 121 & 571 & 57 & 52 & 52 & 52 & 52 & 57 & 0.63 & 556 & 604\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_5.png}} & 3565 & 2123 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig5.png}} & 1 & 0 & 143 & 144 & 541 & 55 & 55 & 55 & 50 & 55 & 55 & 0.62 & 535 & 578\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_6.png}} & 880 & 527 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig6.png}} & 1 & 0 & 121 & 122 & 546 & 54 & 48 & 48 & 48 & 48 & 54 & 0.69 & 546 & 569\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_7.png}} & 0 & 2476 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig7.png}} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_8.png}} & 1907 & 727 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig8.png}} & 0 & 0 & 139 & 139 & 610 & 58 & 57 & 57 & 58 & 58 & 58 & 0.11 & 558 & 607\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_9.png}} & 1709 & 938 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig9.png}} & 2 & 0 & 123 & 125 & 536 & 43 & 43 & 43 & 43 & 43 & 43 & 0.67 & 544 & 550\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_10.png}} & 867 & 284 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig10.png}} & 1 & 0 & 93 & 94 & 653 & 50 & 51 & 51 & 51 & 51 & 51 & 0.12 & 638 & 659\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_11.png}} & 1323 & 761 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig11.png}} & 1 & 0 & 137 & 138 & 531 & 46 & 46 & 46 & 44 & 46 & 46 & 0.83 & 541 & 594\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_12.png}} & 1811 & 825 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig12.png}} & 1 & 0 & 127 & 128 & 582 & 58 & 54 & 54 & 54 & 54 & 58 & 0.07 & 569 & 596\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_13.png}} & 1353 & 768 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig13.png}} & 1 & 0 & 135 & 136 & 538 & 57 & 57 & 57 & 57 & 57 & 57 & 0.75 & 538 & 563\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_14.png}} & 0 & 1861 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig14.png}} & 0 & 9 & 0 & 9 & 580 & 9 & 9 & 9 & 9 & 9 & 9 & 0.89 & 599 & 580\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_15.png}} & 869 & 304 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig15.png}} & 0 & 0 & 122 & 122 & 624 & 55 & 55 & 55 & 55 & 55 & 55 & 0.24 & 585 & 625\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_16.png}} & 1116 & 716 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig16.png}} & 3 & 0 & 130 & 133 & 508 & 51 & 51 & 51 & 51 & 51 & 51 & 0.86 & 510 & 524\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_17.png}} & 367 & 102 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig17.png}} & 1 & 0 & 19 & 20 & 685 & 48 & 48 & 48 & 48 & 48 & 48 & 0.02 & 530 & 692\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_18.png}} & 824 & 312 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig18.png}} & 4 & 0 & 97 & 101 & 619 & 50 & 49 & 50 & 50 & 50 & 50 & 0.2 & 590 & 626\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_19.png}} & 743 & 397 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig19.png}} & 0 & 0 & 98 & 98 & 528 & 56 & 57 & 57 & 57 & 57 & 57 & 0.44 & 529 & 554\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_20.png}} & 347 & 137 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig20.png}} & 0 & 0 & 33 & 33 & 606 & 54 & 54 & 54 & 54 & 54 & 54 & 0.28 & 572 & 638\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_21.png}} & 1127 & 741 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig21.png}} & 4 & 0 & 146 & 150 & 518 & 50 & 50 & 50 & 50 & 50 & 50 & 0.78 & 509 & 575\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_22.png}} & 527 & 197 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig22.png}} & 0 & 0 & 60 & 59 & 620 & 47 & 47 & 47 & 47 & 47 & 47 & 0.11 & 537 & 605\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_23.png}} & 342 & 102 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig23.png}} & 0 & 0 & 29 & 29 & 646 & 47 & 47 & 47 & 47 & 47 & 47 & 0.04 & 630 & 668\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_24.png}} & 1236 & 755 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig24.png}} & 4 & 0 & 145 & 149 & 545 & 52 & 52 & 52 & 52 & 52 & 52 & 0.48 & 528 & 579\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_25.png}} & 2729 & 1219 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig25.png}} & 0 & 0 & 134 & 134 & 567 & 47 & 47 & 47 & 47 & 47 & 47 & 0.4 & 554 & 574\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_26.png}} & 2070 & 960 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig26.png}} & 1 & 0 & 129 & 129 & 582 & 55 & 55 & 55 & 55 & 55 & 55 & 0.62 & 565 & 599\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_27.png}} & 0 & 1892 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig27.png}} & 0 & 4 & 0 & 4 & 558 & 4 & 4 & 4 & 4 & 4 & 4 & 0.5 & 565 & 638\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_28.png}} & 846 & 493 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig28.png}} & 0 & 0 & 136 & 135 & 540 & 51 & 51 & 51 & 51 & 51 & 51 & 0.65 & 530 & 568\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_29.png}} & 802 & 441 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig29.png}} & 1 & 0 & 127 & 126 & 539 & 48 & 47 & 47 & 47 & 47 & 48 & 0.79 & 514 & 562\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_30.png}} & 751 & 441 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig30.png}} & 1 & 0 & 110 & 111 & 544 & 52 & 52 & 52 & 52 & 52 & 52 & 0.62 & 538 & 600\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_31.png}} & 920 & 495 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig31.png}} & 3 & 0 & 116 & 119 & 537 & 49 & 49 & 49 & 49 & 49 & 50 & 0.71 & 546 & 554\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_32.png}} & 1100 & 632 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig32.png}} & 1 & 1 & 102 & 104 & 536 & 49 & 49 & 49 & 49 & 49 & 49 & 0.67 & 512 & 562\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_33.png}} & 1377 & 980 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig33.png}} & 0 & 0 & 147 & 147 & 514 & 52 & 52 & 52 & 52 & 52 & 52 & 0.63 & 498 & 531\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_34.png}} & 1059 & 468 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig34.png}} & 7 & 0 & 105 & 111 & 591 & 48 & 48 & 48 & 48 & 48 & 48 & 0.21 & 537 & 594\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_35.png}} & 406 & 176 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig35.png}} & 0 & 0 & 54 & 53 & 594 & 53 & 53 & 53 & 53 & 53 & 53 & 0.36 & 512 & 576\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_36.png}} & 503 & 217 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig36.png}} & 3 & 0 & 59 & 62 & 578 & 54 & 54 & 54 & 54 & 54 & 54 & 0.24 & 562 & 606\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_37.png}} & 618 & 281 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig37.png}} & 1 & 0 & 61 & 62 & 582 & 54 & 54 & 54 & 54 & 54 & 54 & 0.31 & 522 & 581\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_38.png}} & 255 & 131 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig38.png}} & 0 & 0 & 69 & 68 & 536 & 51 & 51 & 51 & 51 & 51 & 51 & 0.35 & 536 & 560\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_39.png}} & 484 & 154 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig39.png}} & 0 & 0 & 88 & 87 & 631 & 58 & 58 & 58 & 56 & 58 & 58 & 0.33 & 616 & 680\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_40.png}} & 690 & 355 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig40.png}} & 1 & 0 & 130 & 131 & 547 & 52 & 52 & 52 & 52 & 52 & 52 & 0.75 & 528 & 587\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_41.png}} & 2372 & 1143 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig41.png}} & 0 & 0 & 190 & 189 & 559 & 59 & 59 & 59 & 59 & 59 & 59 & 0.22 & 527 & 589\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_42.png}} & 1052 & 462 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig42.png}} & 1 & 0 & 121 & 122 & 588 & 54 & 52 & 52 & 52 & 52 & 54 & 0.08 & 575 & 606\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_43.png}} & 588 & 262 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig43.png}} & 2 & 0 & 133 & 134 & 581 & 53 & 53 & 53 & 53 & 53 & 53 & 0.64 & 583 & 655\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_44.png}} & 351 & 161 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig44.png}} & 0 & 0 & 91 & 91 & 586 & 54 & 49 & 49 & 48 & 49 & 55 & 0.27 & 543 & 587\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_45.png}} & 709 & 286 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig45.png}} & 0 & 0 & 116 & 116 & 593 & 54 & 53 & 53 & 53 & 53 & 54 & 0.23 & 551 & 587\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_46.png}} & 1070 & 361 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig46.png}} & 2 & 0 & 127 & 128 & 628 & 57 & 56 & 56 & 56 & 56 & 57 & 0.13 & 578 & 634\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_47.png}} & 110 & 41 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig47.png}} & 0 & 0 & 11 & 11 & 594 & 30 & 30 & 30 & 30 & 30 & 30 & 0.33 & 579 & 641\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_48.png}} & 1326 & 536 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig48.png}} & 1 & 0 & 131 & 132 & 595 & 51 & 51 & 51 & 51 & 51 & 51 & 0.43 & 590 & 596\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_49.png}} & 294 & 65 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig49.png}} & 0 & 0 & 28 & 28 & 679 & 31 & 31 & 31 & 31 & 31 & 31 & 0.19 & 625 & 748\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_50.png}} & 473 & 134 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig50.png}} & 0 & 0 & 81 & 80 & 668 & 49 & 49 & 49 & 49 & 49 & 49 & 0.2 & 616 & 676\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_51.png}} & 965 & 464 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig51.png}} & 0 & 0 & 127 & 127 & 575 & 55 & 55 & 55 & 55 & 55 & 55 & 0.44 & 562 & 588\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_52.png}} & 231 & 72 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig52.png}} & 0 & 0 & 19 & 19 & 665 & 47 & 47 & 47 & 47 & 47 & 47 & 0.06 & 508 & 664\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_53.png}} & 262 & 74 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig53.png}} & 0 & 0 & 19 & 19 & 652 & 47 & 47 & 47 & 47 & 47 & 47 & 0.26 & 605 & 703\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_54.png}} & 1616 & 924 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig54.png}} & 0 & 0 & 122 & 122 & 532 & 47 & 47 & 47 & 47 & 47 & 47 & 0.49 & 536 & 553\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_55.png}} & 1072 & 472 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig55.png}} & 0 & 0 & 120 & 120 & 570 & 51 & 51 & 51 & 51 & 51 & 51 & 0.55 & 541 & 555\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_56.png}} & 1149 & 506 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig56.png}} & 0 & 0 & 130 & 129 & 583 & 51 & 51 & 51 & 51 & 51 & 51 & 0.47 & 540 & 596\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_57.png}} & 762 & 443 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig57.png}} & 2 & 0 & 113 & 115 & 548 & 59 & 59 & 59 & 59 & 59 & 59 & 0.44 & 519 & 543\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_58.png}} & 29 & 9 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig58.png}} & 0 & 0 & 5 & 5 & 646 & 4 & 4 & 4 & 4 & 4 & 4 & 0.25 & 665 & 662\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_59.png}} & 266 & 90 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig59.png}} & 0 & 0 & 30 & 30 & 629 & 52 & 52 & 52 & 52 & 52 & 52 & 0.25 & 633 & 675\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_60.png}} & 269 & 81 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig60.png}} & 0 & 0 & 24 & 24 & 678 & 46 & 46 & 46 & 46 & 46 & 46 & 0.24 & 666 & 678\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_61.png}} & 2227 & 1332 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig61.png}} & 1 & 0 & 185 & 186 & 517 & 58 & 58 & 58 & 58 & 58 & 58 & 0.55 & 503 & 539\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_62.png}} & 1122 & 574 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig62.png}} & 1 & 0 & 118 & 119 & 572 & 51 & 51 & 51 & 51 & 51 & 51 & 0.61 & 563 & 606\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_63.png}} & 0 & 1360 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig63.png}} & 0 & 1 & 0 & 1 & 796 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 775\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_64.png}} & 1659 & 543 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig64.png}} & 0 & 0 & 138 & 138 & 644 & 55 & 55 & 55 & 55 & 55 & 55 & 0.33 & 601 & 672\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_65.png}} & 40 & 16 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig65.png}} & 0 & 0 & 10 & 10 & 580 & 6 & 6 & 6 & 6 & 6 & 6 & 0.33 & 548 & 614\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_66.png}} & 215 & 89 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig66.png}} & 1 & 0 & 14 & 15 & 622 & 45 & 45 & 45 & 45 & 45 & 45 & 0.67 & 616 & 631\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_67.png}} & 1107 & 360 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig67.png}} & 2 & 1 & 110 & 113 & 637 & 51 & 50 & 50 & 50 & 50 & 51 & 0.32 & 618 & 657\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_68.png}} & 1047 & 374 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig68.png}} & 0 & 0 & 115 & 115 & 607 & 44 & 44 & 44 & 42 & 44 & 44 & 0.32 & 583 & 628\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_69.png}} & 2324 & 1280 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig69.png}} & 1 & 0 & 138 & 139 & 565 & 64 & 50 & 50 & 50 & 50 & 64 & 0.48 & 548 & 569\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_70.png}} & 1599 & 657 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig70.png}} & 1 & 0 & 133 & 134 & 604 & 53 & 53 & 53 & 53 & 53 & 53 & 0.38 & 590 & 622\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_71.png}} & 2006 & 1137 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig71.png}} & 1 & 0 & 134 & 135 & 527 & 55 & 54 & 54 & 54 & 54 & 55 & 0.44 & 499 & 565\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_72.png}} & 585 & 190 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig72.png}} & 0 & 0 & 55 & 55 & 647 & 49 & 49 & 49 & 49 & 49 & 49 & 0.37 & 613 & 654\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_73.png}} & 678 & 197 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig73.png}} & 3 & 0 & 57 & 60 & 670 & 53 & 52 & 52 & 52 & 52 & 53 & 0.17 & 584 & 689\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_74.png}} & 995 & 429 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig74.png}} & 0 & 0 & 140 & 140 & 565 & 51 & 51 & 51 & 51 & 51 & 51 & 0.49 & 571 & 604\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_75.png}} & 1426 & 909 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig75.png}} & 1 & 0 & 127 & 128 & 538 & 51 & 52 & 52 & 52 & 52 & 52 & 0.75 & 534 & 597\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_76.png}} & 1089 & 569 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig76.png}} & 1 & 0 & 147 & 148 & 557 & 51 & 51 & 51 & 51 & 51 & 51 & 0.69 & 562 & 636\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_77.png}} & 779 & 288 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig77.png}} & 1 & 0 & 108 & 109 & 626 & 52 & 52 & 52 & 52 & 52 & 52 & 0.35 & 540 & 644\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_78.png}} & 1091 & 616 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig78.png}} & 1 & 0 & 129 & 130 & 555 & 54 & 54 & 54 & 54 & 54 & 54 & 0.69 & 540 & 561\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_79.png}} & 1380 & 1025 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig79.png}} & 1 & 0 & 126 & 127 & 500 & 52 & 52 & 52 & 52 & 52 & 52 & 0.58 & 502 & 551\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_80.png}} & 1351 & 887 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig80.png}} & 5 & 0 & 127 & 132 & 505 & 54 & 54 & 54 & 54 & 54 & 54 & 0.61 & 497 & 552\\
+\raisebox{-.28\height} {\includegraphics[width=0.8cm]{sets_81.png}} & 1050 & 588 & \raisebox{.12\height} {\includegraphics[width=2cm]{fig81.png}} & 5 & 0 & 132 & 137 & 555 & 49 & 49 & 49 & 49 & 49 & 49 & 0.61 & 539 & 559\\
+\midrule
+Movement &  & 7,589 &  & 0 & 14 & 0 & 0 &  & 14 & 14 & 14 & 14 & 14 & 14 &  &  & \\
+Other &  & 41,020 &  & 82 & 2 & 7,997 & 8,065 &  & 3,860 & 3,818 & 3,819 & 3,808 & 3,820 & 3,865 &  &  & \\
+\midrule
+\textbf{Total} & \textbf{} & \textbf{48,609} & \textbf{} & \textbf{82} & \textbf{16} & \textbf{7,997} & \textbf{8,079} & \textbf{} & \textbf{3,874} & \textbf{3,832} & \textbf{3,833} & \textbf{3,822} & \textbf{3,834} & \textbf{3,879} & \textbf{} & \textbf{} & \textbf{}\\*
+\end{longtable}
+\endgroup{}
+\end{landscape}
+\clearpage
+
+\section{SUMMARY OF BIOLOGICAL DATA FOR THE ROUGHEYE/BLACKSPOTTED ROCKFISH COMPLEX.}
+\label{app:sixth-appendix}
+
+Biological data collected for rougheye/blackspotted rockfish complex. Each set is listed with counts of specimens sampled, calculations of mean fork lengths and the number of species visually identified as either a RE = rougheye rockfish, BS = blackspotted rockfish or a hybrid. All were captured on StRS sets. ~\\
+\hspace*{0.333em}\\
+
+\begingroup\fontsize{8}{10}\selectfont
+\begin{longtable}{>{\raggedleft\arraybackslash}p{0.5cm}>{\centering\arraybackslash}p{0.7cm}>{\centering\arraybackslash}p{0.7cm}>{\centering\arraybackslash}p{0.4cm}>{\centering\arraybackslash}p{0.7cm}>{\centering\arraybackslash}p{0.6cm}>{\centering\arraybackslash}p{0.5cm}>{\centering\arraybackslash}p{0.5cm}>{\centering\arraybackslash}p{1.0cm}>{\centering\arraybackslash}p{0.7cm}>{\centering\arraybackslash}p{0.8cm}>{\centering\arraybackslash}p{0.5cm}>{\centering\arraybackslash}p{0.4cm}>{\centering\arraybackslash}p{0.4cm}>{\centering\arraybackslash}p{0.4cm}}
+\toprule
+\multicolumn{1}{c}{\textbf{ }} & \multicolumn{7}{c}{\textbf{Specimen Count}} & \multicolumn{4}{c}{\textbf{Mean Fork Length(mm)}} & \multicolumn{3}{c}{\textbf{Sampler Visual id}} \\
+\cmidrule(l{3pt}r{3pt}){2-8} \cmidrule(l{3pt}r{3pt}){9-12} \cmidrule(l{3pt}r{3pt}){13-15}
+\textbf{\textbf{Set}} & \textbf{\textbf{Fork Length}} & \textbf{\textbf{Weight}} & \textbf{\textbf{Sex}} & \textbf{\textbf{Maturity}} & \textbf{\textbf{Otolith}} & \textbf{\textbf{DNA}} & \textbf{\textbf{Total Count}} & \textbf{\textbf{Proportion Males}} & \textbf{\textbf{Males}} & \textbf{\textbf{Females}} & \textbf{\textbf{No sex}} & \textbf{\textbf{RE}} & \textbf{\textbf{BS}} & \textbf{\textbf{Hybrid}}\\
+\midrule
+\endfirsthead
+\multicolumn{15}{@{}l}{continued.}\\
+\toprule
+\multicolumn{1}{c}{\textbf{ }} & \multicolumn{7}{c}{\textbf{Specimen Count}} & \multicolumn{4}{c}{\textbf{Mean Fork Length(mm)}} & \multicolumn{3}{c}{\textbf{Sampler Visual id}} \\
+\cmidrule(l{3pt}r{3pt}){2-8} \cmidrule(l{3pt}r{3pt}){9-12} \cmidrule(l{3pt}r{3pt}){13-15}
+\textbf{\textbf{Set}} & \textbf{\textbf{Fork Length}} & \textbf{\textbf{Weight}} & \textbf{\textbf{Sex}} & \textbf{\textbf{Maturity}} & \textbf{\textbf{Otolith}} & \textbf{\textbf{DNA}} & \textbf{\textbf{Total Count}} & \textbf{\textbf{Proportion Males}} & \textbf{\textbf{Males}} & \textbf{\textbf{Females}} & \textbf{\textbf{No sex}} & \textbf{\textbf{RE}} & \textbf{\textbf{BS}} & \textbf{\textbf{Hybrid}}\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+19 & 3 & 3 & 3 & 3 & 3 & 3 & 3 & 0 & 0 & 492 & 0 & 2 & 1 & 0\\
+26 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 520 & 0 & 0 & 0 & 0\\
+48 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 0 & 0 & 445 & 0 & 1 & 1 & 0\\
+53 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 1 & 465 & 0 & 0 & 0 & 2 & 0\\
+55 & 25 & 25 & 25 & 25 & 25 & 25 & 62 & 0.44 & 475 & 474 & 0 & 9 & 16 & 0\\
+56 & 11 & 11 & 11 & 11 & 11 & 11 & 11 & 0.73 & 470 & 490 & 0 & 2 & 9 & 0\\
+64 & 24 & 24 & 24 & 24 & 24 & 24 & 36 & 0.38 & 457 & 472 & 0 & 0 & 24 & 0\\
+67 & 14 & 14 & 14 & 14 & 14 & 14 & 14 & 0.64 & 488 & 480 & 0 & 1 & 12 & 1\\
+68 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 0.5 & 487 & 453 & 0 & 1 & 9 & 0\\
+70 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 410 & 0 & 0 & 0 & 1 & 0\\
+72 & 8 & 8 & 8 & 8 & 8 & 8 & 8 & 0.63 & 449 & 510 & 0 & 3 & 5 & 0\\
+74 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 415 & 0 & 0 & 0 & 1 & 0\\
+\midrule
+ & 102 & 102 & 102 & 102 & 102 & 102 & 151 &  &  &  &  & 19 & 81 & 1\\*
+\end{longtable}
+\endgroup{}
+\clearpage
+
+\section{SUMMARY OF BIOLOGICAL DATA FOR OTHER ROCKFISH SPECIES AND LINGCOD.}
+\label{app:seventh-appendix}
+
+Biological data collected for other rockfish species and lingcod. Each set is listed with counts of specimens sampled and calculations of mean fork lengths. All were captured on StRS sets.
+
+~\\
+
+\begingroup\fontsize{8}{10}\selectfont
+\begin{longtable}{>{\raggedright\arraybackslash}p{3.5cm}>{\raggedleft\arraybackslash}p{0.5cm}>{\centering\arraybackslash}p{0.7cm}>{\centering\arraybackslash}p{0.7cm}>{\centering\arraybackslash}p{0.4cm}>{\centering\arraybackslash}p{0.7cm}>{\centering\arraybackslash}p{0.7cm}>{\centering\arraybackslash}p{0.2cm}>{\centering\arraybackslash}p{1.0cm}>{\centering\arraybackslash}p{0.5cm}>{\centering\arraybackslash}p{0.7cm}>{\centering\arraybackslash}p{0.6cm}}
+\toprule
+\multicolumn{2}{c}{\textbf{ }} & \multicolumn{6}{c}{\textbf{Specimen Count}} & \multicolumn{4}{c}{\textbf{Mean Fork Length(mm)}} \\
+\cmidrule(l{3pt}r{3pt}){3-8} \cmidrule(l{3pt}r{3pt}){9-12}
+\textbf{Species Name} & \textbf{Set} & \textbf{Fork Length} & \textbf{Weight} & \textbf{Sex} & \textbf{Maturity} & \textbf{Otolith} & \textbf{Total} & \textbf{Prop Males} & \textbf{Males} & \textbf{Females} & \textbf{No sex}\\
+\midrule
+\endfirsthead
+\multicolumn{12}{@{}l}{continued.}\\
+\toprule
+\multicolumn{2}{c}{\textbf{ }} & \multicolumn{6}{c}{\textbf{Specimen Count}} & \multicolumn{4}{c}{\textbf{Mean Fork Length(mm)}} \\
+\cmidrule(l{3pt}r{3pt}){3-8} \cmidrule(l{3pt}r{3pt}){9-12}
+\textbf{Species Name} & \textbf{Set} & \textbf{Fork Length} & \textbf{Weight} & \textbf{Sex} & \textbf{Maturity} & \textbf{Otolith} & \textbf{Total} & \textbf{Prop Males} & \textbf{Males} & \textbf{Females} & \textbf{No sex}\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+SHORTRAKER ROCKFISH & 54 & 1 & 1 & 1 & 1 & 1 & 1 & 1.00 & 485 & 0 & 0\\
+ & 68 & 1 & 1 & 1 & 1 & 1 & 1 & 1.00 & 635 & 0 & 0\\
+ & 70 & 2 & 2 & 2 & 2 & 2 & 2 & 0.00 & 0 & 543 & 0\\
+ & 72 & 1 & 1 & 1 & 1 & 1 & 1 & 1.00 & 775 & 0 & 0\\
+ & 74 & 1 & 1 & 1 & 1 & 1 & 1 & 1.00 & 450 & 0 & 0\\
+ & 81 & 2 & 2 & 2 & 2 & 2 & 2 & 0.50 & 635 & 520 & 0\\
+\midrule
+YELLOWEYE ROCKFISH & 20 & 2 & 2 & 2 & 2 & 2 & 2 & 1.00 & 533 & 0 & 0\\
+ & 44 & 15 & 15 & 15 & 15 & 15 & 15 & 0.47 & 594 & 548 & 0\\
+ & 45 & 6 & 6 & 6 & 6 & 6 & 6 & 0.33 & 625 & 604 & 0\\
+ & 46 & 3 & 3 & 2 & 2 & 3 & 3 & 0.50 & 450 & 495 & 595\\
+ & 49 & 2 & 2 & 2 & 2 & 2 & 2 & 0.50 & 495 & 605 & 0\\
+ & 50 & 15 & 15 & 15 & 15 & 15 & 15 & 0.47 & 544 & 494 & 0\\
+ & 52 & 1 & 1 & 1 & 1 & 1 & 1 & 1.00 & 565 & 0 & 0\\
+\midrule
+LINGCOD & 22 & 3 & 3 & 3 & 3 & 6 & 14 & 0.00 & 0 & 975 & 0\\
+ & 42 & 2 & 2 & 2 & 2 & 4 & 6 & 0.00 & 0 & 1003 & 0\\
+ & 44 & 1 & 1 & 1 & 1 & 2 & 18 & 0.00 & 0 & 1000 & 0\\
+ & 45 & 2 & 2 & 2 & 2 & 4 & 39 & 0.00 & 0 & 1043 & 0\\
+ & 50 & 2 & 2 & 2 & 2 & 4 & 11 & 0.00 & 0 & 1085 & 0\\
+ & 52 & 2 & 2 & 2 & 2 & 4 & 8 & 0.00 & 0 & 1100 & 0\\
+ & 58 & 9 & 9 & 9 & 9 & 18 & 12 & 0.00 & 0 & 1084 & 0\\
+ & 68 & 2 & 2 & 2 & 2 & 4 & 2 & 0.00 & 0 & 1077 & 0\\*
+\end{longtable}
+\endgroup{}
+
+\end{appendices}
+
+\clearpage
+
+\hypertarget{references}{%
+\section{References}\label{references}}
+
+\noindent \vspace{-2em} \setlength{\parindent}{-0.2in} \setlength{\leftskip}{0.2in} \setlength{\parskip}{8pt}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode{\hypertarget{ref-DFO2020}{}}%
+DFO. 2020. Evaluating the robustness of candidate management procedures in the {BC} {S}ablefish ({\emph{Anoplopoma fimbria}}) fishery for 2019-2020. DFO Can. Sci. Advis. Sec. Sci. Resp. (25).
+
+\leavevmode{\hypertarget{ref-Olsen2010}{}}%
+Olsen, N. 2010. CA user's guide to {GFBioField: The Pacific Region's} at-sea data acquisition system for groundfish trawl surveys. Can. Tech. Rep. Fish.Aquat. Sci. 2010/2887: x + 76 p.
+
+\leavevmode{\hypertarget{ref-Orr2008}{}}%
+Orr, J., and Wildes, S. 2008. Species of the rougheye rockfish complex: {R}esurrection of {S}ebastes melanostictus ({M}atsubara, 1934) and a redescription of {S}ebastes aleutianus ({J}ordan and {E}vermann, 1898) ({T}eleostei: {S}corpaeniformes). Fishery Bulletin- National Oceanic and Atmospheric Administration 106: 111--134.
+
+\leavevmode{\hypertarget{ref-Wyeth2003}{}}%
+Wyeth, M.R., and Kronlund, A.R. 2003. Sablefish ({\emph{Anoplopoma fimbria}}) {Research and Assessment Surveys} conducted in {British Columbia} waters from 1996 through 2000. Can. Data Rep. Fish. Aquat. Sci. 2003/1116: 130 p.
+
+\end{CSLReferences}
+\end{document}

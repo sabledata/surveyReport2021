@@ -1,0 +1,11 @@
+<PAMDataset>
+  <Metadata>
+    <MDI key="BSB_KNP">SC=75000,GD=NAD83,PR=MERCATOR,PP=52.200000,PI=0.166667,SP=,SK=0.000000,TA=90.000000,UN=FATHOMS AND FEET,SD=HHWLT,DX=7.500000,DY=7.500000</MDI>
+  </Metadata>
+  <Metadata domain="IMAGE_STRUCTURE">
+    <MDI key="GCPPROJECTIONX">PROJCS["Global Mercator",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],TOWGS84[0,0,0,0,0,0,0],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9108"]],AUTHORITY["EPSG","4326"]],PROJECTION["Mercator_2SP"],PARAMETER["standard_parallel_1",52.200000],PARAMETER["latitude_of_origin",0],PARAMETER["central_meridian",-127.984975],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["Meter",1]]</MDI>
+  </Metadata>
+  <Metadata domain="Esri">
+    <MDI key="PyramidResamplingType">NEAREST</MDI>
+  </Metadata>
+</PAMDataset>
