@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.5)  15 JUL 2022 17:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.5)  26 AUG 2022 14:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1277,51 +1277,42 @@ Overfull \hbox (5.38905pt too wide) in paragraph at lines 405--406
 ] [13
 
 ]
-<c:/github/surveyReport2021/figures/figure1.png, id=500, 639.89063pt x 828.0937
-5pt>
-File: c:/github/surveyReport2021/figures/figure1.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure1.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure1.png  used o
-n input line 622.
+<figures/Figure1.png, id=500, 639.89063pt x 828.09375pt>
+File: figures/Figure1.png Graphic file (type png)
+<use figures/Figure1.png>
+Package pdftex.def Info: figures/Figure1.png  used on input line 622.
 (pdftex.def)             Requested size: 411.539pt x 532.58115pt.
-File: c:/github/surveyReport2021/figures/figure1.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure1.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure1.png  used o
-n input line 622.
+File: figures/Figure1.png Graphic file (type png)
+<use figures/Figure1.png>
+Package pdftex.def Info: figures/Figure1.png  used on input line 622.
 (pdftex.def)             Requested size: 411.539pt x 532.58115pt.
-File: c:/github/surveyReport2021/figures/figure1.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure1.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure1.png  used o
-n input line 622.
+File: figures/Figure1.png Graphic file (type png)
+<use figures/Figure1.png>
+Package pdftex.def Info: figures/Figure1.png  used on input line 622.
 (pdftex.def)             Requested size: 411.539pt x 532.58115pt.
-File: c:/github/surveyReport2021/figures/figure1.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure1.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure1.png  used o
-n input line 622.
+File: figures/Figure1.png Graphic file (type png)
+<use figures/Figure1.png>
+Package pdftex.def Info: figures/Figure1.png  used on input line 622.
 (pdftex.def)             Requested size: 411.539pt x 532.58115pt.
 [14
 
- <c:/github/surveyReport2021/figures/figure1.png>]
-<c:/github/surveyReport2021/figures/figure2.png, id=509, 1445.4pt x 1445.4pt>
-File: c:/github/surveyReport2021/figures/figure2.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure2.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure2.png  used o
-n input line 633.
+ <./figures/Figure1.png>]
+<figures/Figure2.png, id=509, 1445.4pt x 1445.4pt>
+File: figures/Figure2.png Graphic file (type png)
+<use figures/Figure2.png>
+Package pdftex.def Info: figures/Figure2.png  used on input line 633.
 (pdftex.def)             Requested size: 481.79147pt x 481.79147pt.
-File: c:/github/surveyReport2021/figures/figure2.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure2.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure2.png  used o
-n input line 633.
+File: figures/Figure2.png Graphic file (type png)
+<use figures/Figure2.png>
+Package pdftex.def Info: figures/Figure2.png  used on input line 633.
 (pdftex.def)             Requested size: 481.79147pt x 481.79147pt.
-File: c:/github/surveyReport2021/figures/figure2.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure2.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure2.png  used o
-n input line 633.
+File: figures/Figure2.png Graphic file (type png)
+<use figures/Figure2.png>
+Package pdftex.def Info: figures/Figure2.png  used on input line 633.
 (pdftex.def)             Requested size: 481.79147pt x 481.79147pt.
-File: c:/github/surveyReport2021/figures/figure2.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure2.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure2.png  used o
-n input line 633.
+File: figures/Figure2.png Graphic file (type png)
+<use figures/Figure2.png>
+Package pdftex.def Info: figures/Figure2.png  used on input line 633.
 (pdftex.def)             Requested size: 481.79147pt x 481.79147pt.
 
 Overfull \hbox (12.03645pt too wide) in paragraph at lines 633--634
@@ -1330,258 +1321,208 @@ Overfull \hbox (12.03645pt too wide) in paragraph at lines 633--634
 
 [15
 
- <c:/github/surveyReport2021/figures/figure2.png>]
-<c:/github/surveyReport2021/figures/figure3.png, id=516, 686.565pt x 1026.83624
-pt>
-File: c:/github/surveyReport2021/figures/figure3.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure3.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure3.png  used o
-n input line 644.
+ <./figures/Figure2.png>]
+<figures/Figure3.png, id=516, 686.565pt x 1026.83624pt>
+File: figures/Figure3.png Graphic file (type png)
+<use figures/Figure3.png>
+Package pdftex.def Info: figures/Figure3.png  used on input line 644.
 (pdftex.def)             Requested size: 381.42523pt x 628.35907pt.
-File: c:/github/surveyReport2021/figures/figure3.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure3.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure3.png  used o
-n input line 644.
+File: figures/Figure3.png Graphic file (type png)
+<use figures/Figure3.png>
+Package pdftex.def Info: figures/Figure3.png  used on input line 644.
 (pdftex.def)             Requested size: 381.42523pt x 628.35907pt.
-File: c:/github/surveyReport2021/figures/figure3.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure3.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure3.png  used o
-n input line 644.
+File: figures/Figure3.png Graphic file (type png)
+<use figures/Figure3.png>
+Package pdftex.def Info: figures/Figure3.png  used on input line 644.
 (pdftex.def)             Requested size: 381.42523pt x 628.35907pt.
-File: c:/github/surveyReport2021/figures/figure3.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure3.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure3.png  used o
-n input line 644.
+File: figures/Figure3.png Graphic file (type png)
+<use figures/Figure3.png>
+Package pdftex.def Info: figures/Figure3.png  used on input line 644.
 (pdftex.def)             Requested size: 381.42523pt x 628.35907pt.
 
 LaTeX Warning: Float too large for page by 15.12906pt on input line 649.
 
-[16 <c:/github/surveyReport2021/figures/figure3.png>]
-<c:/github/surveyReport2021/figures/figure4.png, id=524, 614.295pt x 794.97pt>
-File: c:/github/surveyReport2021/figures/figure4.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure4.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure4.png  used o
-n input line 655.
+[16 <./figures/Figure3.png>]
+<figures/Figure4.png, id=524, 614.295pt x 794.97pt>
+File: figures/Figure4.png Graphic file (type png)
+<use figures/Figure4.png>
+Package pdftex.def Info: figures/Figure4.png  used on input line 655.
 (pdftex.def)             Requested size: 451.68915pt x 584.54462pt.
-File: c:/github/surveyReport2021/figures/figure4.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure4.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure4.png  used o
-n input line 655.
+File: figures/Figure4.png Graphic file (type png)
+<use figures/Figure4.png>
+Package pdftex.def Info: figures/Figure4.png  used on input line 655.
 (pdftex.def)             Requested size: 451.68915pt x 584.54462pt.
-File: c:/github/surveyReport2021/figures/figure4.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure4.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure4.png  used o
-n input line 655.
+File: figures/Figure4.png Graphic file (type png)
+<use figures/Figure4.png>
+Package pdftex.def Info: figures/Figure4.png  used on input line 655.
 (pdftex.def)             Requested size: 451.68915pt x 584.54462pt.
-File: c:/github/surveyReport2021/figures/figure4.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure4.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure4.png  used o
-n input line 655.
+File: figures/Figure4.png Graphic file (type png)
+<use figures/Figure4.png>
+Package pdftex.def Info: figures/Figure4.png  used on input line 655.
 (pdftex.def)             Requested size: 451.68915pt x 584.54462pt.
-[17 <c:/github/surveyReport2021/figures/figure4.png (PNG copy)>]
-<c:/github/surveyReport2021/figures/Figure5.png, id=530, 614.295pt x 794.97pt>
-File: c:/github/surveyReport2021/figures/Figure5.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/Figure5.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/Figure5.png  used o
-n input line 666.
+[17 <./figures/Figure4.png (PNG copy)>]
+<figures/Figure5.png, id=530, 614.295pt x 794.97pt>
+File: figures/Figure5.png Graphic file (type png)
+<use figures/Figure5.png>
+Package pdftex.def Info: figures/Figure5.png  used on input line 666.
 (pdftex.def)             Requested size: 451.68915pt x 584.54462pt.
-File: c:/github/surveyReport2021/figures/Figure5.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/Figure5.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/Figure5.png  used o
-n input line 666.
+File: figures/Figure5.png Graphic file (type png)
+<use figures/Figure5.png>
+Package pdftex.def Info: figures/Figure5.png  used on input line 666.
 (pdftex.def)             Requested size: 451.68915pt x 584.54462pt.
-File: c:/github/surveyReport2021/figures/Figure5.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/Figure5.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/Figure5.png  used o
-n input line 666.
+File: figures/Figure5.png Graphic file (type png)
+<use figures/Figure5.png>
+Package pdftex.def Info: figures/Figure5.png  used on input line 666.
 (pdftex.def)             Requested size: 451.68915pt x 584.54462pt.
-File: c:/github/surveyReport2021/figures/Figure5.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/Figure5.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/Figure5.png  used o
-n input line 666.
+File: figures/Figure5.png Graphic file (type png)
+<use figures/Figure5.png>
+Package pdftex.def Info: figures/Figure5.png  used on input line 666.
 (pdftex.def)             Requested size: 451.68915pt x 584.54462pt.
-[18 <c:/github/surveyReport2021/figures/Figure5.png (PNG copy)>]
-<c:/github/surveyReport2021/figures/figure6.png, id=536, 614.295pt x 794.97pt>
-File: c:/github/surveyReport2021/figures/figure6.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure6.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure6.png  used o
-n input line 677.
+[18 <./figures/Figure5.png (PNG copy)>]
+<figures/Figure6.png, id=536, 614.295pt x 794.97pt>
+File: figures/Figure6.png Graphic file (type png)
+<use figures/Figure6.png>
+Package pdftex.def Info: figures/Figure6.png  used on input line 677.
 (pdftex.def)             Requested size: 451.68915pt x 584.54462pt.
-File: c:/github/surveyReport2021/figures/figure6.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure6.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure6.png  used o
-n input line 677.
+File: figures/Figure6.png Graphic file (type png)
+<use figures/Figure6.png>
+Package pdftex.def Info: figures/Figure6.png  used on input line 677.
 (pdftex.def)             Requested size: 451.68915pt x 584.54462pt.
-File: c:/github/surveyReport2021/figures/figure6.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure6.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure6.png  used o
-n input line 677.
+File: figures/Figure6.png Graphic file (type png)
+<use figures/Figure6.png>
+Package pdftex.def Info: figures/Figure6.png  used on input line 677.
 (pdftex.def)             Requested size: 451.68915pt x 584.54462pt.
-File: c:/github/surveyReport2021/figures/figure6.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure6.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure6.png  used o
-n input line 677.
+File: figures/Figure6.png Graphic file (type png)
+<use figures/Figure6.png>
+Package pdftex.def Info: figures/Figure6.png  used on input line 677.
 (pdftex.def)             Requested size: 451.68915pt x 584.54462pt.
-[19 <c:/github/surveyReport2021/figures/figure6.png (PNG copy)>]
-<c:/github/surveyReport2021/figures/figure7.png, id=542, 501.875pt x 643.40375p
-t>
-File: c:/github/surveyReport2021/figures/figure7.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure7.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure7.png  used o
-n input line 690.
+[19 <./figures/Figure6.png (PNG copy)>]
+<figures/figure7.png, id=542, 501.875pt x 643.40375pt>
+File: figures/figure7.png Graphic file (type png)
+<use figures/figure7.png>
+Package pdftex.def Info: figures/figure7.png  used on input line 690.
 (pdftex.def)             Requested size: 451.71394pt x 578.18427pt.
-File: c:/github/surveyReport2021/figures/figure7.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure7.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure7.png  used o
-n input line 690.
+File: figures/figure7.png Graphic file (type png)
+<use figures/figure7.png>
+Package pdftex.def Info: figures/figure7.png  used on input line 690.
 (pdftex.def)             Requested size: 451.71394pt x 578.18427pt.
-File: c:/github/surveyReport2021/figures/figure7.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure7.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure7.png  used o
-n input line 690.
+File: figures/figure7.png Graphic file (type png)
+<use figures/figure7.png>
+Package pdftex.def Info: figures/figure7.png  used on input line 690.
 (pdftex.def)             Requested size: 451.71394pt x 578.18427pt.
-File: c:/github/surveyReport2021/figures/figure7.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure7.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure7.png  used o
-n input line 690.
+File: figures/figure7.png Graphic file (type png)
+<use figures/figure7.png>
+Package pdftex.def Info: figures/figure7.png  used on input line 690.
 (pdftex.def)             Requested size: 451.71394pt x 578.18427pt.
-[20 <c:/github/surveyReport2021/figures/figure7.png>]
-<c:/github/surveyReport2021/figures/figure8.png, id=549, 501.875pt x 643.40375p
-t>
-File: c:/github/surveyReport2021/figures/figure8.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure8.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure8.png  used o
-n input line 701.
+[20 <./figures/figure7.png>]
+<figures/figure8.png, id=549, 501.875pt x 643.40375pt>
+File: figures/figure8.png Graphic file (type png)
+<use figures/figure8.png>
+Package pdftex.def Info: figures/figure8.png  used on input line 701.
 (pdftex.def)             Requested size: 451.71394pt x 578.18427pt.
-File: c:/github/surveyReport2021/figures/figure8.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure8.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure8.png  used o
-n input line 701.
+File: figures/figure8.png Graphic file (type png)
+<use figures/figure8.png>
+Package pdftex.def Info: figures/figure8.png  used on input line 701.
 (pdftex.def)             Requested size: 451.71394pt x 578.18427pt.
-File: c:/github/surveyReport2021/figures/figure8.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure8.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure8.png  used o
-n input line 701.
+File: figures/figure8.png Graphic file (type png)
+<use figures/figure8.png>
+Package pdftex.def Info: figures/figure8.png  used on input line 701.
 (pdftex.def)             Requested size: 451.71394pt x 578.18427pt.
-File: c:/github/surveyReport2021/figures/figure8.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure8.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure8.png  used o
-n input line 701.
+File: figures/figure8.png Graphic file (type png)
+<use figures/figure8.png>
+Package pdftex.def Info: figures/figure8.png  used on input line 701.
 (pdftex.def)             Requested size: 451.71394pt x 578.18427pt.
-[21 <c:/github/surveyReport2021/figures/figure8.png>]
-<c:/github/surveyReport2021/figures/figure9.png, id=556, 501.875pt x 643.40375p
-t>
-File: c:/github/surveyReport2021/figures/figure9.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure9.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure9.png  used o
-n input line 712.
+[21 <./figures/figure8.png>]
+<figures/figure9.png, id=556, 501.875pt x 643.40375pt>
+File: figures/figure9.png Graphic file (type png)
+<use figures/figure9.png>
+Package pdftex.def Info: figures/figure9.png  used on input line 712.
 (pdftex.def)             Requested size: 451.71394pt x 578.18427pt.
-File: c:/github/surveyReport2021/figures/figure9.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure9.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure9.png  used o
-n input line 712.
+File: figures/figure9.png Graphic file (type png)
+<use figures/figure9.png>
+Package pdftex.def Info: figures/figure9.png  used on input line 712.
 (pdftex.def)             Requested size: 451.71394pt x 578.18427pt.
-File: c:/github/surveyReport2021/figures/figure9.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure9.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure9.png  used o
-n input line 712.
+File: figures/figure9.png Graphic file (type png)
+<use figures/figure9.png>
+Package pdftex.def Info: figures/figure9.png  used on input line 712.
 (pdftex.def)             Requested size: 451.71394pt x 578.18427pt.
-File: c:/github/surveyReport2021/figures/figure9.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure9.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure9.png  used o
-n input line 712.
+File: figures/figure9.png Graphic file (type png)
+<use figures/figure9.png>
+Package pdftex.def Info: figures/figure9.png  used on input line 712.
 (pdftex.def)             Requested size: 451.71394pt x 578.18427pt.
-[22 <c:/github/surveyReport2021/figures/figure9.png>]
-<c:/github/surveyReport2021/figures/figure10.png, id=564, 602.25pt x 803.0pt>
-File: c:/github/surveyReport2021/figures/figure10.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure10.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure10.png  used 
-on input line 723.
+[22 <./figures/figure9.png>]
+<figures/figure10.png, id=564, 602.25pt x 803.0pt>
+File: figures/figure10.png Graphic file (type png)
+<use figures/figure10.png>
+Package pdftex.def Info: figures/figure10.png  used on input line 723.
 (pdftex.def)             Requested size: 451.70476pt x 578.19632pt.
-File: c:/github/surveyReport2021/figures/figure10.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure10.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure10.png  used 
-on input line 723.
+File: figures/figure10.png Graphic file (type png)
+<use figures/figure10.png>
+Package pdftex.def Info: figures/figure10.png  used on input line 723.
 (pdftex.def)             Requested size: 451.70476pt x 578.19632pt.
-File: c:/github/surveyReport2021/figures/figure10.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure10.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure10.png  used 
-on input line 723.
+File: figures/figure10.png Graphic file (type png)
+<use figures/figure10.png>
+Package pdftex.def Info: figures/figure10.png  used on input line 723.
 (pdftex.def)             Requested size: 451.70476pt x 578.19632pt.
-File: c:/github/surveyReport2021/figures/figure10.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure10.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure10.png  used 
-on input line 723.
+File: figures/figure10.png Graphic file (type png)
+<use figures/figure10.png>
+Package pdftex.def Info: figures/figure10.png  used on input line 723.
 (pdftex.def)             Requested size: 451.70476pt x 578.19632pt.
-[23 <c:/github/surveyReport2021/figures/figure10.png>]
-<c:/github/surveyReport2021/figures/figure11.png, id=571, 602.25pt x 803.0pt>
-File: c:/github/surveyReport2021/figures/figure11.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure11.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure11.png  used 
-on input line 734.
+[23 <./figures/figure10.png>]
+<figures/Figure11.png, id=571, 602.25pt x 803.0pt>
+File: figures/Figure11.png Graphic file (type png)
+<use figures/Figure11.png>
+Package pdftex.def Info: figures/Figure11.png  used on input line 734.
 (pdftex.def)             Requested size: 451.70476pt x 562.13293pt.
-File: c:/github/surveyReport2021/figures/figure11.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure11.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure11.png  used 
-on input line 734.
+File: figures/Figure11.png Graphic file (type png)
+<use figures/Figure11.png>
+Package pdftex.def Info: figures/Figure11.png  used on input line 734.
 (pdftex.def)             Requested size: 451.70476pt x 562.13293pt.
-File: c:/github/surveyReport2021/figures/figure11.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure11.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure11.png  used 
-on input line 734.
+File: figures/Figure11.png Graphic file (type png)
+<use figures/Figure11.png>
+Package pdftex.def Info: figures/Figure11.png  used on input line 734.
 (pdftex.def)             Requested size: 451.70476pt x 562.13293pt.
-File: c:/github/surveyReport2021/figures/figure11.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure11.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure11.png  used 
-on input line 734.
+File: figures/Figure11.png Graphic file (type png)
+<use figures/Figure11.png>
+Package pdftex.def Info: figures/Figure11.png  used on input line 734.
 (pdftex.def)             Requested size: 451.70476pt x 562.13293pt.
 
 LaTeX Warning: Float too large for page by 3.30295pt on input line 739.
 
-[24 <c:/github/surveyReport2021/figures/figure11.png>]
-<c:/github/surveyReport2021/figures/figure12.png, id=578, 803.0pt x 431.6125pt>
-
-File: c:/github/surveyReport2021/figures/figure12.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure12.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure12.png  used 
-on input line 745.
+[24 <./figures/Figure11.png>]
+<figures/figure12.png, id=578, 803.0pt x 431.6125pt>
+File: figures/figure12.png Graphic file (type png)
+<use figures/figure12.png>
+Package pdftex.def Info: figures/figure12.png  used on input line 745.
 (pdftex.def)             Requested size: 421.58131pt x 245.91629pt.
-File: c:/github/surveyReport2021/figures/figure12.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure12.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure12.png  used 
-on input line 745.
+File: figures/figure12.png Graphic file (type png)
+<use figures/figure12.png>
+Package pdftex.def Info: figures/figure12.png  used on input line 745.
 (pdftex.def)             Requested size: 421.58131pt x 245.91629pt.
-File: c:/github/surveyReport2021/figures/figure12.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure12.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure12.png  used 
-on input line 745.
+File: figures/figure12.png Graphic file (type png)
+<use figures/figure12.png>
+Package pdftex.def Info: figures/figure12.png  used on input line 745.
 (pdftex.def)             Requested size: 421.58131pt x 245.91629pt.
-File: c:/github/surveyReport2021/figures/figure12.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure12.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure12.png  used 
-on input line 745.
+File: figures/figure12.png Graphic file (type png)
+<use figures/figure12.png>
+Package pdftex.def Info: figures/figure12.png  used on input line 745.
 (pdftex.def)             Requested size: 421.58131pt x 245.91629pt.
-<c:/github/surveyReport2021/figures/figure13.png, id=580, 903.375pt x 531.9875p
-t>
-File: c:/github/surveyReport2021/figures/figure13.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure13.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure13.png  used 
-on input line 754.
+<figures/figure13.png, id=580, 903.375pt x 531.9875pt>
+File: figures/figure13.png Graphic file (type png)
+<use figures/figure13.png>
+Package pdftex.def Info: figures/figure13.png  used on input line 754.
 (pdftex.def)             Requested size: 451.70018pt x 240.89389pt.
-File: c:/github/surveyReport2021/figures/figure13.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure13.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure13.png  used 
-on input line 754.
+File: figures/figure13.png Graphic file (type png)
+<use figures/figure13.png>
+Package pdftex.def Info: figures/figure13.png  used on input line 754.
 (pdftex.def)             Requested size: 451.70018pt x 240.89389pt.
-File: c:/github/surveyReport2021/figures/figure13.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure13.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure13.png  used 
-on input line 754.
+File: figures/figure13.png Graphic file (type png)
+<use figures/figure13.png>
+Package pdftex.def Info: figures/figure13.png  used on input line 754.
 (pdftex.def)             Requested size: 451.70018pt x 240.89389pt.
-File: c:/github/surveyReport2021/figures/figure13.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure13.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure13.png  used 
-on input line 754.
+File: figures/figure13.png Graphic file (type png)
+<use figures/figure13.png>
+Package pdftex.def Info: figures/figure13.png  used on input line 754.
 (pdftex.def)             Requested size: 451.70018pt x 240.89389pt.
 [25
 
@@ -1595,76 +1536,60 @@ on input line 754.
 
 
 
- <c:/github/surveyReport2021/figures/figure12.png> <c:/github/surveyReport2021/
-figures/figure13.png>]
-<c:/github/surveyReport2021/figures/figure14.png, id=588, 702.625pt x 413.545pt
->
-File: c:/github/surveyReport2021/figures/figure14.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure14.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure14.png  used 
-on input line 765.
+ <./figures/figure12.png> <./figures/figure13.png>]
+<figures/figure14.png, id=588, 702.625pt x 413.545pt>
+File: figures/figure14.png Graphic file (type png)
+<use figures/figure14.png>
+Package pdftex.def Info: figures/figure14.png  used on input line 765.
 (pdftex.def)             Requested size: 411.55394pt x 235.88715pt.
-File: c:/github/surveyReport2021/figures/figure14.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure14.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure14.png  used 
-on input line 765.
+File: figures/figure14.png Graphic file (type png)
+<use figures/figure14.png>
+Package pdftex.def Info: figures/figure14.png  used on input line 765.
 (pdftex.def)             Requested size: 411.55394pt x 235.88715pt.
-File: c:/github/surveyReport2021/figures/figure14.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure14.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure14.png  used 
-on input line 765.
+File: figures/figure14.png Graphic file (type png)
+<use figures/figure14.png>
+Package pdftex.def Info: figures/figure14.png  used on input line 765.
 (pdftex.def)             Requested size: 411.55394pt x 235.88715pt.
-File: c:/github/surveyReport2021/figures/figure14.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure14.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure14.png  used 
-on input line 765.
+File: figures/figure14.png Graphic file (type png)
+<use figures/figure14.png>
+Package pdftex.def Info: figures/figure14.png  used on input line 765.
 (pdftex.def)             Requested size: 411.55394pt x 235.88715pt.
-<c:/github/surveyReport2021/figures/figure15i.png, id=590, 440.39531pt x 296.60
-812pt>
-File: c:/github/surveyReport2021/figures/figure15i.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure15i.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure15i.png  used
- on input line 774.
+<figures/figure15i.png, id=590, 440.39531pt x 296.60812pt>
+File: figures/figure15i.png Graphic file (type png)
+<use figures/figure15i.png>
+Package pdftex.def Info: figures/figure15i.png  used on input line 774.
 (pdftex.def)             Requested size: 351.32889pt x 235.89284pt.
-File: c:/github/surveyReport2021/figures/figure15i.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure15i.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure15i.png  used
- on input line 774.
+File: figures/figure15i.png Graphic file (type png)
+<use figures/figure15i.png>
+Package pdftex.def Info: figures/figure15i.png  used on input line 774.
 (pdftex.def)             Requested size: 351.32889pt x 235.89284pt.
-File: c:/github/surveyReport2021/figures/figure15i.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure15i.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure15i.png  used
- on input line 774.
+File: figures/figure15i.png Graphic file (type png)
+<use figures/figure15i.png>
+Package pdftex.def Info: figures/figure15i.png  used on input line 774.
 (pdftex.def)             Requested size: 351.32889pt x 235.89284pt.
-File: c:/github/surveyReport2021/figures/figure15i.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure15i.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure15i.png  used
- on input line 774.
+File: figures/figure15i.png Graphic file (type png)
+<use figures/figure15i.png>
+Package pdftex.def Info: figures/figure15i.png  used on input line 774.
 (pdftex.def)             Requested size: 351.32889pt x 235.89284pt.
 [26
 
- <c:/github/surveyReport2021/figures/figure14.png> <c:/github/surveyReport2021/
-figures/figure15i.png>]
-<c:/github/surveyReport2021/figures/figure16.png, id=598, 803.0pt x 927.465pt>
-File: c:/github/surveyReport2021/figures/figure16.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure16.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure16.png  used 
-on input line 785.
+ <./figures/figure14.png> <./figures/figure15i.png>]
+<figures/figure16.png, id=598, 803.0pt x 927.465pt>
+File: figures/figure16.png Graphic file (type png)
+<use figures/figure16.png>
+Package pdftex.def Info: figures/figure16.png  used on input line 785.
 (pdftex.def)             Requested size: 501.88602pt x 579.16888pt.
-File: c:/github/surveyReport2021/figures/figure16.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure16.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure16.png  used 
-on input line 785.
+File: figures/figure16.png Graphic file (type png)
+<use figures/figure16.png>
+Package pdftex.def Info: figures/figure16.png  used on input line 785.
 (pdftex.def)             Requested size: 501.88602pt x 579.16888pt.
-File: c:/github/surveyReport2021/figures/figure16.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure16.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure16.png  used 
-on input line 785.
+File: figures/figure16.png Graphic file (type png)
+<use figures/figure16.png>
+Package pdftex.def Info: figures/figure16.png  used on input line 785.
 (pdftex.def)             Requested size: 501.88602pt x 579.16888pt.
-File: c:/github/surveyReport2021/figures/figure16.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure16.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure16.png  used 
-on input line 785.
+File: figures/figure16.png Graphic file (type png)
+<use figures/figure16.png>
+Package pdftex.def Info: figures/figure16.png  used on input line 785.
 (pdftex.def)             Requested size: 501.88602pt x 579.16888pt.
 
 Overfull \hbox (32.131pt too wide) in paragraph at lines 785--786
@@ -1674,28 +1599,23 @@ Overfull \hbox (32.131pt too wide) in paragraph at lines 785--786
 
 LaTeX Warning: Float too large for page by 6.73889pt on input line 790.
 
-[27 <c:/github/surveyReport2021/figures/figure16.png>]
-<c:/github/surveyReport2021/figures/figure17.png, id=605, 694.09312pt x 465.238
-13pt>
-File: c:/github/surveyReport2021/figures/figure17.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure17.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure17.png  used 
-on input line 797.
+[27 <./figures/figure16.png>]
+<figures/figure17.png, id=605, 694.09312pt x 465.23813pt>
+File: figures/figure17.png Graphic file (type png)
+<use figures/figure17.png>
+Package pdftex.def Info: figures/figure17.png  used on input line 797.
 (pdftex.def)             Requested size: 501.89664pt x 336.2703pt.
-File: c:/github/surveyReport2021/figures/figure17.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure17.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure17.png  used 
-on input line 797.
+File: figures/figure17.png Graphic file (type png)
+<use figures/figure17.png>
+Package pdftex.def Info: figures/figure17.png  used on input line 797.
 (pdftex.def)             Requested size: 501.89664pt x 336.2703pt.
-File: c:/github/surveyReport2021/figures/figure17.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure17.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure17.png  used 
-on input line 797.
+File: figures/figure17.png Graphic file (type png)
+<use figures/figure17.png>
+Package pdftex.def Info: figures/figure17.png  used on input line 797.
 (pdftex.def)             Requested size: 501.89664pt x 336.2703pt.
-File: c:/github/surveyReport2021/figures/figure17.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure17.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure17.png  used 
-on input line 797.
+File: figures/figure17.png Graphic file (type png)
+<use figures/figure17.png>
+Package pdftex.def Info: figures/figure17.png  used on input line 797.
 (pdftex.def)             Requested size: 501.89664pt x 336.2703pt.
 
 Overfull \hbox (32.14162pt too wide) in paragraph at lines 797--798
@@ -1705,28 +1625,23 @@ Overfull \hbox (32.14162pt too wide) in paragraph at lines 797--798
 [28
 
 
- <c:/github/surveyReport2021/figures/figure17.png>]
-<c:/github/surveyReport2021/figures/figure18.png, id=612, 602.25pt x 772.8875pt
->
-File: c:/github/surveyReport2021/figures/figure18.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure18.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure18.png  used 
-on input line 808.
+ <./figures/figure17.png>]
+<figures/figure18.png, id=612, 602.25pt x 772.8875pt>
+File: figures/figure18.png Graphic file (type png)
+<use figures/figure18.png>
+Package pdftex.def Info: figures/figure18.png  used on input line 808.
 (pdftex.def)             Requested size: 481.81903pt x 618.31084pt.
-File: c:/github/surveyReport2021/figures/figure18.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure18.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure18.png  used 
-on input line 808.
+File: figures/figure18.png Graphic file (type png)
+<use figures/figure18.png>
+Package pdftex.def Info: figures/figure18.png  used on input line 808.
 (pdftex.def)             Requested size: 481.81903pt x 618.31084pt.
-File: c:/github/surveyReport2021/figures/figure18.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure18.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure18.png  used 
-on input line 808.
+File: figures/figure18.png Graphic file (type png)
+<use figures/figure18.png>
+Package pdftex.def Info: figures/figure18.png  used on input line 808.
 (pdftex.def)             Requested size: 481.81903pt x 618.31084pt.
-File: c:/github/surveyReport2021/figures/figure18.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/figure18.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/figure18.png  used 
-on input line 808.
+File: figures/figure18.png Graphic file (type png)
+<use figures/figure18.png>
+Package pdftex.def Info: figures/figure18.png  used on input line 808.
 (pdftex.def)             Requested size: 481.81903pt x 618.31084pt.
 
 Overfull \hbox (12.06401pt too wide) in paragraph at lines 808--809
@@ -1736,21 +1651,19 @@ Overfull \hbox (12.06401pt too wide) in paragraph at lines 808--809
 
 LaTeX Warning: Float too large for page by 18.68083pt on input line 813.
 
-[29 <c:/github/surveyReport2021/figures/figure18.png>] [30
+[29 <./figures/figure18.png>] [30
 
 
 
 ]
-<c:/github/surveyReport2021/figures/AppendixB.png, id=624, 655.69969pt x 604.50
-844pt>
-File: c:/github/surveyReport2021/figures/AppendixB.png Graphic file (type png)
-<use c:/github/surveyReport2021/figures/AppendixB.png>
-Package pdftex.def Info: c:/github/surveyReport2021/figures/AppendixB.png  used
- on input line 886.
+<figures/AppendixB.png, id=624, 655.69969pt x 604.50844pt>
+File: figures/AppendixB.png Graphic file (type png)
+<use figures/AppendixB.png>
+Package pdftex.def Info: figures/AppendixB.png  used on input line 886.
 (pdftex.def)             Requested size: 461.72807pt x 467.75127pt.
 [31
 
- <c:/github/surveyReport2021/figures/AppendixB.png>] [32
+ <./figures/AppendixB.png>] [32
 
 ]
 Overfull \hbox (2.29373pt too wide) in paragraph at lines 896--896
@@ -9157,7 +9070,7 @@ Package rerunfilecheck Info: File `techreport.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  25322 strings out of 478582
- 455227 string characters out of 2843873
+ 451096 string characters out of 2843873
  1206306 words of memory out of 3000000
  42490 multiletter control sequences out of 15000+600000
  538898 words of font info for 210 fonts, out of 8000000 for 9000
@@ -9174,7 +9087,7 @@ enc}{C:/Users/lackol/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc
 b><C:/Users/lackol/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8
 a.pfb><C:/Users/lackol/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/u
 hvro8a.pfb>
-Output written on techreport.pdf (54 pages, 14306358 bytes).
+Output written on techreport.pdf (54 pages, 14306456 bytes).
 PDF statistics:
  1086 PDF objects out of 1200 (max. 8388607)
  168 named destinations out of 1000 (max. 500000)

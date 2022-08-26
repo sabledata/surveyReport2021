@@ -584,13 +584,12 @@ Length, sex, maturity and otoliths were collected for `r total.string` (Appendix
 
 ## SABLEFISH AGES
 
-At the time of this report, sablefish ages were only available prior to 2021. The highest proportion of female ages in StRS sets for 2003 through to 2010 were 3, 4, 5, 6, 7, 8, 9 and 10 years of age,
+The highest proportion of female ages in StRS sets for 2003 through to 2010 were 3, 4, 5, 6, 7, 8, 9 and 10 years of age,
 respectively. Then, another cohort appeared in 2011 through to 2015, showing up as 3, 4, 5, 6 and 7 year olds. In 2016, 2017 and 2018 the highest proportion of female sablefish were ages 3,
-4, and 5 year olds.  Last, the years 2019 and 2020 were represented by 3 and 4 year old female sablefish (Figure \@ref(fig:figure16) a). 
+4, and 5 year olds.  Last, the years 2019, 2020 and 2021 were represented by 3, 4 and 5 year old female sablefish, respectively (Figure \@ref(fig:figure16) a). 
 
 The highest proportion of male ages in StRS sets for 2003 through to 2011 were 3, 5, 5, 6, 8, 8, 8, 10 and 12 years of age, respectively. Another cohort appeared in 2012 through to 2016 as 4,
-5, 7, 7 and 8 year olds. A cohort also appeared to arrive in 2017 which was dominated by 3 year olds and in 2018 by 5 year olds.  The years 2019 and 2020 were represented by 3 and 4 year old 
-male sablefish (Figure \@ref(fig:figure16) b). 
+5, 7, 7 and 8 year olds. A cohort also appeared to arrive in 2017 which was dominated by 3 year olds and in 2018 by 5 year olds.  The years 2019, 2020 and 2021 were represented by 3, 4 and 5 year old males, respectively (Figure \@ref(fig:figure16) b). 
 
 The maximum reported age in B.C. for females is `r oldFem` years,  collected in `r oldFemYr`.  The maximum reported age in B.C. for males is `r oldMale` years,  collected in `r oldMaleYr`. 
 

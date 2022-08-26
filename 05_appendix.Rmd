@@ -252,7 +252,7 @@ Summary of the basket use by trap number for StRS and inlet sets during the `r y
 
 ```{r appendixESetUp, warning=FALSE, echo=FALSE, message=FALSE, error=FALSE}
 
-    library(pander)
+    #library(pander)
 
     trap.count <-paste("select tp.YEAR, fe.TRIP_ID, fe.FE_MAJOR_LEVEL_ID AS SET_ID, fe.FE_SUB_LEVEL_ID AS BECKET, ", 
                        "fe.FE_MINOR_LEVEL_ID AS TRAP, SUM(c.CATCH_COUNT) AS total_count ",
@@ -282,9 +282,9 @@ Summary of the basket use by trap number for StRS and inlet sets during the `r y
    #write.table(trap.sable1, file = paste(path,"appendixESetUp.csv",sep=''),row.names=FALSE, na="",col.names=TRUE, sep=",")
    trap.sable1  <-  read.csv(paste(path,'appendixESetUp.csv',sep=''), header=T)
 
-   library(tidyverse)
-   library(tidyr)
-   library(scales)
+   #library(tidyverse)
+   #library(tidyr)
+   #library(scales)
    
    trap.sable <- trap.sable1[,c(-1,-2,-4)] 
    #trap.sable$SET_ID <- as.factor(trap.sable$SET_ID)

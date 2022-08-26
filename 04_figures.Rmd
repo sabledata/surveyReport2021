@@ -783,16 +783,16 @@
    b <- c(0,12)
    c <- c(2008,2017)
    d <- c(0,10)
-   e <- c(2013,2020)
+   e <- c(2013,2021)
    f <- c(0,8)
-   g <- c(2016,2020)
+   g <- c(2016,2021)
    h <- c(0,5)
 
    #  plot bubbles for female ages
    plot(dat$Year, dat$Age, type="n",
         xlab=" Year", ylab="", main="Females", 
         ylim=c(0,42), xlim=c(minyr,maxyr),xaxt="n")
-        axis(1, seq(2003,2020,1))            
+        axis(1, seq(2003,2021,1))            
         symbols(dat$Year, dat$Age, 
                 circles=pi*(dat$Female_Proportion),
                 inches=0.3, add=T,col="light grey")
@@ -830,7 +830,7 @@
         xlab=" Year", ylab="", main="Males", 
         ylim=c(0,42), xlim=c(minyr,maxyr),
         xaxt="n")
-        axis(1, seq(2003,2020,1))      
+        axis(1, seq(2003,2021,1))      
         symbols(dat$Year, dat$Age, 
                 circles=pi*(dat$Male_Proportion),
                 inches=0.3, add=T, col="light grey")
