@@ -215,7 +215,7 @@
     Trap.camera$HOBO  <- "x"
     Trap.camera$CAM   <- "x"
     
-    colnames(Trap.camera)  <- c( "Spatial Strata", "Set", "Becket" , "Trap", "SBE39", "HOBO", "CAM")
+    colnames(Trap.camera)  <- c( "Spatial Strata", "Set", "Becket id" , "Trap id", "SBE39", "HOBO", "CAM")
     
     kableExtra::kable(Trap.camera, booktabs = TRUE, linesep = "",
                       align = c("l","r","r","r","c","c","c"),
@@ -224,7 +224,7 @@
                       caption = "(ref:table3Caption)") %>%
                       row_spec(0,    bold = T) %>%
                       row_spec(c(3,6,9), hline_after = T) %>%
-
+                      
     kableExtra::kable_styling(font_size = 9, position = "left",latex_options = "hold_position")
 
 ```
