@@ -463,8 +463,8 @@
      p <- ggplot(inlet.2w, aes(x=year, y=CPUE.SABLE.WEIGHT/CPUE.TRAPS)) +
           geom_boxplot(fill="grey90", width=0.4) +
           stat_summary(fun.y=mean, geom="point", shape=16, size=2,col="steel blue") +
-          #stat_summary(fun = mean, geom = "text", col = "red", size=4.5,    # Add text to plot
-               #vjust = 2.0, aes(label = paste("", round(..y.., digits = 1)))) +
+          stat_summary(fun = mean, geom = "text", col = "red", size=4.5,    # Add text to plot
+               vjust = 2.0, aes(label = paste("", round(..y.., digits = 1)))) +
           xlab("Year") +
           ylab("CPUE (kg/trap)") +
           #scale_y_continuous(limits=c(0,100))+
