@@ -112,6 +112,11 @@ The remaining traps were allocated to the discard category and sorted by size in
 
 Biological samples were collected from sablefish and incidentally captured species such as rockfishes and lingcod on the EDAS GFBioField Fish Recording form. Measurements were electronically recorded for fork length (L), body weight (W), sex (S) and maturity level (M). Sagittal otoliths (O) were collected and stored for potential ageing by the sclerochronology laboratory.  In addition, tissue for DNA was collected from the rougheye/blackspotted rockfish complex for later species determination.  Since this complex of two distinct species [@Orr2008] have similar appearances with slight variations in colour markings and dorsal fin lengths, the sampler visually identifed each specimen as either a rougheye, a blackspotted or a hybrid species.  All rockfish, lingcod and legal-sized sablefish (fork length > 55 cm) that were sacrificed for biological samples were dressed, frozen, and landed as commercial catch.
 
+<!--KH suggestion to add:
+Biological sampling of lingcod was new for 2021. Samples were collected for the specific purpose of supporting a paired ageing study comparing fin ages and otolith ages, so both ageing structures were collected from sampled fish. The goal of lingcod sampling on the sablefish survey in 2021 was to increase the number of very large lingcod included in the length-stratified samples for the study, so a small subset of large lingcod were opportunistically collected for sampling.
+
+-->
+
 Length (L) and weight (W) measurements were collected from all Pacific halibut (*Hippoglossus stenolepis*) before they were released at sea. Only the length (L) was recorded for Pacific sleeper sharks (*Somniosus pacificus*) before release. 
 
 ## SABLEFISH TAGGING
