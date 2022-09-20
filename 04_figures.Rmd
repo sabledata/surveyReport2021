@@ -614,9 +614,9 @@
     par(mfcol=c(1,2), mar=c(4,4,1,1), oma=c(2,2,3,1), cex=1.0)  # -- mar(bottom, left, top, and right)
     par(xpd=NA)  # for placement of A,B,C,D
 
-    lenWT     <- "exec procR_Survey_Sablefish_LenWt_shiny"
+    #lenWT     <- "exec procR_Survey_Sablefish_LenWt_shiny"
     #lenWTdat1 <-  GetSQLData(lenWT,"Sablefish")                                                       # read from SQL Server
-    #write.table(lenWTdat1, file = paste(path,"figure14.csv",sep=''),row.names=FALSE, na="",col.names=TRUE,  sep=",")    
+    write.table(lenWTdat1, file = paste(path,"figure14.csv",sep=''),row.names=FALSE, na="",col.names=TRUE,  sep=",")    
     lenWTdat1 <- read.csv(paste(path,'figure14.csv',sep=''),header=T) # read from csv
     lenWTdat  <- lenWTdat1[lenWTdat1$YEAR==yr,]
 

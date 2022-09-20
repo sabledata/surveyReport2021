@@ -2,7 +2,7 @@
 
 ## SURVEY DESIGN
 
-Methodology for the `r yr` sablefish research and assessment surveys employed a stratified random sampling (StRS) design and a traditional standardized inlet component.  In 2021, Wild Canadian Sablefish, Ltd. launched a multi-year investigation of longline trap gear on the ocean floor.  
+Methodology for the `r yr` sablefish research and assessment surveys employed a stratified random sampling (StRS) design and a traditional standardized inlet component.  In 2021, Wild Canadian Sablefish, Ltd. launched a multi-year investigation of longline trap gear movement on the ocean floor.  
 
 ### STRATIFIED RANDOM SAMPLING SURVEY DESIGN COMPONENT
 

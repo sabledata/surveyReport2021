@@ -191,9 +191,10 @@ Summary of the basket use by trap number for StRS and inlet sets during the `r y
                     mutate(Survey.set= paste0("\\raisebox{-.28\\height} {\\includegraphics[width=0.8cm]{sets_",Set,".png}}") ) 
    trap.Usage  <- trap.Usage[, c(32,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)]  # reorder table
    
-   names(trap.Usage)  <-  c("Set","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17",
-                                  "18","19","20","21","22","23","24","25","26", "A","D","T","-")
-
+   names(trap.Usage)  <-  c("Set","1","2","3","4","5","6","7","8","9","10",
+                            "11","12","13","14","15","16","17",
+                            "18","19","20","21","22","23","24", 
+                            "25","26", "A","D","T","-")
 
    kableExtra::kable(trap.Usage,
                      booktabs = TRUE, 
@@ -293,7 +294,6 @@ Summary of the basket use by trap number for StRS and inlet sets during the `r y
    trap.sable.start <- trap.sable[trap.sable$PU =='START',]
    trap.sable.end   <- trap.sable[trap.sable$PU =='END',]
    big.value <- max(trap.sable$Value)
-   
 
   w<-trap.sable.start %>%   # create sparkline graphs
      group_by(SurveySet) %>%
@@ -524,9 +524,9 @@ Biological data collected for rougheye/blackspotted rockfish complex.  Each set 
                            "dbo.GFBIO_RESEARCH_SAMPLE_DETAILS_OTHER_FISH.species ",            
                            "where (dbo.GFBIO_RESEARCH_SAMPLE_DETAILS_OTHER_FISH.Year = ",yr, 
                            ") and (dbo.GFBIO_RESEARCH_SAMPLE_DETAILS_OTHER_FISH.species = N'394') order by species,[SET]", sep="")
-   #otherspecre                <-  GetSQLData(othersamplesre,"Sablefish")   # read from SQL Server
-   #write.table(otherspecre, file = paste(path,'appendixF.csv',sep=''),row.names=FALSE, na="",col.names=TRUE,  sep=",")   
-   otherspecre                <-  read.csv(paste(path,'appendixF.csv',sep=''),header=T) # read from csv
+   # otherspecre      <-  GetSQLData(othersamplesre,"Sablefish")   # read from SQL Server
+   # write.table(otherspecre, file = paste(path,'appendixF.csv',sep=''),row.names=FALSE, na="",col.names=TRUE,  sep=",")   
+   otherspecre       <-  read.csv(paste(path,'appendixF.csv',sep=''),header=T) # read from csv
    otherspecre[2,14] <- 0
    otherspecre[2,15] <- 0
    otherspecre[2,16] <- 0
@@ -534,7 +534,7 @@ Biological data collected for rougheye/blackspotted rockfish complex.  Each set 
    otherspecre$'Blackspotted' <- as.integer(otherspecre$'Blackspotted')
    otherspecre$'Hybrid'       <- as.integer(otherspecre$'Hybrid')    
 
-   additionre                <-  c('Total','', 
+   additionre               <-  c('Total','', 
                                  sum(otherspecre$Len.Sample.Count),    sum(otherspecre$weight_count), 
                                  sum(otherspecre$Sex.Sample.Count),    sum(otherspecre$Maturity.Sample.Count),   
                                  sum(otherspecre$Otolith.Sample.Count),sum(otherspecre$DNA.Sample.Count),
@@ -648,8 +648,8 @@ Biological data collected for other rockfish species and lingcod.  Each set is l
                      format = "latex") %>%
       
       add_header_above(c(" "= 2,
-                      "Specimen Count"= 6, 
-                      "Mean Fork Length(mm)" = 4), bold=TRUE) %>%
+                         "Specimen Count"= 6, 
+                         "Mean Fork Length(mm)" = 4), bold=TRUE) %>%
    
       kableExtra::kable_styling(font_size = 8, 
                        latex_options = "repeat_header",
