@@ -8,7 +8,7 @@
 ```
 \clearpage
 
-(ref:figure2)  Image of the F/V `r boat`  used for the `r yr` sablefish research and assessment survey.  Photo credit: Cody Melnychuk. 
+(ref:figure2)  Image of the F/V `r boat`  used for the `r yr` Sablefish research and assessment survey.  Photo credit: Cody Melnychuk. 
 
 ```{r figure2, fig.cap='(ref:figure2)', out.width = "480px", out.height = "480px",echo=FALSE, fig.align="center", warning=FALSE}
       img  <- paste(basepath,'figures/figure2.png',sep="") 
@@ -253,7 +253,7 @@
 
 \clearpage
 
-(ref:figure8) Average number of sablefish per trap (mean +/- 95% CIs) by StRS survey strata over time. Panels run deep to shallow (left to right) and north to south (top to bottom).
+(ref:figure8) Average number of Sablefish per trap (mean +/- 95% CIs) by StRS survey strata over time. Panels run deep to shallow (left to right) and north to south (top to bottom).
 
 ```{r figure8, fig.cap='(ref:figure8)', out.width = "450px", out.height = "576px",echo=FALSE, fig.align="center", warning=FALSE}
 
@@ -326,7 +326,7 @@
     
 ```
 \clearpage
-(ref:figure9) Average weight of sablefish (mean +/- 95% CIs) by survey strata over time. Panels run deep to shallow (left to right) and north to south (top to bottom).
+(ref:figure9) Average weight of Sablefish (mean +/- 95% CIs) by survey strata over time. Panels run deep to shallow (left to right) and north to south (top to bottom).
 
 ```{r figure9, fig.cap='(ref:figure9)', out.width = "450px", out.height = "576px",echo=FALSE, fig.align="center", warning=FALSE}
 
@@ -361,7 +361,7 @@
 ```   
 \clearpage
 
-(ref:figure10) Annual mean weight of sablefish per trap (kg/trap) (A);  annual mean number of sablefish per trap (#fish/trap) (B); annual mean weight of sablefish (kg) (C) by StRS survey strata over time. Horizontal line is median and blue dots are arithmetic mean.
+(ref:figure10) Annual mean weight of Sablefish per trap (kg/trap) (A);  annual mean number of Sablefish per trap (#fish/trap) (B); annual mean weight of Sablefish (kg) (C) by StRS survey strata over time. Horizontal line is median and blue dots are arithmetic mean.
 
 ```{r figure10, fig.cap='(ref:figure10)', out.width = "450px", out.height = "576px",echo=FALSE, fig.align="center", warning=FALSE}
 
@@ -411,7 +411,7 @@
 ```
 \clearpage
 
-(ref:figure11) Annual distributions of catch statistics over all mainland inlet indexing sets between 1994 and 2019, including: (A) CPUE in units of weight of sablefish per trap (kg/trap);  (B) CPUE in units of sablefish per trap (#fish/trap); and (C) mean sablefish body weight (kg). Horizontal line is median, grey shading shows the 25th and 75% percentiles, and blue dots show arithmetic means. No inlets were surveyed in 2020.  Dean/Burke Channel inlet was the only inlet surveyed in 2021 and not included in these figures.
+(ref:figure11) Annual distributions of catch statistics over all mainland inlet indexing sets between 1994 and 2019, including: (A) CPUE in units of weight of Sablefish per trap (kg/trap);  (B) CPUE in units of Sablefish per trap (#fish/trap); and (C) mean Sablefish body weight (kg). Horizontal line is median, grey shading shows the 25th and 75% percentiles, and blue dots show arithmetic means. No inlets were surveyed in 2020.  Dean/Burke Channel inlet was the only inlet surveyed in 2021 and not included in these figures.
 
 ```{r figure11, fig.cap='(ref:figure11)', results='asis', out.width = "450px",out.height = "560px", fig.align="center"}
 
@@ -509,7 +509,7 @@
 ```
 \clearpage
 
-(ref:figure12) Length frequencies for female (grey) and male sablefish (steel blue) up to `r yr` for all StRS sets.  Specimen number (n), mean ($\overline{x}$) and standard deviation ($\sigma$) are displayed.
+(ref:figure12) Length frequencies for female (grey) and male Sablefish (steel blue) up to `r yr` for all StRS sets.  Specimen number (n), mean ($\overline{x}$) and standard deviation ($\sigma$) are displayed.
 
 ```{r figure12, fig.cap='(ref:figure12)',results='asis',out.width = "420px",out.height = "245px", fig.align="center"}
 
@@ -561,7 +561,7 @@
               knitr::include_graphics(img)
 ```
 
-(ref:figure13) Average length and ratios of male and female sablefish by year. Counts by sex are labelled on top of the plotted lines.
+(ref:figure13) Average length and ratios of male and female Sablefish by year. Counts by sex are labelled on top of the plotted lines.
 
 ```{r figure13, fig.cap='(ref:figure13)',results='asis', out.width = "450px",out.height = "240px", fig.align="center"}
 
@@ -666,7 +666,7 @@
           
 ```
 
-(ref:figure15) The percentage of sub-legal sablefish (<55 cm fork length) sampled by spatial (S~1~-S~5~) and depth strata (S=shallow, RD~1~; M=mid, RD~2~; D=deep, RD~3~) over time. Sub-legal specimen count above 50% sampled shown in blue.  
+(ref:figure15) The percentage of sub-legal Sablefish (<55 cm fork length) sampled by spatial (S~1~-S~5~) and depth strata (S=shallow, RD~1~; M=mid, RD~2~; D=deep, RD~3~) over time. Sub-legal specimen count above 50% sampled shown in blue.  
 
 ```{r figure15, fig.cap='(ref:figure15)',results='asis', out.width = "350px",out.height = "235px", fig.align="center"}
 
@@ -756,7 +756,7 @@
 \clearpage
 
 
-(ref:figure16) Bubble plot for female (A) and male (B) sablefish ages by survey year from StRS sets that have been aged.  The sizes of the circles are proportional to the number of fish with given ages. Fish age 35 and older are included in one bubble. The total number of fish aged are listed across the top of each panel. The ages with the highest ratios are posted to the right of each bubble.
+(ref:figure16) Bubble plot for female (A) and male (B) Sablefish ages by survey year from StRS sets that have been aged.  The sizes of the circles are proportional to the number of fish with given ages. Fish age 35 and older are included in one bubble. The total number of fish aged are listed across the top of each panel. The ages with the highest ratios are posted to the right of each bubble.
 
 ```{r figure16, fig.cap='(ref:figure16)',results='asis', out.width = "500px",out.height = "577px", fig.align="center"}
 
