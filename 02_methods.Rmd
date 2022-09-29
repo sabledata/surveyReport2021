@@ -59,7 +59,6 @@ Sets in StRS blocks had a targeted soak time of 24 hours.  Fishing sets were des
 
 Fishing sets in inlet localities had a targeted soak time of 18 hours. These sets were designated useable if hauled between 16 and 20 hours, compatible with the historic inlet survey protocols.  Traps were baited with 2 pounds of bagged squid. 
 
-<!-- KH: I suggest adding the following sections here to describe fishing operations for gear movement sets.  Fell free to move this to another place if you think it fits better though.
 
 ### Gear Movement Research
 
@@ -71,7 +70,7 @@ For the subset of StRS sets selected for gear movement research, cameras and ass
 
 These sets were intended to replicate commercial fishing practices, and as such, traps were baited at the discretion of the Fishing Master as per commercial fishing practices. Soak time was also at the discretion of the fishing master, with gear deployed and retrieved at times convenient to other operations. Trap cameras were deployed in open, unbaited traps located at positions 5, 35, and 55 on the 60-trap string. Escape rings were sewn shut in all other traps in teh string, as per normal survey fishing operations described above.
 
--->
+
 
 ## CATCH PROCESSING
 
