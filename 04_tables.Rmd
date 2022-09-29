@@ -1,5 +1,5 @@
 # Tables
-(ref:table1Caption) Spatial and depth stratum allocation and completed set counts (blue) for the `r yr` sablefish research and assessment survey.
+(ref:table1Caption) Spatial and depth stratum allocation and completed set counts (blue) for the `r yr` Sablefish research and assessment survey.
 \ \
 
 ```{r table1, echo=FALSE}
@@ -67,7 +67,7 @@
 ```
 
 \ \
-(ref:table2Caption) Target number of 25-trap camera survey sets and completed counts (blue) for the `r yr` sablefish research and assessment survey.
+(ref:table2Caption) Target number of 25-trap camera survey sets and completed counts (blue) for the `r yr` Sablefish research and assessment survey.
 \ \
 
 ```{r table2,  echo=FALSE}
@@ -290,7 +290,7 @@
 ```
 \clearpage
 
-(ref:table6Caption) Summary of sablefish sex ratios and mean fork length measurements collected during the `r yr` stratified random sets by spatial and depth stratum.
+(ref:table6Caption) Summary of Sablefish sex ratios and mean fork length measurements collected during the `r yr` stratified random sets by spatial and depth stratum.
 \ \
 \ \
 ```{r table6, echo=FALSE}
