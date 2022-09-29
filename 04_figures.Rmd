@@ -616,7 +616,7 @@
 
     #lenWT     <- "exec procR_Survey_Sablefish_LenWt_shiny"
     #lenWTdat1 <-  GetSQLData(lenWT,"Sablefish")                                                       # read from SQL Server
-    write.table(lenWTdat1, file = paste(path,"figure14.csv",sep=''),row.names=FALSE, na="",col.names=TRUE,  sep=",")    
+    #write.table(lenWTdat1, file = paste(path,"figure14.csv",sep=''),row.names=FALSE, na="",col.names=TRUE,  sep=",")    
     lenWTdat1 <- read.csv(paste(path,'figure14.csv',sep=''),header=T) # read from csv
     lenWTdat  <- lenWTdat1[lenWTdat1$YEAR==yr,]
 

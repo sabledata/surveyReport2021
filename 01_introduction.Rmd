@@ -2,13 +2,15 @@
 
 British Columbia (BC) sablefish (*Anoplopoma fimbria*), also known as black cod, are a highly valuable commercial fish species that are harvested directly by the commercial groundfish K (Sablefish) and T (Trawl) licence sectors.  They are also intercepted by the non-directed groundfish longline hook fisheries of the L (Pacific halibut), ZN (rockfishes), LC (lingcod) and DF (North Pacific spiny dogfish) licence sectors.  BC vessels have landed an average of `r format(avgTen, big.mark=",")` metric tons of black cod annually over the past ten years (`r yr-9` to `r yr`),  with the majority captured in `r yr` by longline trap gear (`r trapP`\%) and longline hook gear (`r LonglineP`\%).
 
-Fishery-independent research surveys using longline trap gear have been conducted by the Department of Fisheries and Oceans (DFO) since 1988. Survey procedures have evolved over time with 1. standardized fishing sets (1988 - 2010) and traditional tagging sets (1991 - 2007) conducted at offshore indexing localities; 2. traditional tagging sets conducted at offshore tagging localities (1995 - 2008); 3.  standardized fishing sets conducted at mainland inlet localities (1994 - 2019, 2021); and 4. stratified random sets conducted within five spatial strata (2003-2021).  
+Fishery-independent research surveys using longline trap gear have been conducted by the Department of Fisheries and Oceans (DFO) since 1988. Survey procedures have evolved over time with 1. standardized fishing sets (1988 - 2010) and traditional tagging sets (1991 - 2007) conducted at offshore indexing localities; 2. traditional tagging sets conducted at offshore tagging localities (1995 - 2008); 3.  standardized fishing sets conducted at mainland inlet localities (1994 - 2019, 2021); and 4. stratified random sets conducted within five spatial strata (2003-2021). <!--KH suggestion to add: These research surveys are conducted in collaboration with Wild Canadian Sablefish Ltd. under a collaborative agreement with DFO. --> 
 
 These surveys are used to obtain catch rate data, gather biological samples, capture oceanographic measurements, record gear bottom contact and collect tag release and recapture data. This information is used as the key contemporary index of abundance for assessing the biological status of the sablefish stock, and to condition an operating model that serves as the biological basis of the coastal Management Strategy Evaluation [@DFO2020]. In 2021, Wild Canadian Sablefish, Ltd. implemented a multi-year research study to understand and quantify movement of longline trap gear.
 
-Due to weather conditions, 77 out of the 111 blocks and one out of four mainland inlets were surveyed in 2021.  
+<!-- KH: suggest moving this next bit to the results section as its more of a result.  I also suggest adding this sentence to the abstract.
+
+Due to weather conditions, only 77 out of the 111 planned stratified random survey blocks and one out of four mainland inlets were surveyed in 2021.  
 \clearpage
 
-
+-->
 
 
