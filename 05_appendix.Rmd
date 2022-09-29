@@ -150,7 +150,7 @@ Details of sets completed during the `r yr` survey program (F/V `r boat`).  Sets
 
 # SUMMARY OF BASKET USE BY TRAP `r yr`.{#app:fourth-appendix} 
 
-Summary of the basket use by trap number for StRS and inlet sets during the `r yr` sablefish survey. The fate of the sablefish catch for each set and trap is indicated using the following abbreviations: D = Discarded after weighing (processed as commercial catch), A = Sampled for LSMWO, T = Tagged and released, SD = Sublegal discarded, F= Frames, NULL = No sablefish catch/trap missing. Standardized sets at mainland inlet localities are highlighted with green colour and StRS sets have no background colour. Those set numbers highlighted with purple colour had a camera deployed on the string of gear.  
+Summary of the basket use by trap number for StRS and inlet sets during the `r yr` Sablefish survey. The fate of the Sablefish catch for each set and trap is indicated using the following abbreviations: D = Discarded after weighing (processed as commercial catch), A = Sampled for LSMWO, T = Tagged and released, SD = Sublegal discarded, F= Frames, NULL = No Sablefish catch/trap missing. Standardized sets at mainland inlet localities are highlighted with green colour and StRS sets have no background colour. Those set numbers highlighted with purple colour had a camera deployed on the string of gear.  
 
 ```{r appendixD, echo=FALSE}
 
@@ -330,9 +330,9 @@ Summary of the basket use by trap number for StRS and inlet sets during the `r y
 
 
 ```
-# SUMMARY OF SABLEFISH BIOLOGICAL DATA `r yr`. {#app:fifth-appendix}
+# SUMMARY OF Sablefish BIOLOGICAL DATA `r yr`. {#app:fifth-appendix}
 
-Summary of biological data collected for sablefish by set, catch weight in kilograms and numbers of fish.  Sablefish counts by trap are represented by sparklines, with every string picked up from the end location in 2021. Tagged fish counts are recorded by number of fish recovered and re-released, fish sampled and fish tagged and released. Tagged fish fork lengths are listed by count and mean (millimeters). Specimen counts are listed by sample type; mean fork lengths are tabulated.  Standardized sets at mainland inlet localities are highlighted with green colour and StRS sets have no background colour. Those set numbers highlighted with purple colour had a camera deployed on the string of gear.  The 4 sets highlighted in blue colour represent the 60 trap sets that were deployed to evaluate gear bottom-contact.
+Summary of biological data collected for Sablefish by set, catch weight in kilograms and numbers of fish.  Sablefish counts by trap are represented by sparklines, with every string picked up from the end location in 2021. Tagged fish counts are recorded by number of fish recovered and re-released, fish sampled and fish tagged and released. Tagged fish fork lengths are listed by count and mean (millimeters). Specimen counts are listed by sample type; mean fork lengths are tabulated.  Standardized sets at mainland inlet localities are highlighted with green colour and StRS sets have no background colour. Those set numbers highlighted with purple colour had a camera deployed on the string of gear.  The 4 sets highlighted in blue colour represent the 60 trap sets that were deployed to evaluate gear bottom-contact.
 
 ```{r appendixE, echo=FALSE}
 
