@@ -1,5 +1,5 @@
 ---
-title: "Summary of the annual 2021 sablefish (*Anoplopoma fimbria*) trap survey, October 6 - November 21, 2021 "
+title: "Summary of the annual 2021 Sablefish (*Anoplopoma fimbria*) trap survey, October 6 - November 21, 2021 "
 year: 2022
 report_number: nnn
 author: |
