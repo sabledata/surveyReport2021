@@ -18,8 +18,7 @@ Under the traditional mainland inlet design, sets were allocated to five specifi
 
 ### GEAR MOVEMENT RESEARCH
 
-The objectives for the gear movement research in 2021 were to:
-
+The objectives for the gear movement research in 2021 were to:<br>
 1.	Validate estimates of gear movement derived from a movement classification algorithm developed from 25-trap strings of Sablefish gear;
 2.	Estimate bottom-contact and gear movement from 60-trap strings in BC coastal fishing grounds, by collecting movement data near the ends and middle of the string.  
 
