@@ -112,23 +112,23 @@ No inlets were surveyed in 2020.  Dean/Burke Channel was the only mainland inlet
    topStRSsp  <-  read.csv(paste(path, 'results02.csv',sep=''), header=T) 
    
    topStRSsp1   <-  stringr::str_to_title(as.character(topStRSsp[1,1]))                     # -- StRS top 5 species names
-   #topStRSsp1   <- gsub("pacific","Pacific", topStRSsp1)            # -- capital on Pacific if it occurs
-   topStRSsc1   <- firstup(tolower(as.character(topStRSsp[1,2])))   # -- StRS top 5 species science names
+   topStRSsp1   <- gsub("Complex","complex", topStRSsp1)            # -- small letter on complex if it occurs
+   topStRSsc1   <- firstup(tolower(as.character(topStRSsp[1,2])))    # -- StRS top 5 species science names
    
    topStRSsp2   <-  stringr::str_to_title(as.character(topStRSsp[2,1]))  
-   #topStRSsp2   <- gsub("pacific","Pacific", topStRSsp2)            # -- capital on Pacific if it occurs   
+   topStRSsp2   <- gsub("Complex","complex", topStRSsp2)            # -- small letter on complex if it occurs  
    topStRSsc2   <- firstup(tolower(as.character(topStRSsp[2,2])))   
    
    topStRSsp3   <- stringr::str_to_title(as.character(topStRSsp[3,1]))
-   #topStRSsp3   <- gsub("pacific","Pacific", topStRSsp3)            # -- capital on Pacific if it occurs   
+   topStRSsp3   <- gsub("Complex","complex", topStRSsp3)            # -- small letter on complex if it occurs  
    topStRSsc3   <- firstup(tolower(as.character(topStRSsp[3,2])))
    
    topStRSsp4   <- stringr::str_to_title(as.character(topStRSsp[4,1]) ) 
-   #topStRSsp4   <- gsub("pacific","Pacific", topStRSsp4)            # -- capital on Pacific if it occurs   
+   topStRSsp4   <- gsub("Complex","complex", topStRSsp4)            # -- small letter on complex if it occurs   
    topStRSsc4   <- firstup(tolower(as.character(topStRSsp[4,2])))  
    
    topStRSsp5   <- stringr::str_to_title(as.character(topStRSsp[5,1]))  
-   #topStRSsp5   <- gsub("pacific","Pacific", topStRSsp5)            # -- capital on Pacific if it occurs   
+   topStRSsp5   <- gsub("Complex","complex", topStRSsp5)            # -- small letter on complex if it occurs   
    topStRSsc5   <- firstup(tolower(as.character(topStRSsp[5,2])))
    
   # -- taxonomic group count Inlets
@@ -146,7 +146,7 @@ No inlets were surveyed in 2020.  Dean/Burke Channel was the only mainland inlet
    topInletsp1  <- stringr::str_to_title(as.character(topInletsp[1,1]))    # -- inlet top 2 species names
    # str_to_title() Function in R Language is used to convert the first letter of every word of a string to Uppercase 
    # the rest of the letters are converted to lower case. uses stringr()
-   #topInletsp1  <- gsub("pacific","Pacific", topInletsp1)          # -- capital on Pacific if it occurs
+   #topInletsp1  <- gsub("Complex","complex", topInletsp1)          # -- small letter on complex if it occurs 
    topInletsc1  <- firstup(tolower(as.character(topInletsp[1,2])))  # -- inlet top 2 species science names
 
    topInletsp2  <- stringr::str_to_title(topInletsp[2,1])  
@@ -567,20 +567,20 @@ Of the `r sum(tag.rec$Recoveries)` Canadian tagged fish that were recovered on t
    total <- ""
     for (i in c(len.sp.cnt:1)) {
         if (i==len.sp.cnt-1){
-            addition <- paste(tolower(species.names[i]),", and ", sep="")}  # add 'and'
+            addition <- paste(stringr::str_to_title(species.names[i]),", and ", sep="")}  # add 'and'
         else { 
-            addition <- paste(tolower(species.names[i]),", ", sep="")}  # add comma between species
+            addition <- paste(stringr::str_to_title(species.names[i]),", ", sep="")}  # add comma between species
         
             total    <- paste(addition,total,sep="")
      }
-     total    <- gsub("pacific","Pacific", total)    # replace small p with capital
+     #total    <- gsub("pacific","Pacific", total)    # replace small p with capital
      total.string <- strtrim(total,nchar(total)-2)   # trim string
 
    
 ```
 ## OTHER FISH SAMPLING
 
-Length, sex, maturity, otoliths and DNA samples were collected for `r rebs.count` rougheye/blackspotted rockfish samples.  The science samplers visually identified `r re.count` specimens as rougheye, `r bs.count` specimens as blackspotted and `r hy.count` specimen as a hybrid species (Appendix \@ref(app:sixth-appendix)).
+Length, sex, maturity, otoliths and DNA samples were collected for `r rebs.count` Rougheye/Blackspotted Rockfish samples.  The science samplers visually identified `r re.count` specimens as Rougheye, `r bs.count` specimens as Blackspotted and `r hy.count` specimen as a hybrid species (Appendix \@ref(app:sixth-appendix)).
 
 Length, sex, maturity and otoliths were collected for `r total.string` (Appendix \@ref(app:seventh-appendix)).
 

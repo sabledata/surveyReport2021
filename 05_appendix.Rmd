@@ -492,7 +492,7 @@ Summary of biological data collected for Sablefish by set, catch weight in kilog
 \clearpage
 
 # SUMMARY OF BIOLOGICAL DATA FOR THE ROUGHEYE/BLACKSPOTTED ROCKFISH COMPLEX. {#app:sixth-appendix} 
-Biological data collected for rougheye/blackspotted rockfish complex.  Each set is listed with counts of specimens sampled, calculations of mean fork lengths and the number of species visually identified as either a RE = rougheye rockfish, BS = blackspotted rockfish or a hybrid. All were captured on StRS sets.
+Biological data collected for Rougheye/Blackspotted Rockfish complex.  Each set is listed with counts of specimens sampled, calculations of mean fork lengths and the number of species visually identified as either a RE = Rougheye Rockfish, BS = Blackspotted Rockfish or a hybrid. All were captured on StRS sets.
 \ \
 \ \
 
@@ -596,7 +596,7 @@ Biological data collected for rougheye/blackspotted rockfish complex.  Each set 
 \clearpage
 
 # SUMMARY OF BIOLOGICAL DATA FOR OTHER ROCKFISH SPECIES AND LINGCOD. {#app:seventh-appendix} 
-Biological data collected for other rockfish species and lingcod.  Each set is listed with counts of specimens sampled and calculations of mean fork lengths.  All were captured on StRS sets.
+Biological data collected for other rockfish species and Lingcod.  Each set is listed with counts of specimens sampled and calculations of mean fork lengths.  All were captured on StRS sets.
 
 \ \
 

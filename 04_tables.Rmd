@@ -247,6 +247,7 @@
     dat1SP <- dat1SP[,c(-6)]  # trim columns
     cleandataSP<-dat1SP
     cleandataSP$Summary_sp     <- cleanf(cleandataSP$Summary_sp)  #  remove duplicates function
+    cleandataSP$Common_Name    <- stringr::str_to_title(as.character(cleandataSP$Common_Name))
     cleandataSP$Total_weight   <- gsub("NA", "", cleandataSP$Total_weight)
     colnames(cleandataSP)      <- c( "Category", "Common Name", "Scientific Name" , "Count", "Weight(kg)")
     
@@ -277,6 +278,7 @@
   dat1SP <- dat1SP[,c(-6)]
   cleandataSPi<-dat1SP
   cleandataSPi$Summary_sp <- cleanf(cleandataSPi$Summary_sp)  #use the remove duplicates function
+  cleandataSPi$Common_Name    <- stringr::str_to_title(as.character(cleandataSPi$Common_Name))
   colnames(cleandataSPi)  <- c( "Category", "Common Name", "Scientific Name" , "Count", "Weight(kg)")
 
   kableExtra::kable(cleandataSPi,
