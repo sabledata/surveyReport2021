@@ -295,11 +295,11 @@ library(cowplot)
    
    boat        <- simpleCap(tolower(sd[1,1]))      # -- vessel name 
    captain     <- "Albert (Deacon) Melnychuk"      # -- captain name -- override name from db for 2021
-   dates       <- sd[1,3]                          # -- survey start and end dates 
-   setcnt      <- sd[1,4]                          # -- survey set count 
-   days        <- sd[1,5]                          # -- days survey total to match paper docs
-   legone      <- sd[1,6]    
-   legtwo      <- sd[1,7]   
+   dates       <-   sd[1,3]                          # -- survey start and end dates 
+   setcnt      <-   sd[1,4]                          # -- survey set count 
+   days        <-   sd[1,5]                          # -- days survey total to match paper docs
+   legone      <-   sd[1,6]    # demo
+   legtwo      <-   sd[1,7]   
 
    avgC        <- paste("select round(AVG(TOTAL), 0) AS YrAvg ",
                         "from   dbo.TableA2_Annual_sablefish_Landing_in_Can_waters_2 ",
@@ -313,7 +313,7 @@ library(cowplot)
                         "where  (year = ", yr, ")  group by round(TRAP / TOTAL * 100, 0), TOTAL", sep="")
    #trapP       <- GetSQLData(tp,"Sablefish")        # -- trap gear catch ratio
    #write.table(trapP, file = paste(path,"index03.csv",sep=''),row.names=FALSE, na="",col.names=TRUE,  sep=",")   
-   trapP      <- read.csv(paste(path,'index03.csv', sep=''),header=T)
+   trapP      <-   read.csv(paste(path,'index03.csv', sep=''),header=T)
    
    lp          <- paste( "select  round(LONGLINE / TOTAL * 100, 0) AS LonglinePer from ",  
                          "dbo.TableA2_Annual_sablefish_Landing_in_Can_waters_2  ",
