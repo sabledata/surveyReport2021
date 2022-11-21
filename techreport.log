@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.20)  29 SEP 2022 12:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.4)  21 NOV 2022 15:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **techreport.tex
 (./techreport.tex
 LaTeX2e <2022-06-01> patch level 5
-L3 programming layer <2022-08-30> (c:/Users/lackol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
+L3 programming layer <2022-09-28> (c:/Users/lackol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
 (c:/Users/lackol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
@@ -734,7 +734,7 @@ LaTeX Font Info:    Trying to load font information for T1+phv on input line 144
 (c:/Users/lackol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 ) (c:/Users/lackol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2022-08-30 L3 backend support: PDF output (pdfTeX)
+File: l3backend-pdftex.def 2022-09-28 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count343
 \l__pdf_internal_box=\box74
 ) (./techreport.aux)
@@ -8892,11 +8892,11 @@ Package rerunfilecheck Info: File `techreport.out' has not changed.
 (rerunfilecheck)             Checksum: AD6669D80D99BC8914846D8E228B7148;9360.
  ) 
 Here is how much of TeX's memory you used:
- 25188 strings out of 477035
- 452412 string characters out of 5826234
- 1252018 words of memory out of 5000000
- 45306 multiletter control sequences out of 15000+600000
- 539149 words of font info for 212 fonts, out of 8000000 for 9000
+ 25180 strings out of 477031
+ 452094 string characters out of 5826551
+ 1252150 words of memory out of 5000000
+ 45308 multiletter control sequences out of 15000+600000
+ 538898 words of font info for 210 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  87i,17n,91p,1238b,757s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/Users/lackol/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/Users/lackol/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Users/lackol/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/Users/lackol/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/Users/lackol/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/Users/lackol/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/lackol/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/Users/lackol/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/Users/lackol/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Users/lackol/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
