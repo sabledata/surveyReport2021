@@ -1,6 +1,7 @@
 # Tables
+
 (ref:table1Caption) Spatial and depth stratum allocation and completed set counts (blue) for the `r yr` Sablefish research and assessment survey.
-\ \
+
 
 ```{r table1, echo=FALSE}
 
@@ -65,10 +66,8 @@
   
   
 ```
-
-\ \
 (ref:table2Caption) Target number of 25-trap camera survey sets and completed counts (blue) for the `r yr` Sablefish research and assessment survey.
-\ \
+
 
 ```{r table2,  echo=FALSE}
     # refer to procedure exec dbo.Build_Seabird_tables at end for counts 
@@ -144,9 +143,12 @@
     datastrata$Total[6]<-" "   
     datastrata$Inlet[c(1,2,3,4,5)]<-" " 
     
-    colnames(datastrata) <- c("Strata", paste("RD", "\\textsubscript{1}", sep='') , paste("RD", "\\textsubscript{1}"," 2021", sep=''), 
-                                        paste("RD", "\\textsubscript{2}", sep='') , paste("RD", "\\textsubscript{2}"," 2021", sep=''),
-                                        paste("RD", "\\textsubscript{3}", sep='') , paste("RD", "\\textsubscript{3}"," 2021", sep=''), 
+    colnames(datastrata) <- c("Strata", paste("RD", "\\textsubscript{1}", sep='') , 
+                              paste("RD", "\\textsubscript{1}"," 2021", sep=''), 
+                                        paste("RD", "\\textsubscript{2}", sep='') , 
+                              paste("RD", "\\textsubscript{2}"," 2021", sep=''),
+                                        paste("RD", "\\textsubscript{3}", sep='') , 
+                              paste("RD", "\\textsubscript{3}"," 2021", sep=''), 
                                         "Inlet", "Total", "Total 2021") 
    
        kableExtra::kable(datastrata, booktabs = TRUE,
@@ -174,8 +176,9 @@
     
 
 ```
-\ \
-(ref:table3Caption) Details of completed 60 trap camera movement sets. Seabird temperature and pressure recorder (SBE39), Hobo accelerometer (HOBO) and camera (CAM) are indicated with an 'x'.
+
+
+(ref:table3Caption) Details of completed 60 trap camera movement sets. Seabird temperature and pressure recorder (SBE39), Actigraph accelerometer (AXL) and camera (CAM) are indicated with an 'x'.
 
 ```{r table3,  echo=FALSE}
 
@@ -183,7 +186,8 @@
                   " MAX(CAM) AS CAM ",
                   " FROM (SELECT  dbo.SURVEY_trips_vw.YEAR, FE.TRIP_ID, FE.FE_MAJOR_LEVEL_ID AS set_no,  ",
                   " FE.FE_SUB_LEVEL_ID AS becket_no,  ",
-                  " FE.FE_MINOR_LEVEL_ID AS trap_no, CASE WHEN FE_EVENT_SENSOR_DESC LIKE '%sbe39%' THEN 1 ELSE 0 END AS SBE39,  ",
+                  " FE.FE_MINOR_LEVEL_ID AS trap_no, CASE WHEN FE_EVENT_SENSOR_DESC  ",
+                  " LIKE '%sbe39%' THEN 1 ELSE 0 END AS SBE39,  ",
                   " CASE WHEN FE_EVENT_SENSOR_DESC LIKE '%accelerometer%' THEN 1 ELSE 0 END AS HOBO,  ",
                   " CASE WHEN FE_EVENT_SENSOR_DESC LIKE '%ctd%' THEN 1 ELSE 0 END AS CTD,  ",
                   " CASE WHEN FE_EVENT_SENSOR_DESC LIKE '%camera%' THEN 1 ELSE 0 END AS CAM,  ",
@@ -191,9 +195,11 @@
                   " FROM  GFBioSQL.dbo.TRAP_SENSOR INNER JOIN ",
                   "  GFBioSQL.dbo.FE_EVENT_SENSOR ON GFBioSQL.dbo.TRAP_SENSOR.FE_EVENT_SENSOR_CODE =  ",
                   " GFBioSQL.dbo.FE_EVENT_SENSOR.FE_EVENT_SENSOR_CODE INNER JOIN ",
-                  " GFBioSQL.dbo.FISHING_EVENT AS FE ON GFBioSQL.dbo.TRAP_SENSOR.FISHING_EVENT_ID = FE.FISHING_EVENT_ID INNER JOIN ",
+                  " GFBioSQL.dbo.FISHING_EVENT AS FE ON GFBioSQL.dbo.TRAP_SENSOR.FISHING_EVENT_ID =",
+                  " FE.FISHING_EVENT_ID INNER JOIN ",
                   " dbo.SURVEY_trips_vw ON FE.TRIP_ID = dbo.SURVEY_trips_vw.TRIP_ID ",
-                  " GROUP BY FE.TRIP_ID, FE.FE_MAJOR_LEVEL_ID, FE.FE_SUB_LEVEL_ID, FE.FE_MINOR_LEVEL_ID, dbo.SURVEY_trips_vw.YEAR, ",          
+                  " GROUP BY FE.TRIP_ID, FE.FE_MAJOR_LEVEL_ID, FE.FE_SUB_LEVEL_ID,  ",
+                  " FE.FE_MINOR_LEVEL_ID, dbo.SURVEY_trips_vw.YEAR, ",          
                   " GFBioSQL.dbo.FE_EVENT_SENSOR.FE_EVENT_SENSOR_DESC  ", 
                   " HAVING  (dbo.SURVEY_trips_vw.YEAR = 2021) AND (FE.FE_MAJOR_LEVEL_ID IN (7, 14, 27, 63)) ",
                   " ) AS SENS  GROUP BY YEAR, TRIP_ID, set_no, becket_no, trap_no", sep="")
@@ -215,7 +221,7 @@
     Trap.camera$HOBO  <- "x"
     Trap.camera$CAM   <- "x"
     
-    colnames(Trap.camera)  <- c( "Spatial Strata", "Set", "Becket id" , "Trap id", "SBE39", "HOBO", "CAM")
+    colnames(Trap.camera)  <- c( "Spatial Strata", "Set", "Becket id" , "Trap id", "SBE39", "AXL", "CAM")
     
     kableExtra::kable(Trap.camera, booktabs = TRUE, linesep = "",
                       align = c("l","r","r","r","c","c","c"),
@@ -248,11 +254,15 @@
     cleandataSP<-dat1SP
     cleandataSP$Summary_sp     <- cleanf(cleandataSP$Summary_sp)  #  remove duplicates function
     cleandataSP$Common_Name    <- stringr::str_to_title(as.character(cleandataSP$Common_Name))
+    cleandataSP$Common_Name    <- gsub("Spiny Dogfish","North Pacific Spiny Dogfish", cleandataSP$Common_Name)
     cleandataSP$Total_weight   <- gsub("NA", "", cleandataSP$Total_weight)
     colnames(cleandataSP)      <- c( "Category", "Common Name", "Scientific Name" , "Count", "Weight(kg)")
+    cleandataSP[25,2]          <- "Fragile Sea Urchin"
+    
     
     kableExtra::kable(cleandataSP,
                       booktabs = TRUE,linesep = "",
+                      align = c("l","l","l","l","l"),
                       format = "latex",  caption = "(ref:table4Caption)") %>%
                       row_spec(0,  bold = T) %>%
                       row_spec(8,  hline_after = T) %>%
@@ -261,6 +271,7 @@
                       kableExtra::kable_styling(font_size = 8, position = "left",
                                                 latex_options = "hold_position")
 ```
+\clearpage
 
 (ref:table5Caption) Summary of species captured by the `r boat` during the `r yr` survey standardized sets conducted at Dean/Burke Channel mainland inlet locality. No value in both weight and count fields indicate trace weights.
 
@@ -283,6 +294,7 @@
 
   kableExtra::kable(cleandataSPi,
                     booktabs = TRUE,linesep = "",
+                    align = c("l","l","l","l","l"),
                     format = "latex",  caption = "(ref:table5Caption)") %>%
                     row_spec(0,  bold = T) %>%
                     row_spec(1,  hline_after = T) %>%
@@ -290,15 +302,13 @@
                     kableExtra::kable_styling(font_size = 8, position = "left",latex_options = "hold_position")
 
 ```
-\clearpage
 
 (ref:table6Caption) Summary of Sablefish sex ratios and mean fork length measurements collected during the `r yr` stratified random sets by spatial and depth stratum.
-\ \
-\ \
+
 ```{r table6, echo=FALSE}
 
-    #newdata2     <-   rbind(newdata,biosumm)
-    newdata2      <-   newdata  # created in results section
+    
+    newdata2      <-   read.csv(paste(path,'table6.csv',sep=''), header=T)  # created in results section
     newdata2[1,1] <-   paste( "S", "\\textsubscript{1}", sep='')
     newdata2[5,1] <-   paste( "S", "\\textsubscript{2}", sep='')
     newdata2[9,1] <-   paste( "S", "\\textsubscript{3}", sep='')
@@ -346,11 +356,10 @@
                 row_spec(20,   bold = T)
       
 ```
-\ \
-\ \
+\clearpage
+
 (ref:table7Caption) Canadian tag recovery counts from all sets during the 2021 survey, by distance from release site and years at liberty. Distances were determined using the great circle distance between the release location and recovery location.
-\ \
-\ \
+
 
 ```{r table7, echo=FALSE}
 
@@ -375,7 +384,7 @@
       names(tag.rec2) <- c("Years at Liberty","<10","11-50","51-100","101-250","251-500","501-1000","1000+","Recovery count")
    
       kableExtra::kable(tag.rec2, row.names = FALSE,
-                        align = c("l","r","r","r","c","c","c"),
+                        align = c("l","l","l","l","l","l","l","l","l"),
                   booktabs = TRUE,   linesep = "",
                   format = "latex",  caption = "(ref:table7Caption)") %>% 
       add_header_above(c(" "= 1,

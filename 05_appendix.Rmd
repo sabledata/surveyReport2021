@@ -16,7 +16,7 @@ After that, all subsequent sections will be turned into appendices. -->
    #write.table(trip, file = paste(path,'appendixA.csv',sep=''),row.names=FALSE, na="",col.names=TRUE,  sep=",")  
    trip   <-  read.csv(paste(path,'appendixA.csv',sep=''),header=T)
    
-   colnames(trip) <- c("Year", "Dates",  "Vessel", "Captain", "Set Count", "GFBIO Id")
+   colnames(trip) <- c("Year", "Dates",  "Vessel", "Captain", "Set Count", "GFBIO Trip id")
    kableExtra::kable(trip,
                      booktabs = TRUE, 
                      longtable = T,
@@ -41,7 +41,7 @@ Example of the set log data form with directions from the survey instruction man
 \clearpage
 
 # SURVEY SET DETAILS `r yr`. {#app:third-appendix}
-Details of sets completed during the `r yr` survey program (F/V `r boat`).  Sets are listed by stratum/inlet name, set type, depth stratum, start date, end of gear deployment time and duration in minutes. The depth strata for type 3 tagging sets include RD~1~ (100-250 fathoms), RD~2~ (250-450 fathoms) and RD~3~ (450-750 fathoms). The position data includes the major area and start and end latitude and longitude in degrees decimal minutes. The bottom depths (in meters) of the fishing set are shown with the mean bottom depth calculated from recordings at one minute intervals between the start and end of the set. The number of traps fished for each set excludes open traps, while holed or fouled traps have been included.  Sets that successfully deployed a Seabird SBE temperature and pressure recorder (SBE 39), Hobo accelerometer (HOBO) or camera (CAM) are indicated with an 'x'. 
+Details of sets completed during the `r yr` survey program (F/V `r boat`).  Sets are listed by stratum/inlet name, set type, depth stratum, start date, end of gear deployment time and duration in minutes. The depth strata for type 3 tagging sets include RD~1~ (100-250 fathoms), RD~2~ (250-450 fathoms) and RD~3~ (450-750 fathoms). The position data includes the major area and start and end latitude and longitude in degrees decimal minutes. The bottom depths (in meters) of the fishing set are shown with the mean bottom depth calculated from recordings at one minute intervals between the start and end of the set. The number of traps fished for each set excludes open traps, while holed or fouled traps have been included.  Sets that successfully deployed a Seabird SBE temperature and pressure recorder (SBE 39), an accelerometer (AXL) or a camera (CAM) are indicated with an 'x'. 
 
 
 ```{r appendixC, results="asis"}
@@ -79,7 +79,7 @@ Details of sets completed during the `r yr` survey program (F/V `r boat`).  Sets
                            "Start Latitude",  "Start Longitude", 
                            "End Latitude",    "End Longitude", 
                            "Start Depth (m)", "End Depth (m)", "Mean Depth (m)", 
-                           "Traps Fished",    "SBE 39", "HOBO", "CAM")
+                           "Traps Fished",    "SBE 39", "AXL", "CAM")
    
    srvy.set$Type <- as.character(srvy.set$Type)
    srvy.set$Type[srvy.set$Set==7]  <-  'Movement'
@@ -112,6 +112,7 @@ Details of sets completed during the `r yr` survey program (F/V `r boat`).  Sets
  
    kableExtra::kable(srvy.set,
                     booktabs  = TRUE, 
+                    align = c("l","l","l","l","l","l","l","l","l","l","l","l","l","l","l","l","l","l","l"),
                     longtable = T,
                     linesep   = "",
                     escape = F,
@@ -366,7 +367,7 @@ Summary of biological data collected for Sablefish by set, catch weight in kilog
    
    addition.cam                     <-  c("Movement", "", surveycam.Total.Count, "", 0, 
                                            surveycam.Recovered.Dead.Number, 
-                                           0, 0, "", surveycam.Fork.Len.Sample.Count,
+                                           0, surveycam.Fork.Len.Tag.Sample.Count, "", surveycam.Fork.Len.Sample.Count,
                                            surveycam.Sex.Sample.Count, surveycam.Maturity.Sample.Count, 
                                            surveycam.Otolith.Sample.Count,
                                            surveycam.Weight.Sample.Count, surveycam.Sample.Count, "", "", "")
@@ -556,7 +557,7 @@ Biological data collected for Rougheye/Blackspotted Rockfish complex.  Each set 
                      booktabs = TRUE, 
                      longtable = T,
                      linesep   = "",
-                     align=c('r','c','c','c','c','c','c','c','c','c','c','c','c','c','c'),
+                     align=c('l','l','l','l','l','l','l','l','l','l','l','l','l','l','l'),
                      format = "latex") %>%
       
    add_header_above(c(" "= 1,
@@ -602,39 +603,24 @@ Biological data collected for other rockfish species and Lingcod.  Each set is l
 
 ```{r appendixG, echo=FALSE}
  
-   othersamples <-  paste( "select species_name, [SET], [Len Sample Count], ",
-                           "[weight_count], [Sex Sample Count], ",
-                           "[Maturity Sample Count], [Otolith Sample Count], [DNA Sample Count], ",
-                           "Sample_count, [Proportion Males],  ",   
-                           "round([Male Mean Fork Len(mm)],0) as malelen, ",
-                           "round([Female Mean Fork Len(mm)],0) as femlen,  ", 
-                           "round([NoSexMeanLen(mm)],0) as nosexlen ", 
-                           "from  ",
-                           "(select year, TRIP_ID, FE_MAJOR_LEVEL_ID, SPECIES_CODE ",
-                           "from  (select year, TRIP_ID, FE_MAJOR_LEVEL_ID, SPECIES_CODE, ",
-                           "CASE WHEN EXISTENCE_ATTRIBUTE_CODE = 16 THEN 1 ELSE 0 END AS re, ",
-                           "CASE WHEN EXISTENCE_ATTRIBUTE_CODE = 17 THEN 1 ELSE 0 END AS bs, ",
-                           "CASE WHEN EXISTENCE_ATTRIBUTE_CODE = 31 THEN 1 ELSE 0 END AS hyb, ",
-                           "SPECIMEN_ID ",
-                           "from dbo.gfbio_species_guess) AS bs ",
-                           "group by year, TRIP_ID, FE_MAJOR_LEVEL_ID, SPECIES_CODE) AS bsre ", 
-                           "RIGHT OUTER JOIN ",
-                           "dbo.GFBIO_RESEARCH_SAMPLE_DETAILS_OTHER_FISH ON bsre.TRIP_ID = ",              
-                           "dbo.GFBIO_RESEARCH_SAMPLE_DETAILS_OTHER_FISH.TRIP_ID and ",
-                           "bsre.FE_MAJOR_LEVEL_ID = dbo.GFBIO_RESEARCH_SAMPLE_DETAILS_OTHER_FISH.[SET] ",
-                           "and bsre.SPECIES_CODE = ",                       
-                           "dbo.GFBIO_RESEARCH_SAMPLE_DETAILS_OTHER_FISH.species ",            
-                           "where (dbo.GFBIO_RESEARCH_SAMPLE_DETAILS_OTHER_FISH.Year = ",yr, 
-                           ") and (dbo.GFBIO_RESEARCH_SAMPLE_DETAILS_OTHER_FISH.species <> N'394') order by species,[SET]", sep="")
+   othersamples <-  paste( "SELECT species_name, [SET], [Len Sample Count], ",
+                           "weight_count, [Sex Sample Count], [Maturity Sample Count],  ",
+                           "[Otolith Sample Count], [DNA Sample Count], Sample_count,   ",
+                           "[Proportion Males], ROUND([Male Mean Fork Len(mm)], 0) AS malelen,  ",
+                           "ROUND([Female Mean Fork Len(mm)], 0) AS femlen,  ",
+                           "ROUND([NoSexMeanLen(mm)], 0) AS nosexlen  FROM    ",                                    
+                           "dbo.GFBIO_RESEARCH_SAMPLE_DETAILS_OTHER_FISH ", 
+                           "WHERE (Year = ",yr,") AND (species <> N'394') ", 
+                           "ORDER BY species, [SET]  ", sep="")
    #otherspec2            <-  GetSQLData(othersamples,"Sablefish")   # read from SQL Server
    #write.table(otherspec2, file = paste(path,'appendixG.csv',sep=''),row.names=FALSE, na="",col.names=TRUE,  sep=",")   
    otherspec2              <-  read.csv(paste(path,'appendixG.csv',sep=''),header=T) # read from csv
    otherspec2$species_name <-  as.character(otherspec2$species_name)
 
    otherspec2$species_name<-  cleanf(otherspec2$species_name)  
-   otherspec2             <-  otherspec2[c(-8)]
+   #otherspec2             <-  otherspec2[c(-8)]
    colnames(otherspec2)   <-  c("Species Name", "Set", "Fork Length",
-                               "Weight", "Sex","Maturity", "Otolith", 
+                               "Weight", "Sex","Maturity", "Aging Structures Collected", "DNA",
                                "Total", 
                                "Prop Males", 
                                "Males", "Females",  
@@ -644,11 +630,11 @@ Biological data collected for other rockfish species and Lingcod.  Each set is l
                      booktabs = TRUE, 
                      longtable = T,
                      linesep   = "",
-                     align=c('l','r','c','c','c','c','c','c','c','c','c','c'),
+                     align=c('l','l','l','l','l','l','l','l','l','l','l','l','l'),
                      format = "latex") %>%
       
       add_header_above(c(" "= 2,
-                         "Specimen Count"= 6, 
+                         "Specimen Count"= 7, 
                          "Mean Fork Length(mm)" = 4), bold=TRUE) %>%
    
       kableExtra::kable_styling(font_size = 8, 
@@ -663,11 +649,12 @@ Biological data collected for other rockfish species and Lingcod.  Each set is l
       column_spec(5,width     = "0.4cm") %>% # sex 
       column_spec(6,width     = "0.7cm") %>% # mat
       column_spec(7,width     = "0.7cm") %>% # oto
-      column_spec(8,width     = "0.2cm") %>% # tot cnt        
-      column_spec(9,width     = "1.0cm") %>% # prop m
-      column_spec(10,width    = "0.5cm") %>% # male
-      column_spec(11,width    = "0.7cm") %>% # female
-      column_spec(12,width    = "0.6cm") %>% #  no sex  
+      column_spec(8,width     = "0.7cm") %>% # dna 
+      column_spec(9,width     = "0.2cm") %>% # tot cnt        
+      column_spec(10,width     = "1.0cm") %>% # prop m
+      column_spec(11,width    = "0.5cm") %>% # male
+      column_spec(12,width    = "0.7cm") %>% # female
+      column_spec(13,width    = "0.6cm") %>% #  no sex  
       row_spec(0, bold = T) %>%
       row_spec(6,  hline_after = T) %>%
       row_spec(13,  hline_after = T)

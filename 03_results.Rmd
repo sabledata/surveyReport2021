@@ -9,7 +9,7 @@
 ```
 The 2021 survey was 47 days long, starting in Nanaimo, BC on October 6, with crew changes on October 27, and November 2nd at Port Hardy. There were six weather days on leg one due to the October 2021 Northeast Pacific bomb cyclone.  Inclement weather prevented fishing one day on leg two, and four days on leg three.  In total, 81 sets were completed (Appendix \@ref(app:third-appendix)): 72 StRS sets at random sites, four 60-trap experimental sets for gear movement research (Figure \@ref(fig:figure4)) and five standardized sets at Dean/Burke Channel mainland inlet locality (Figure \@ref(fig:figure5)). 
 
-Of the 91 original blocks for the StRS portion of the survey, four were replaced at sea; two blocks were rejected after on-ground inspection and two blocks were rejected based on prior knowledge (Figure \@ref(fig:figure6)). 
+Of the 91 original blocks for the StRS portion of the survey, 4 blocks were deemed unfishable during the survey and alternate blocks were selected to replace them, two blocks were rejected after on-ground inspection and two blocks were rejected based on prior knowledge (Figure \@ref(fig:figure6)). 
 
 ```{r CatchRateText, echo=FALSE}
   # -- generate the lowest uncertainity and corresponding year for catch rate paragraph
@@ -93,7 +93,7 @@ The mean weight of captured Sablefish in 2021 was similar or slightly lower comp
 
 CPUE in the mainlaind inlets has varied over time with peak CPUE occurring every 5-8 years (Figure \@ref(fig:figure11) a,b). In the early part of the time series (mid-1990s) average CPUE remained relatively constant before a peak in CPUE was observed in 1999, followed by declines to consistent levels until another peak in 2003 and 2004, and again in 2011. In 2018, CPUE returned (~23 fish, and ~40 kg per trap) to the levels observed during previous peaks. In 2019, the highest catch rates of the 26 year time series were observed (~36 fish, and ~61 kg per trap). Notably, the 2018-2019 mean weight (~1.7 kg) declined to an all time low due to large number of small fish becoming available to the survey (Figure \@ref(fig:figure11) c).  
 
-No inlets were surveyed in 2020.  Dean/Burke Channel was the only mainland inlet locality surveyed in 2021. It is not included in the CPUE figures due to the other four inlets having no data. 
+No inlets were surveyed in 2020.  Dean/Burke Channel was the only mainland inlet locality surveyed in 2021. It is not included in the CPUE figures because no data was collected in the three other inlets.
 
 
 ```{r SpeciesCompositionText, echo=FALSE}
@@ -113,6 +113,7 @@ No inlets were surveyed in 2020.  Dean/Burke Channel was the only mainland inlet
    
    topStRSsp1   <-  stringr::str_to_title(as.character(topStRSsp[1,1]))                     # -- StRS top 5 species names
    topStRSsp1   <- gsub("Complex","complex", topStRSsp1)            # -- small letter on complex if it occurs
+   topStRSsp1   <- gsub("Spiny Dogfish","North Pacific Spiny Dogfish", topStRSsp1) # add North Pacific to dogfish name
    topStRSsc1   <- firstup(tolower(as.character(topStRSsp[1,2])))    # -- StRS top 5 species science names
    
    topStRSsp2   <-  stringr::str_to_title(as.character(topStRSsp[2,1]))  
@@ -220,7 +221,7 @@ No inlets were surveyed in 2020.  Dean/Burke Channel was the only mainland inlet
 
 A total of `r totalS[1]` taxonomic groups were represented in the  `r yr` catch from StRS sets (Table \@ref(tab:table4)).  These included `r roundfishS[1]` roundfish species, `r rockfishS[1]` rockfish species, `r flatfishS[1]`  flatfish species and `r invertS[1]` invertebrate species. Other than Sablefish, the most common species, by weight,  were  `r topStRSsp1[1]` (*`r topStRSsc1`*), `r topStRSsp2` (*`r topStRSsc2`*), `r topStRSsp3` (*`r topStRSsc3`*) and `r topStRSsp4` (*`r topStRSsc4`*).  
 
-A total of `r totalI` taxonomic groups were represented in the catches from traditional standardized sets conducted in mainland inlet localities in `r yr[1]` (Table \@ref(tab:table5)).  These included `r roundfishI` roundfish species, `r rockfishI`  rockfish species, `r flatfishI` flatfish species and `r invertI` invertebrate species.  The most common species captured, in terms of total weight, other than Sablefish were `r topInletsp1` (*`r topInletsc1`*). 
+A total of `r totalI` taxonomic groups were represented in the catches from traditional standardized sets conducted in mainland inlet localities in `r yr[1]` (Table \@ref(tab:table5)).  These included `r roundfishI` roundfish species, `r rockfishI`  rockfish species, `r flatfishI` flatfish species and `r invertI` invertebrate species.  The most common species captured, in terms of total weight, other than Sablefish was `r topInletsp1` (*`r topInletsc1`*). 
 
 ```{r SamplingWords, echo=FALSE}
     # inline text query Sablefish.dbo.GFBIO_RESEARCH_SAMPLE_DETAILS for the counts of Sablefish from StRS sets
@@ -329,6 +330,7 @@ A total of `r totalI` taxonomic groups were represented in the catches from trad
                                  biosumm[13:15,], biosumm[20,])   # r bind the average column results
      newdata$Spatial   <-  cleanf(newdata$Spatial)
      colnames(newdata) <-  c("Spatial","Depth","Males","Females","Males","Females","Tagged")
+     #write.table(newdata, file = paste(path,"table6.csv",sep=''),row.names=FALSE, na="",col.names=TRUE, sep=",")
      a <-"the spatial strata S~1~, S~2~, S~3~, S~4~ and S~5~"
      
      pdiffS1 <- biosumm[16,3] - biosumm[16,4]    # --  S1 check male - female prop
@@ -417,7 +419,7 @@ A total of `r totalI` taxonomic groups were represented in the catches from trad
       deepsfemale <- sub(",([^,]*)$", " and\\1", deepsfema)   # replace last comma with and
  
    # -- other fish counts
-     othfish      <-   paste(" select species_name, sum(Sample_count) as count   ",
+     othfish      <-   paste(" select species_name, sum(Samnple_count) as count   ",
                              " from dbo.GFBIO_RESEARCH_SAMPLE_DETAILS_OTHER_FISH ",
                              " where (Year = ", yr, ") group by species_name, species ",
                              " order by species", sep="")
@@ -528,7 +530,7 @@ On average, female Sablefish grow faster and reach a far greater size (Figure \@
    
 ```
 
-More than half of the sub-legal specimens were captured in the mid-depth waters of i) the northern strata of S~4~ and S~5~ in 2017 and 2018, ii) all spatial strata in 2019, iii) S~1~, S~4~ and S~5~ in 2020, and iv) S~1~, S~2~, S~4~ and S~5~ in 2021 (Figure \@ref(fig:figure15)).
+More than half of the sub-legal specimens were captured in the mid-depth waters of i) the northern strata of S~4~ and S~5~ in 2017 and 2018, ii) all spatial strata in 2019, iii) S~1~, S~4~ and S~5~ in 2020, and iv) S~1~, S~2~, S~3~ and S~5~ in 2021 (Figure \@ref(fig:figure15)).
 
 ``` {r RecoveredTaggedFish,}
       tag  <- paste("select * from Report_Survey_Tag_Recoveries",sep="") # have to go in database and change the year value
@@ -580,7 +582,7 @@ Of the `r sum(tag.rec$Recoveries)` Canadian tagged fish that were recovered on t
 ```
 ## OTHER FISH SAMPLING
 
-Length, sex, maturity, otoliths and DNA samples were collected for `r rebs.count` Rougheye/Blackspotted Rockfish samples.  The science samplers visually identified `r re.count` specimens as Rougheye, `r bs.count` specimens as Blackspotted and `r hy.count` specimen as a hybrid species (Appendix \@ref(app:sixth-appendix)).
+Length, sex, maturity, otoliths and DNA samples were collected for `r rebs.count` Rougheye/Blackspotted Rockfish specimens.  The science samplers visually identified `r re.count` specimens as Rougheye, `r bs.count` specimens as Blackspotted and `r hy.count` specimen as a hybrid species (Appendix \@ref(app:sixth-appendix)).
 
 Length, sex, maturity and otoliths were collected for `r total.string` (Appendix \@ref(app:seventh-appendix)).
 
@@ -633,7 +635,7 @@ The maximum reported age in B.C. for females is `r oldFem` years,  collected in 
 
 As with previous years, the `r yr` survey data exhibited a trend of decreasing temperature with depth over 1-degree latitude intervals from southwest Vancouver Island to northwest Haida Gwaii (Figure \@ref(fig:figure17)).
 
-SBE 39 recorders have been placed on survey fishing sets since 2006. In the shallow waters, the lowest average temperature of `r round(celcius.min.shallow[1,5],2)` $^\circ$C  was recorded in `r celcius.min.shallow[1,1]` (latitude zone `r celcius.min.shallow$lat`$^\circ$ - `r celcius.min.shallow$lat+1`$^\circ$); the highest average temperature was `r round(celcius.max.shallow[1,5],2)` $^\circ$C in `r celcius.min.shallow[1,1]` (`r celcius.max.shallow$lat`$^\circ$ - `r celcius.max.shallow$lat+1`$^\circ$) . In the mid-depth waters, the lowest average temperature was `r round(celcius.min.mid[1,5],2)` $^\circ$C in `r celcius.min.mid[1,1]` (`r celcius.min.mid$lat`$^\circ$ - `r celcius.min.mid$lat+1`$^\circ$); the highest average temperature was `r round(celcius.max.mid[1,5],2)` $^\circ$C in `r celcius.max.mid[1,1]` (`r celcius.max.mid$lat`$^\circ$ - `r celcius.max.mid$lat+1`$^\circ$). In the deepest waters, the lowest average temperature was `r round(celcius.min.deep[1,5],2)` $^\circ$C in `r celcius.min.deep[1,1]` (`r celcius.min.deep$lat`$^\circ$ - `r celcius.min.deep$lat+1`$^\circ$) and the highest average temperature was `r round(celcius.max.deep[1,5],2)`$^\circ$C  in `r celcius.min.deep[1,1]` (`r celcius.max.deep$lat`$^\circ$ - `r celcius.max.deep$lat+1`$^\circ$) (Figure \@ref(fig:figure18)).
+SBE 39 recorders have been deployed on survey fishing sets since 2006. In the shallow waters, the lowest average temperature of `r round(celcius.min.shallow[1,5],2)` $^\circ$C  was recorded in `r celcius.min.shallow[1,1]` (latitude zone `r celcius.min.shallow$lat`$^\circ$ - `r celcius.min.shallow$lat+1`$^\circ$); the highest average temperature was `r round(celcius.max.shallow[1,5],2)` $^\circ$C in `r celcius.min.shallow[1,1]` (`r celcius.max.shallow$lat`$^\circ$ - `r celcius.max.shallow$lat+1`$^\circ$). In the mid-depth waters, the lowest average temperature was `r round(celcius.min.mid[1,5],2)` $^\circ$C in `r celcius.min.mid[1,1]` (`r celcius.min.mid$lat`$^\circ$ - `r celcius.min.mid$lat+1`$^\circ$); the highest average temperature was `r round(celcius.max.mid[1,5],2)` $^\circ$C in `r celcius.max.mid[1,1]` (`r celcius.max.mid$lat`$^\circ$ - `r celcius.max.mid$lat+1`$^\circ$). In the deepest waters, the lowest average temperature was `r round(celcius.min.deep[1,5],2)` $^\circ$C in `r celcius.min.deep[1,1]` (`r celcius.min.deep$lat`$^\circ$ - `r celcius.min.deep$lat+1`$^\circ$) and the highest average temperature was `r round(celcius.max.deep[1,5],2)`$^\circ$C  in `r celcius.min.deep[1,1]` (`r celcius.max.deep$lat`$^\circ$ - `r celcius.max.deep$lat+1`$^\circ$) (Figure \@ref(fig:figure18)).
 
 
 ```{r acknowledge, echo=FALSE}
@@ -647,7 +649,7 @@ SBE 39 recorders have been placed on survey fishing sets since 2006. In the shal
                                                                                                         
 ## ACKNOWLEDGEMENTS
 
-The stock assessment survey and data report is the result of the collaborative efforts of many individuals.  Wild Canadian Sablefish has provided coordination and support of the annual Sablefish survey since 1994.  The scientific staff that conducted the `r yr` Sablefish research charter included `r credits[2,4]` of Archipelago Marine Research Ltd (AMR); `r credits[3,4]` of Fisheries and Oceans, Canada.  
+The stock assessment survey and data report is the result of the collaborative efforts of many individuals.  The Canadian Sablefish Association has provided coordination and support of the annual Sablefish survey since 1994.  The scientific staff that conducted the `r yr` Sablefish research charter included `r credits[2,4]` of Archipelago Marine Research Ltd (AMR); `r credits[3,4]` of Fisheries and Oceans, Canada.  
 
 A special thanks to the Vessel Master and crew of the F/V `r boat`, whose efforts made the survey successful and safe during the COVID-19 pandemic.  In `r yr`, the crew consisted of `r credits[1,4]`.
 

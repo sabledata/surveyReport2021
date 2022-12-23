@@ -14,6 +14,7 @@
       img  <- paste(basepath,'figures/figure2.png',sep="") 
       knitr::include_graphics(img)
 ```
+
 \clearpage
 
 (ref:figure3) Trap gear elements consisting of 25 baited traps snapped to beckets along a groundline (A). Trap and camera trap elements (B).  
@@ -33,6 +34,7 @@
 \clearpage
 
 (ref:figure5) Location of the `r yr` standardized sets within the Dean/Burke Channel mainland inlet locality.  
+
 ```{r figure5, fig.cap='(ref:figure5)', out.width = "450px", echo=FALSE, fig.align="center", warning=FALSE}
       img <- paste(basepath,'figures/Figure5.png'  ,sep="")
       knitr::include_graphics(img)
@@ -47,182 +49,32 @@
 ```
 \clearpage
 
+(ref:figure7) Average Sablefish catch per unit effort (CPUE; mean +/- 95% CIs) by survey strata since 2003. Panels run deep to shallow (left to right) and north to south (top to bottom).
 
-```{r figureSetUp, echo=FALSE, out.width = "400px",  fig.align = "center", warning=FALSE}
+```{r figure7, fig.cap='(ref:figure7)', out.width = "450px",  fig.align="center", warning=FALSE, echo=FALSE, message=FALSE, error=FALSE}
 
-    #   results='asis',echo=FALSE,include=FALSE,warning=FALSE,message = FALSE,error= FALSE
-    #   png(paste(basepath,'figures/figure7.png',sep=''), width = 575, height = 784)  # write png to folder 
-    #   png(paste(basepath,'figures/figure7.png',sep=''))  # write png to folder 
-
-    #   query----------raw survey datafile for Landmark fisheries----------------
-    landmrk <- paste("select fecCPUE.TRIP_ID, fecCPUE.VESSEL_ID, fecCPUE.SUFFIX, ",                                  
-                     "fecCPUE.CAPTAIN_ID, fecCPUE.FISHING_EVENT_ID, fecCPUE.FE_MAJOR_LEVEL_ID,",
-                     "fecCPUE.SET_YEAR,   fecCPUE.SET_MONTH, fecCPUE.SET_DAY, ",                               
-                     "fecCPUE.SET_TIME,   fecCPUE.DURATION_MINUTES, fecCPUE.SABLE_DEPTH_GROUP, ",                     
-                     "fecCPUE.SABLE_AREA_GROUP, fecCPUE.SABLE_SET_TYPE, ", 
-                     "fecCPUE.GROUPING_CODE, fecCPUE.REASON_CODE, fecCPUE.FE_REASON_COMMENT, ",                    
-                     "fecCPUE.GEAR_CODE,  fecCPUE.NS_AREA, ",
-                     "fecCPUE.INSHORE_IND,      fecCPUE.SEAMOUNT_IND, fecCPUE.MAJOR_STAT_AREA_CODE, ",                
-                     "fecCPUE.MINOR_STAT_AREA_CODE, fecCPUE.LOCALITY_CODE, ",                                   
-                     "fecCPUE.FE_FISHING_Ground_COMMENT, ",
-                     "fecCPUE.START_LATITUDE, fecCPUE.START_LONGITUDE, ",
-                     "fecCPUE.END_LATITUDE, fecCPUE.END_LONGITUDE, ",
-                     "fecCPUE.FE_BEGINNING_BOTTOM_DEPTH, fecCPUE.FE_END_BOTTOM_DEPTH, ",
-                     "fecCPUE.FE_MODAL_BOTTOM_DEPTH, fecCPUE.TRAP_MODIFICATIONS_CODE, ",       
-                     "fecCPUE.FE_USABILITY, fecCPUE.CPUE_SABLE_WEIGHT, ",
-                     "fecCPUE.CPUE_SABLE_COUNT, fecCPUE.CPUE_TRAPS, fecCPUE.TOTAL_TRAPS, ",   
-                     "ISNULL(fecCPUE.TOTAL_SABLE_COUNT, 0) AS TOTAL_SABLE_COUNT, ",
-                     "ISNULL(fecCPUE.TOTAL_SABLE_WEIGHT, 0) AS TOTAL_SABLE_WEIGHT, ",
-                     "fecCPUE.VERIFICATION_METHOD, fecCPUE.FE_START_LATTITUDE_DEGREE, ",
-                     "fecCPUE.FE_START_LATTITUDE_MINUTE, fecCPUE.FE_START_LONGITUDE_DEGREE,",     
-                     "fecCPUE.fe_start_longitude_minute, fecCPUE.FE_END_LATTITUDE_DEGREE, ", 
-                     "fecCPUE.fe_end_lattitude_minute, fecCPUE.fe_end_longitude_degree,   ",
-                     "fecCPUE.fe_end_longitude_minute, fecCPUE.START_FATHOMS, ",
-                     "fecCPUE.END_FATHOMS, fecCPUE.MODAL_DEPTH_FM, ",
-                     "fecCPUE.DepthStrataID, dbo.SurveyBlock_countWeight.nBlocks AS Nh, ",
-                     "dbo.SurveyBlock_countWeight.Wh,", 
-                     "ISNULL(fecCPUE.CPUE_SABLE_WEIGHT / NULLIF (fecCPUE.CPUE_TRAPS, 0), 0) AS cpue,",   
-                     "dbo.GFBIO_RESEARCH_SAMPLE_DETAILS.[Proportion Males], ",
-                     "dbo.GFBIO_RESEARCH_SAMPLE_DETAILS.[Male Mean Fork Len(mm)], ",
-                     "dbo.GFBIO_RESEARCH_SAMPLE_DETAILS.[Female Mean Fork Len(mm)], ",                                        
-                     "dbo.GFBIO_RESEARCH_SAMPLE_DETAILS.[Tagged Mean Fork Len(mm)]  ",
-                     "from (select trp.TRIP_ID, trp.VESSEL_ID, trp.SUFFIX, trp.CAPTAIN_ID, fe_1.FISHING_EVENT_ID, ",
-                     "fe_1.FE_MAJOR_LEVEL_ID, YEAR(dbo.SableSetDate(fe_1.fe_begin_deployment_time, ",
-                     "fe_1.fe_end_deployment_time, fe_1.fe_begin_retrieval_time, ",
-                     "fe_1.fe_end_retrieval_time)) AS SET_YEAR,  ",     
-                     "MONTH(dbo.SableSetDate(fe_1.fe_begin_deployment_time, ",
-                     "fe_1.fe_end_deployment_time, fe_1.fe_begin_retrieval_time, ",
-                     "fe_1.fe_end_retrieval_time)) AS SET_MONTH,  ", 
-                     "DAY(dbo.SableSetDate(fe_1.fe_begin_deployment_time, ",
-                     "fe_1.fe_end_deployment_time, ",
-                     "fe_1.fe_begin_retrieval_time, fe_1.fe_end_retrieval_time)) AS SET_DAY, ",
-                     "CAST(DATEPART(hh, dbo.SableSetDate(fe_1.fe_begin_deployment_time, ",
-                     "fe_1.fe_end_deployment_time, fe_1.fe_begin_retrieval_time, ",
-                     "fe_1.fe_end_retrieval_time)) AS varchar) + ",
-                     "CAST(DATEPART(mi, dbo.SableSetDate(fe_1.fe_begin_deployment_time, ",
-                     "fe_1.fe_end_deployment_time, fe_1.fe_begin_retrieval_time, fe_1.fe_end_retrieval_time)) AS varchar) AS SET_TIME, ",
-                     "DATEDIFF(mi, ISNULL(fe_1.fe_end_deployment_time, fe_1.fe_begin_deployment_time), ISNULL(fe_1.fe_begin_retrieval_time, ",  
-                     "fe_1.fe_end_retrieval_time)) AS DURATION_MINUTES,  ",
-                     "dbo.SableDepthGroup(fe_1.GROUPING_CODE) AS SABLE_DEPTH_GROUP, ",   
-                     "dbo.SableAreaGroup(fe_1.GROUPING_CODE, fe_1.REASON_CODE, fe_1.FE_FISHING_Ground_COMMENT) AS SABLE_AREA_GROUP, ",
-                     "dbo.SableSetType(fe_1.REASON_CODE,fe_1.FE_REASON_COMMENT, ISNULL(GFBioSQL.dbo.Dater(fe_1.fe_begin_deployment_time, ",  
-                     "fe_1.fe_end_deployment_time, fe_1.fe_begin_retrieval_time, fe_1.fe_end_retrieval_time),  ",
-                     "trp.TRIP_START_DATE)) AS SABLE_SET_TYPE, fe_1.GROUPING_CODE, fe_1.REASON_CODE, fe_1.FE_REASON_COMMENT, ",
-                     "fe_1.GEAR_CODE, sloc.NS_AREA, sloc.INSHORE_IND, sloc.SEAMOUNT_IND, ",
-                     "fe_1.MAJOR_STAT_AREA_CODE, fe_1.MINOR_STAT_AREA_CODE, fe_1.LOCALITY_CODE, fe_1.FE_FISHING_Ground_COMMENT, ",
-                     "fe_1.FE_START_LATTITUDE_DEGREE + fe_1.FE_START_LATTITUDE_MINUTE / 60 AS START_LATITUDE, ",
-                     "(fe_1.FE_START_LONGITUDE_DEGREE + fe_1.fe_start_longitude_minute / 60)  * - 1 AS START_LONGITUDE, ",
-                     "fe_1.FE_END_LATTITUDE_DEGREE + fe_1.fe_end_lattitude_minute / 60 AS END_LATITUDE, ",
-                     "(fe_1.fe_end_longitude_degree + fe_1.fe_end_longitude_minute / 60) * - 1 AS END_LONGITUDE, ",
-                     "fe_1.FE_BEGINNING_BOTTOM_DEPTH, fe_1.FE_END_BOTTOM_DEPTH, fe_1.FE_MODAL_BOTTOM_DEPTH, ",
-                     "fe_1.FE_MISC_COMMENT, fets.TRAP_MODIFICATIONS_CODE, fets.USABILITY_CODE AS FE_USABILITY, ",
-                     "CAST(CASE WHEN fe_1.REASON_CODE <> 14 AND fets.USABILITY_CODE <> 13 THEN isnull(traps.CPUE_WEIGHT, ",
-                     "CASE WHEN fets.USABILITY_CODE IN (1, 12) THEN CASE WHEN fec_1.catch_weight IS NULL AND ",
-                     "isnull(fec_1.VERIFICATION_METHOD,0) <> 9 THEN 0 ELSE fec_1.catch_weight END ELSE NULL END)  ",
-                     "else NULL end AS numeric(7,1)) ",
-                     "AS CPUE_SABLE_WEIGHT, CAST(CASE WHEN fe_1.REASON_CODE <> 14 AND fets.USABILITY_CODE <> 13 THEN isnull(traps.CPUE_COUNT, ",
-                     "CASE WHEN fets.USABILITY_CODE IN (1, 12) THEN CASE WHEN fec_1.catch_count IS NULL AND ",
-                     "isnull(fec_1.VERIFICATION_METHOD, 0) <> 3 THEN 0 ELSE fec_1.catch_count END ELSE NULL END) ELSE NULL END ",
-                     "AS smallint) AS CPUE_SABLE_COUNT, ",
-                     "CAST(CASE WHEN fe_1.reason_code <> 14 AND fets.USABILITY_CODE <> 13 THEN ",
-                     "isnull(CPUE_TRAPS, CASE WHEN fets.USABILITY_CODE IN (1, 12) THEN fets.TRAPS_FISHED_COUNT ELSE NULL END) ",
-                     "ELSE NULL END AS smallint) AS CPUE_TRAPS, ISNULL(traps.TOTAL_TRAPS, fets.TRAPS_FISHED_COUNT) AS TOTAL_TRAPS, ",              
-                     "CAST(ISNULL(traps.total_count, fec_1.CATCH_COUNT) AS smallint) as TOTAL_SABLE_COUNT, ",
-                     "CAST(ISNULL(traps.total_weight, fec_1.CATCH_WEIGHT) AS numeric(7, 1)) AS TOTAL_SABLE_WEIGHT, ",
-                     "fec_1.VERIFICATION_METHOD, fe_1.FE_START_LATTITUDE_DEGREE, fe_1.FE_START_LATTITUDE_MINUTE, ",
-                     "fe_1.FE_START_LONGITUDE_DEGREE, fe_1.fe_start_longitude_minute, fe_1.FE_END_LATTITUDE_DEGREE, ",
-                     "fe_1.fe_end_lattitude_minute, fe_1.fe_end_longitude_degree, fe_1.fe_end_longitude_minute, ",      
-                     "round(PacHarvest.dbo.m2fa(fe_1.FE_BEGINNING_BOTTOM_DEPTH), 0) AS START_FATHOMS, ",
-                     "round(PacHarvest.dbo.m2fa(fe_1.FE_END_BOTTOM_DEPTH), 0) AS END_FATHOMS, ",
-                     "round(PacHarvest.dbo.m2fa(fe_1.FE_MODAL_BOTTOM_DEPTH), 0) AS MODAL_DEPTH_FM, ",
-                     "dbo.DepthStrataID(round(fe_1.FE_MODAL_BOTTOM_DEPTH, 0), ",
-                     "dbo.SableDepthGroup(fe_1.GROUPING_CODE)) AS DepthStrataID ",
-                     "from GFBioSQL.dbo.TRIP AS trp INNER JOIN ",
-                     "(select  TRIP_ID         ",
-                     "from GFBioSQL.dbo.TRIP_ACTIVITY    ",
-                     "where (ACTIVITY_CODE = 19)) AS act ON trp.TRIP_ID = act.TRIP_ID INNER JOIN  ",
-                     "(select TRIP_ID,FISHING_EVENT_ID,FE_PARENT_EVENT_ID, ",
-                     "FE_MAJOR_LEVEL_ID,FE_SUB_LEVEL_ID,FE_MINOR_LEVEL_ID,EMPLOYEE_ID, ",                                         
-                     "fe_begin_deployment_time, fe_end_deployment_time, fe_begin_retrieval_time, fe_end_retrieval_time,  ",
-                     "GROUPING_CODE, REASON_CODE, FE_REASON_COMMENT, MAJOR_STAT_AREA_CODE, ",
-                     "MINOR_STAT_AREA_CODE, LOCALITY_CODE, DFO_STAT_AREA_CODE, DFO_STAT_SUBAREA_CODE, ",
-                     "LOC_VRFN_METHOD_CODE, FE_FISHING_Ground_COMMENT, ",
-                     "FE_START_LATTITUDE_DEGREE, FE_START_LATTITUDE_MINUTE,  ",
-                     "FE_END_LATTITUDE_DEGREE,   fe_end_lattitude_minute,      ",             
-                     "FE_START_LONGITUDE_DEGREE, fe_start_longitude_minute,     ",
-                     "fe_end_longitude_degree, fe_end_longitude_minute, ",
-                     "FE_START_LORAN_X, FE_START_LORAN_Y, FE_END_LORAN_X, FE_END_LORAN_Y, ",
-                     "FE_DISTANCE_TRAVELLED, FE_DIRECTION_OF_SET, FE_PLOTTER_RECORD_INFOR, ",
-                     "DEPTH_VRFN_METHOD_CODE, FE_BEGINNING_BOTTOM_DEPTH, FE_END_BOTTOM_DEPTH,  ",
-                     "FE_MODAL_BOTTOM_DEPTH, FE_MIN_BOTTOM_DEPTH, FE_MAX_BOTTOM_DEPTH,  ",
-                     "FE_BEGIN_TARGET_DEPTH, FE_END_TARGET_DEPTH, FE_MIN_TARGET_DEPTH, FE_MAX_TARGET_DEPTH,  ",
-                     "FE_MODAL_TARGET_DEPTH, FE_BEGIN_CAPTURE_DEPTH, FE_END_CAPTURE_DEPTH,  ",
-                     "FE_MIN_CAPTURE_DEPTH, FE_MAX_CAPTURE_DEPTH, FE_MODAL_CAPTURE_DEPTH,  ",
-                     "FE_BEGINNING_GEAR_DEPTH, FE_END_GEAR_DEPTH, FE_MIN_GEAR_DEPTH, FE_MAX_GEAR_DEPTH, FE_MODAL_GEAR_DEPTH,  ",  
-                     "FE_SURFACE_WATER_TEMPERATURE,  ",
-                     "FE_SURFACE_WATER_TEMP_DEPTH, FE_SURFC_WATR_TEMP_TECH_CODE, FE_BOTTOM_WATER_TEMPERATURE,  ",
-                     "FE_BOTTOM_WATER_TEMP_DEPTH, FE_BOTTM_WATR_TEMP_TECH_CODE,  ",
-                     "FE_MODAL_DEPTH_TEMPERATURE, FE_GEAR_TEMP_TECH_CODE, FE_CTD_REF_NUMBER,  ",
-                     "FE_WIND_DIRECTION, FE_WIND_SPEED, BEAUFORT_SCALE_CODE, FE_SWELL, TIDE_CODE,  ",
-                     "FE_CLOUD_COVER, FE_LUMINESCENCE, FE_WEATHER_COMMENT, FE_SUN_SHINING_IND, GEAR_CODE,  ",   
-                     "EST_CATCH_METHOD_CODE, FE_TOTAL_CATCH_WEIGHT, FE_TOTAL_CATCH_PIECES,  ",
-                     "FE_CATCH_WEIGHT_PER_PIECE, FE_SOUNDER_COMMENT, FE_EK500_TAPE_NUMBER,  ",
-                     "FE_MISC_COMMENT, ROW_VERSION, BLOCK_DESIGNATION, FE_BEGIN_BOTTOM_CONTACT_TIME,  ",
-                     "FE_END_BOTTOM_CONTACT_TIME, BOTTOM_CONTACT_METHOD_CODE, MODIFIED_DATE, MODIFIED_BY,  ",
-                     "HAUL_RECORDER, FE_CATCH_COMMENT, PARTIAL_SORT_IND,  ",
-                     "FE_CATCH_VERIFICATION_COMMENT, SCALE_ID, CAPTAIN_ID ",
-                     "from GFBioSQL.dbo.FISHING_EVENT ",
-                     "where (FE_PARENT_EVENT_ID IS NULL)) AS fe_1 ON trp.TRIP_ID = fe_1.TRIP_ID LEFT OUTER JOIN dbo.traps AS traps ",
-                     "ON fe_1.TRIP_ID = traps.TRIP_ID AND fe_1.FE_MAJOR_LEVEL_ID = traps.FE_MAJOR_LEVEL_ID LEFT OUTER JOIN ",
-                     "dbo.sablefish_locality AS sloc ON fe_1.MAJOR_STAT_AREA_CODE = sloc.MAJOR_STAT_AREA_CODE  ",
-                     "and fe_1.MINOR_STAT_AREA_CODE = sloc.MINOR_STAT_AREA_CODE AND  ",
-                     "fe_1.LOCALITY_CODE = sloc.LOCALITY_CODE LEFT OUTER JOIN ",
-                     "GFBioSQL.dbo.TRAP_SPECS AS fets ON fe_1.FISHING_EVENT_ID = fets.FISHING_EVENT_ID LEFT OUTER JOIN ",
-                     "(select  fec.FISHING_EVENT_ID, CATCH_1.SPECIES_CODE, SUM(CATCH_1.CATCH_WEIGHT) AS CATCH_WEIGHT,  ",
-                     "sum(CATCH_1.CATCH_COUNT) AS CATCH_COUNT, AVG(ISNULL(CATCH_1.CATCH_VERIFICATION_CODE, 0)) AS VERIFICATION_METHOD ",
-                     "from GFBioSQL.dbo.FISHING_EVENT_CATCH AS fec INNER JOIN ",                                                                  
-                     "GFBioSQL.dbo.CATCH AS CATCH_1 ON fec.CATCH_ID = CATCH_1.CATCH_ID ",
-                     "where (CATCH_1.SPECIES_CODE = '455') ",
-                     "group by fec.FISHING_EVENT_ID, CATCH_1.SPECIES_CODE) AS fec_1 ON fe_1.FISHING_EVENT_ID = fec_1.FISHING_EVENT_ID ", 
-                     "where (YEAR(dbo.SableSetDate(fe_1.fe_begin_deployment_time, fe_1.fe_end_deployment_time,  ",
-                     "fe_1.fe_begin_retrieval_time, fe_1.fe_end_retrieval_time)) > 2002))  AS fecCPUE LEFT OUTER JOIN ",
-                     "dbo.GFBIO_RESEARCH_SAMPLE_DETAILS ON fecCPUE.FE_MAJOR_LEVEL_ID = dbo.GFBIO_RESEARCH_SAMPLE_DETAILS.[SET] AND  ",
-                     "fecCPUE.TRIP_ID = dbo.GFBIO_RESEARCH_SAMPLE_DETAILS.TRIP_ID LEFT OUTER JOIN ",
-                     "dbo.SurveyBlock_countWeight ON fecCPUE.SABLE_AREA_GROUP = dbo.SurveyBlock_countWeight.areaStrName AND   ",      
-                     "fecCPUE.DepthStrataID = dbo.SurveyBlock_countWeight.depthStrName", sep="")
-
-    #raw_survey_data<- GetSQLData(landmrk,"Sablefish")
-    #write.table(raw_survey_data, file = paste(path,"figure7.csv",sep=''),row.names=FALSE, na="",col.names=TRUE,  sep=",")
-    raw_survey_data <- read.csv(paste(path,'figure7.csv',sep=''),header=T)
+     png(paste(basepath,'figures/figure7.png',sep=''), width=500, height=641) # write png to file
+     par(mfcol=c(1,1))
+     raw_survey_data <- read.csv(paste(path,'figure7.csv',sep=''),header=T)
     
     # load survey data 
     library(Rmisc)
     strs01            <- subset(raw_survey_data,SABLE_SET_TYPE=="StRS") 
-    strs01$sable_cpue <- strs01$CPUE_SABLE_WEIGHT/strs01$CPUE_TRAPS           # changed from TOTAL_TRAPS to CPUE_TRAPS
+    strs01$sable_cpue <- strs01$CPUE_SABLE_WEIGHT/strs01$CPUE_TRAPS  # changed from TOTAL_TRAPS to CPUE_TRAPS
     strs01$sable_cnts <- strs01$CPUE_SABLE_COUNT/strs01$CPUE_TRAPS 
     strs01$sable_wt   <- strs01$CPUE_SABLE_WEIGHT/strs01$CPUE_SABLE_COUNT
     strs01$strata     <- paste(strs01$SABLE_AREA_GROUP,strs01$SABLE_DEPTH_GROUP)
     strs02            <- arrange(transform(strs01,strata=factor(strata,levels=rev(unique(strs01$strata)))),strata)
     tgc01             <- summarySE(strs02, measurevar="sable_cpue", groupvars=c("SET_YEAR","strata"),na.rm = T)
     
-    tgc.02            <- arrange(transform(tgc01, strata=factor(strata,levels = c("S5 RD3", "S5 RD2", "S5 RD1", 
-                                                                                  "S4 RD3", "S4 RD2", "S4 RD1", 
-                                                                                  "S3 RD3", "S3 RD2", "S3 RD1", 
-                                                                                  "S2 RD3", "S2 RD2", "S2 RD1",
-                                                                                  "S1 RD3", "S1 RD2", "S1 RD1" ))),strata)
+    tgc.02            <- arrange(transform(tgc01, 
+                                           strata=factor(strata,levels = c("S5 RD3", "S5 RD2", "S5 RD1", 
+                                                                           "S4 RD3", "S4 RD2", "S4 RD1", 
+                                                                           "S3 RD3", "S3 RD2", "S3 RD1", 
+                                                                           "S2 RD3", "S2 RD2", "S2 RD1",
+                                                                           "S1 RD3", "S1 RD2", "S1 RD1"))),strata)
   
 
-
-
-```
-\clearpage
-
-(ref:figure7) Average Sablefish catch per unit effort (CPUE; mean +/- 95% CIs) by survey strata since 2003. Panels run deep to shallow (left to right) and north to south (top to bottom).
-
-```{r figure7, fig.cap='(ref:figure7)', out.width = "450px", out.height = "576px",echo=FALSE, fig.align="center", warning=FALSE}
-
-     png(paste(basepath,'figures/figure7.png',sep=''), width=500, height=641) # write png to file
-     par(mfcol=c(1,1))
      tgc.02$col <- ifelse(tgc.02$SET_YEAR == 2021, "red", "steelblue")
 
      ggplot(tgc.02,aes(x=SET_YEAR,y=sable_cpue,label = round(sable_cpue,1))) +
@@ -246,11 +98,11 @@
                 plot.margin=unit(c(0.2,0.2,0.2,1),"cm")) 
      
   
-     while (!is.null(dev.list()))  dev.off()
-     img <-   paste(basepath,'figures/figure7.png',sep='')   # -- retrieve png 
-              knitr::include_graphics(img)
+    while (!is.null(dev.list()))  dev.off()
+    img <- paste(basepath,'figures/figure7.png',sep='')   # -- retrieve png 
+           knitr::include_graphics(img)
+     
 ```
-
 \clearpage
 
 (ref:figure8) Average number of Sablefish per trap (mean +/- 95% CIs) by StRS survey strata over time. Panels run deep to shallow (left to right) and north to south (top to bottom).
@@ -300,15 +152,15 @@
     
     # print(tgcnt[tgcnt$SET_YEAR >=2021,])
     
-    ggplot(tgcnt, aes(x=SET_YEAR,y=sable_cnt,label = round(sable_cnt,1))) +   # add label just for temporary visual
+    ggplot(tgcnt, aes(x=SET_YEAR,y=sable_cnt,label = round(sable_cnt,1))) +   # add label temporary visual
            #geom_text(size = 4.0, vjust = 2.9, nudge_y = 8.5) +    # add text just for temporary visual
            geom_errorbar(aes(ymin=sable_cnt-ci, ymax=sable_cnt+ci), width=0, col=tgcnt$col) +
            geom_line(col=tgcnt$col ) +
            geom_point(col=tgcnt$col ) +
            facet_wrap(~strata,nrow=5) +
            coord_cartesian(ylim=c(0,80))+ 
-           xlab("Year")+
-           ylab("Mean CPUE (#fish/trap)")+
+           xlab("Year") +
+           ylab("Mean CPUE (#fish/trap)") +
         
      theme(panel.background = element_rect(fill = "white",
                               colour = "grey50",
@@ -325,7 +177,9 @@
            knitr::include_graphics(img)
     
 ```
+
 \clearpage
+
 (ref:figure9) Average weight of Sablefish (mean +/- 95% CIs) by survey strata over time. Panels run deep to shallow (left to right) and north to south (top to bottom).
 
 ```{r figure9, fig.cap='(ref:figure9)', out.width = "450px", out.height = "576px",echo=FALSE, fig.align="center", warning=FALSE}
@@ -358,10 +212,10 @@
     while (!is.null(dev.list()))  dev.off()
     img <-    paste(basepath,'figures/figure9.png',sep='')   # -- retrieve png 
               knitr::include_graphics(img)
-```   
+``` 
 \clearpage
 
-(ref:figure10) Annual mean weight of Sablefish per trap (kg/trap) (A);  annual mean number of Sablefish per trap (#fish/trap) (B); annual mean weight of Sablefish (kg) (C) by StRS survey strata over time. Horizontal line is median and blue dots are arithmetic mean.
+(ref:figure10) (A) Annual mean weight of Sablefish per trap (kg/trap); (B) annual mean number of Sablefish per trap (#fish/trap); (C) annual mean weight of Sablefish (kg) by StRS survey strata over time. Horizontal line is median and blue dots are arithmetic mean.
 
 ```{r figure10, fig.cap='(ref:figure10)', out.width = "450px", out.height = "576px",echo=FALSE, fig.align="center", warning=FALSE}
 
@@ -463,8 +317,8 @@
      p <- ggplot(inlet.2w, aes(x=year, y=CPUE.SABLE.WEIGHT/CPUE.TRAPS)) +
           geom_boxplot(fill="grey90", width=0.4) +
           stat_summary(fun.y=mean, geom="point", shape=16, size=2,col="steel blue") +
-          stat_summary(fun = mean, geom = "text", col = "red", size=4.5,    # Add text to plot
-               vjust = 2.0, aes(label = paste("", round(..y.., digits = 1)))) +
+          #stat_summary(fun = mean, geom = "text", col = "red", size=4.5,    # Add text to plot
+           #    vjust = 2.0, aes(label = paste("", round(..y.., digits = 1)))) +
           xlab("Year") +
           ylab("CPUE (kg/trap)") +
           #scale_y_continuous(limits=c(0,100))+
@@ -479,8 +333,8 @@
                           position =  position_dodge2(width = 0.5, preserve = "single")) + 
           geom_boxplot(fill="grey90", width=0.4) +
           stat_summary(fun.y=mean, geom="point", shape=16, size=2,col="steel blue") +
-          stat_summary(fun = mean, geom = "text", col = "red", size=4.5,    # Add text to plot
-               vjust = 2.0, aes(label = paste("", round(..y.., digits = 1)))) +
+          #stat_summary(fun = mean, geom = "text", col = "red", size=4.5,    # Add text to plot
+           #    vjust = 2.0, aes(label = paste("", round(..y.., digits = 1)))) +
           xlab("Year") +
           ylab("CPUE (#fish/trap)") +
           #scale_y_continuous(limits=c(0,100))+
@@ -492,8 +346,8 @@
                           position =  position_dodge2(width = 0.5, preserve = "single")) + 
           geom_boxplot(fill="grey90", width=0.4) +
           stat_summary(fun.y=mean, geom="point", shape=16, size=2,col="steel blue") +
-          stat_summary(fun = mean, geom = "text", col = "red", size=4.5,    # Add text to plot
-               vjust = 2.0, aes(label = paste("", round(..y.., digits = 1)))) +
+          #stat_summary(fun = mean, geom = "text", col = "red", size=4.5,    # Add text to plot
+           #    vjust = 2.0, aes(label = paste("", round(..y.., digits = 1)))) +
           xlab("Year") +
           ylab("Mean weight (kg)") +
           theme(axis.text = element_text(size = 5)) + 
@@ -512,8 +366,7 @@
 (ref:figure12) Length frequencies for female (grey) and male Sablefish (steel blue) up to `r yr` for all StRS sets.  Specimen number (n), mean ($\overline{x}$) and standard deviation ($\sigma$) are displayed.
 
 ```{r figure12, fig.cap='(ref:figure12)',results='asis',out.width = "420px",out.height = "245px", fig.align="center"}
-
-      knitr::opts_chunk$set(out.height = "\\textheight",  out.width = "\\textwidth")
+knitr::opts_chunk$set(out.height = "\\textheight",  out.width = "\\textwidth")
       #  L E N G T H    H I S T O G R A M   # data created in the Results.Rmd
       #  Sablefish.dbo.procReport_Survey_LenMF pulls length data from table GFBIO_SABLEBIO_VW 
       #  procedure:  Build_BIO_Sablefish_Tables 
@@ -863,6 +716,7 @@
              knitr::include_graphics(img)
 ```
 \clearpage
+
 \ \
 (ref:figure17) Coplot of average depth (m) vs average temperature ($^\circ$C) for a given 1-degree latitude range (blue bands) for `r yr`.  The number of fishing sets deployed with a SBE 39 recorder are represented by n.
 
@@ -952,5 +806,3 @@
 
 ```
 \clearpage
-
-
