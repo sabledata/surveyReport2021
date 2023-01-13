@@ -95,8 +95,9 @@ Details of sets completed during the `r yr` survey program (F/V `r boat`).  Sets
     trap.set$count   <- 81
     trap.set         <- trap.set %>%  # set background colour
                          mutate(get.color = ifelse(Type %in% c("Inlet") , "olivedrab1",  "white"))
-    trap.set$get.color[trap.set$Type=='Movement']   <- "lightskyblue"   # 25 trap sets
-    trap.set$get.color[trap.set$surveyset %in% c(5,6,11,12,13,19,20,25,26,31,32,33,38,43,44,45,49,51,62,67,68,69,70)] <- "plum2"  # 60 trap sets
+    trap.set$get.color[trap.set$Type=='Movement']   <- "lightskyblue"   # 60 trap sets
+    trap.set$get.color[trap.set$surveyset 
+                       %in% c(5,6,11,12,13,19,20,25,26,31,32,33,38,43,44,45,49,51,62,67,68,69,70)] <- "plum2"  # 25 trap sets
     # tail(trap.set)
     
      w   <-  trap.set %>%
@@ -256,74 +257,66 @@ Summary of the basket use by trap number for StRS and inlet sets during the `r y
 
     #library(pander)
 
-    trap.count <-paste("select tp.YEAR, fe.TRIP_ID, fe.FE_MAJOR_LEVEL_ID AS SET_ID, fe.FE_SUB_LEVEL_ID AS BECKET, ", 
-                       "fe.FE_MINOR_LEVEL_ID AS TRAP, SUM(c.CATCH_COUNT) AS total_count ",
-                       "from dbo.GFBIO_TRAP_VW_VW AS fe INNER JOIN ",
-                       "(select YEAR, TRIP_ID from dbo.SURVEY_trips_vw ",
-                       " group by YEAR, TRIP_ID) AS tp ON fe.TRIP_ID = tp.TRIP_ID LEFT OUTER JOIN ",
-                       " GFBioSQL.dbo.TRAP_SPECS AS ts ON fe.FISHING_EVENT_ID = ts.FISHING_EVENT_ID LEFT OUTER JOIN ",
-                       " (select FISHING_EVENT_ID, SUM(CASE WHEN BAIT_LURE_CODE = 15 AND BAIT_METHOD_CODE = 4  ",
-                       " then TRPBL_BAIT_AMOUNT ELSE NULL END) AS BAGGED_SQUID, SUM(CASE WHEN BAIT_LURE_CODE = 18 and  ", 
-                       " BAIT_METHOD_CODE = 6 THEN TRPBL_BAIT_AMOUNT ELSE NULL END) AS LOOSE_HAKE,  ",
-                       " SUM(CASE WHEN (BAIT_LURE_CODE <> 15 AND BAIT_METHOD_CODE <> 4) AND (BAIT_LURE_CODE <> 18 AND  ",
-                       " BAIT_METHOD_CODE <> 6) THEN TRPBL_BAIT_AMOUNT ELSE NULL END) AS OTHER_BAIT ",
-                       " from GFBioSQL.dbo.TRAP_BAIT_LURE ",
-                       " group by FISHING_EVENT_ID) AS bait ON fe.FISHING_EVENT_ID = bait.FISHING_EVENT_ID  ",
-                       " LEFT OUTER JOIN ",
-                       " (select fec.FISHING_EVENT_ID, GFBioSQL.dbo.CATCH.SPECIES_CODE,  ",
-                       " SUM(GFBioSQL.dbo.CATCH.CATCH_WEIGHT) AS CATCH_WEIGHT, SUM(GFBioSQL.dbo.CATCH.CATCH_COUNT) AS CATCH_COUNT,  ",
-                       " AVG(ISNULL(GFBioSQL.dbo.CATCH.CATCH_VERIFICATION_CODE, 0)) AS VERIFICATION_METHOD ",
-                       " from GFBioSQL.dbo.FISHING_EVENT_CATCH AS fec INNER JOIN ",
-                       " GFBioSQL.dbo.CATCH ON fec.CATCH_ID = GFBioSQL.dbo.CATCH.CATCH_ID ",
-                       " where (GFBioSQL.dbo.CATCH.SPECIES_CODE = '455') ",
-                       " GROUP BY fec.FISHING_EVENT_ID, GFBioSQL.dbo.CATCH.SPECIES_CODE) AS c ON fe.FISHING_EVENT_ID = c.FISHING_EVENT_ID ",
-                       " GROUP BY fe.FE_MAJOR_LEVEL_ID, fe.TRIP_ID, tp.YEAR, fe.FE_SUB_LEVEL_ID, fe.FE_MINOR_LEVEL_ID",
-                       " having  (tp.YEAR IN ('2020')) order by SET_ID, BECKET, TRAP",sep="")
+  trap.count <-paste(
+                 " select tp.YEAR, fe.TRIP_ID, fe.FE_MAJOR_LEVEL_ID AS SET_ID,  ",
+                 " fe.FE_SUB_LEVEL_ID AS BECKET, ", 
+                 " fe.FE_MINOR_LEVEL_ID AS TRAP, SUM(c.CATCH_COUNT) AS total_count ",
+                 " from dbo.GFBIO_TRAP_VW_VW AS fe INNER JOIN ",
+                 " (select YEAR, TRIP_ID from dbo.SURVEY_trips_vw ",
+                 " group by YEAR, TRIP_ID) AS tp ON fe.TRIP_ID = tp.TRIP_ID LEFT OUTER JOIN ",
+                 " GFBioSQL.dbo.TRAP_SPECS AS ts ON fe.FISHING_EVENT_ID = ts.FISHING_EVENT_ID LEFT OUTER JOIN ",
+                 " (select FISHING_EVENT_ID, SUM(CASE WHEN BAIT_LURE_CODE = 15 AND BAIT_METHOD_CODE = 4  ",
+                 " then TRPBL_BAIT_AMOUNT ELSE NULL END) AS BAGGED_SQUID, SUM(CASE WHEN BAIT_LURE_CODE = 18 and  ", 
+                 " BAIT_METHOD_CODE = 6 THEN TRPBL_BAIT_AMOUNT ELSE NULL END) AS LOOSE_HAKE,  ",
+                 " SUM(CASE WHEN (BAIT_LURE_CODE <> 15 AND BAIT_METHOD_CODE <> 4) AND (BAIT_LURE_CODE <> 18 AND  ",
+                 " BAIT_METHOD_CODE <> 6) THEN TRPBL_BAIT_AMOUNT ELSE NULL END) AS OTHER_BAIT ",
+                 " from GFBioSQL.dbo.TRAP_BAIT_LURE ",
+                 " group by FISHING_EVENT_ID) AS bait ON fe.FISHING_EVENT_ID = bait.FISHING_EVENT_ID  ",
+                 " LEFT OUTER JOIN ",
+                 " (select fec.FISHING_EVENT_ID, GFBioSQL.dbo.CATCH.SPECIES_CODE,  ",
+                 " SUM(GFBioSQL.dbo.CATCH.CATCH_WEIGHT) AS CATCH_WEIGHT, ",
+                 " SUM(GFBioSQL.dbo.CATCH.CATCH_COUNT) AS CATCH_COUNT,  ",
+                 " AVG(ISNULL(GFBioSQL.dbo.CATCH.CATCH_VERIFICATION_CODE, 0)) AS VERIFICATION_METHOD ",
+                 " from GFBioSQL.dbo.FISHING_EVENT_CATCH AS fec INNER JOIN ",
+                 " GFBioSQL.dbo.CATCH ON fec.CATCH_ID = GFBioSQL.dbo.CATCH.CATCH_ID ",
+                 " where (GFBioSQL.dbo.CATCH.SPECIES_CODE = '455') ",
+                 " GROUP BY fec.FISHING_EVENT_ID, GFBioSQL.dbo.CATCH.SPECIES_CODE) ",
+                 " AS c ON fe.FISHING_EVENT_ID = c.FISHING_EVENT_ID ",
+                 " GROUP BY fe.FE_MAJOR_LEVEL_ID, fe.TRIP_ID, tp.YEAR, ",
+                 " fe.FE_SUB_LEVEL_ID, fe.FE_MINOR_LEVEL_ID",
+                 " having  (tp.YEAR IN ('", yr ,"')) order by SET_ID, BECKET, TRAP",sep="")
+    
     
    #trap.sable1   <- GetSQLData(trap.count,"Sablefish")
    #write.table(trap.sable1, file = paste(path,"appendixESetUp.csv",sep=''),row.names=FALSE, na="",col.names=TRUE, sep=",")
    trap.sable1  <-  read.csv(paste(path,'appendixESetUp.csv',sep=''), header=T)
+   trap.sable25 <-  trap.sable1[!trap.sable1$SET_ID %in% c(7,14,27,63),]  # 60 TRAP SETS SO HUGE THEY NOT SHOWN
+   #  unique(trap.sable25$SET_ID)
 
-   #library(tidyverse)
-   #library(tidyr)
-   #library(scales)
+   library(tidyverse)
+   library(tidyr)
+   library(scales)
    
-   trap.sable <- trap.sable1[,c(-1,-2,-4)] 
-   #trap.sable$SET_ID <- as.factor(trap.sable$SET_ID)
+   trap.sable <- trap.sable25[,c(-1,-2,-4)] 
    names(trap.sable) <- c("SurveySet","Trap","Value")
    trap.sable[is.na(trap.sable)] <- 0
-   trap.sable.start <- trap.sable[trap.sable$PU =='START',]
-   trap.sable.end   <- trap.sable[trap.sable$PU =='END',]
+   
+   # note 2021, all sets picked up from the end
+   trap.sable.end   <- trap.sable
    big.value <- max(trap.sable$Value)
 
-  w<-trap.sable.start %>%   # create sparkline graphs
-     group_by(SurveySet) %>%
-     do({
-       p <- ggplot(., aes(x = Trap, y = Value)) + 
-            geom_area( fill="#6495ED", alpha=0.4) + 
-            #geom_area( fill=trap.sable$col, alpha=0.4) + 
-            geom_line(size = 4, color="blue") +      
-            #geom_point(size=15, color="red") + 
-            ylim(0, big.value) +
-            xlim(0,25) +
-            theme_void() 
-            #stat_summary(fun.y = max, colour = "red", geom = "point", size = 5)
-            #ggsave(p, filename = paste0("fig", unique(.$SurveySet), ".png"), width = 8, height = 1.9)  # mini graphs
-            invisible(.) 
-       })
-   
-    w<-trap.sable.end %>%   # create sparkline graphs
+   w<-trap.sable.end %>%   # create sparkline graphs
      group_by(SurveySet) %>%
      do({
        p <- ggplot(., aes(x = Trap, y = Value)) + 
             geom_area( fill="green", alpha=0.4) + 
             #geom_area( fill=trap.sable$col, alpha=0.4) + 
-            geom_line(size = 4, color="dark green") +      
+            geom_line(linewidth = 3, color="dark green") +      
             #geom_point(size=15, color="red") + 
             ylim(0, big.value) +
             xlim(0,25) +
             theme_void() 
-            #stat_summary(fun.y = max, colour = "red", geom = "point", size = 5)
+            stat_summary(fun = max, colour = "red", geom = "point", size = 5)
             #ggsave(p, filename = paste0("fig", unique(.$SurveySet), ".png"), width = 8, height = 1.9)  # mini graphs
             invisible(.) 
        
@@ -597,7 +590,7 @@ Biological data collected for Rougheye/Blackspotted Rockfish complex.  Each set 
 \clearpage
 
 # SUMMARY OF BIOLOGICAL DATA FOR OTHER ROCKFISH SPECIES AND LINGCOD. {#app:seventh-appendix} 
-Biological data collected for other rockfish species and Lingcod.  Each set is listed with counts of specimens sampled and calculations of mean fork lengths.  All were captured on StRS sets.
+Biological data collected for other rockfish species and Lingcod.  Both fin clips and otolith structures were collected for Lingcod.  Each set is listed with counts of specimens sampled and calculations of mean fork lengths.  All were captured on StRS sets.
 
 \ \
 
